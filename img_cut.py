@@ -11,6 +11,11 @@ __date__    = '2014/05/09'
 from PIL import Image
 
 def cut_img(img_path, offsetX, offsetY, prefix):
+    """img_path 画像のパス
+    offsetX X 座標のオフセット値
+    offsetY Y 座標のオフセット値
+    prefix 保存するファイルのプレフィックス
+    """
     im = Image.open(img_path + ".png")
     box = (0 + offsetX, 216 + offsetY, 216 + offsetX, 432 + offsetY)
     im2 = im.crop(box)
