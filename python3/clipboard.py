@@ -2,11 +2,11 @@ from PIL import ImageGrab, Image
 import time
 import win32clipboard as w32c
 
-test_no = '33'
+test_no = '44'
 
 folder_name = 'test'
 
-count = 1
+count = 7
 
 def monitor(interval_sec):
 	pre_seq = None
