@@ -5,7 +5,8 @@
 
 import os
 
-file_path = "file_list.txt"
+#file_path = "file_list.txt"
+file_path = "master_list.txt"
 
 def is_folder(str):
     str = os.path.basename(str)
