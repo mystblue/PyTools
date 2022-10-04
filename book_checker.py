@@ -14,6 +14,12 @@ import requests
 from bs4 import BeautifulSoup
 
 set = {
+    "07" : {"url_a": 'https://hon-hikidashi.jp/enjoy/150087/',
+            "url_b": 'https://hon-hikidashi.jp/enjoy/150088/'},
+    "08" : {"url_a": 'https://hon-hikidashi.jp/enjoy/151491/',
+            "url_b": 'https://hon-hikidashi.jp/enjoy/151493/'},
+    "09" : {"url_a": 'https://hon-hikidashi.jp/enjoy/152766/',
+            "url_b": 'https://hon-hikidashi.jp/enjoy/152767/'},
     "10" : {"url_a": 'https://hon-hikidashi.jp/enjoy/154368/',
             "url_b": 'https://hon-hikidashi.jp/enjoy/154369/'},
     "11" : {"url_a": 'https://hon-hikidashi.jp/enjoy/156084/',
@@ -22,8 +28,6 @@ set = {
 
 url_a ='https://hon-hikidashi.jp/enjoy/156084/'
 url_b = 'https://hon-hikidashi.jp/enjoy/156085/'
-filename_a='11a.html'
-filename_b='11b.html'
 
 titles = ["女神のカフェテラス", "もののがたり", "ギルティサークル", "出会って5秒でバトル", "ぐらんぶる", "てんぷる", "バツハレ", "制裁学園", "EDENS", "イジらないで、長瀞さん", "恋愛志向生徒会", "トリアージ", "トリニティセブン", "カッコウの許嫁", "ダンダダン", "キングダム", "終末のハーレム", "はぐれアイドル", "魔都精兵のスレイブ", "あやかしトライアングル", "彼女、お借りします", "絶対聖域のチェリオン", "甘神さんちの縁結び", "俺の現実", "賭ケグルイ",  "性食鬼", "冒険王ビィト", "呪術廻戦", "さわらないで小手指くん", "化物語", "神呪のネクタール", "ダーウィンズゲーム", "チェンソーマン"]
 authors = ["瀬尾公治", "冨樫義博", "あきばるいき", "オニグンソウ", "尾田栄一郎", "赤坂一夫", "真島ヒロ", "タスクオーナ", "佐原玄清", "堀越耕平", "春輝", "神田ゆう", "井荻寿一", "岬ゆきひろ"]
@@ -78,7 +82,7 @@ def main(month):
         f.write(ret)
 
 if __name__ == '__main__':
-    month = "10"
+    month = "07"
     url_a = set[month]["url_a"]
     url_b = set[month]["url_b"]
     download(url_a, month + "a.html")
