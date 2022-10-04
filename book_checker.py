@@ -13,6 +13,13 @@ __version__ = '1.0.0'
 import requests
 from bs4 import BeautifulSoup
 
+set = {
+    "10" : {"url_a": 'https://hon-hikidashi.jp/enjoy/154368/',
+            "url_b": 'https://hon-hikidashi.jp/enjoy/154369/'},
+    "11" : {"url_a": 'https://hon-hikidashi.jp/enjoy/156084/',
+            "url_b": 'https://hon-hikidashi.jp/enjoy/156085/'}
+}
+
 url_a ='https://hon-hikidashi.jp/enjoy/156084/'
 url_b = 'https://hon-hikidashi.jp/enjoy/156085/'
 filename_a='11a.html'
@@ -41,11 +48,11 @@ def parse(filename):
         ret = ret + "\n"
     return ret
 
-def main():
+def main(month):
     buf = ""
-    buf += parse(filename_a)
-    buf += parse(filename_b)
-    with open("11.csv", "w", encoding="utf-8") as f:
+    buf += parse(month + "a.html")
+    buf += parse(month + "b.html")
+    with open(month + ".csv", "w", encoding="utf-8") as f:
         f.write(buf)
     
     ret = ""
@@ -67,10 +74,13 @@ def main():
 
         skip = False
 
-    with open("11a.csv", "w", encoding="utf-8") as f:
+    with open(month + "a.csv", "w", encoding="utf-8") as f:
         f.write(ret)
 
 if __name__ == '__main__':
-    #download(url_a, filename_a)
-    #download(url_b, filename_b)
-    main()
+    month = "10"
+    url_a = set[month]["url_a"]
+    url_b = set[month]["url_b"]
+    download(url_a, month + "a.html")
+    download(url_b, month + "b.html")
+    main(month)
