@@ -23,7 +23,9 @@ set = {
     "10" : {"url_a": 'https://hon-hikidashi.jp/enjoy/154368/',
             "url_b": 'https://hon-hikidashi.jp/enjoy/154369/'},
     "11" : {"url_a": 'https://hon-hikidashi.jp/enjoy/156084/',
-            "url_b": 'https://hon-hikidashi.jp/enjoy/156085/'}
+            "url_b": 'https://hon-hikidashi.jp/enjoy/156085/'},
+    "12" : {"url_a": 'https://hon-hikidashi.jp/enjoy/158107/',
+            "url_b": 'https://hon-hikidashi.jp/enjoy/158108/'}
 }
 
 url_a ='https://hon-hikidashi.jp/enjoy/156084/'
@@ -68,12 +70,12 @@ def main(month):
         items = line.split(',')
         if len(items) > 4:
             for author in authors:
-                if author in items[4]:
+                if author in items[3]:
                     ret = ret + line + "\n"
                     skip = True
             if not skip:
                 for title in titles:
-                    if title in items[3]:
+                    if title in items[2]:
                         ret = ret + line + "\n"
 
         skip = False
@@ -82,9 +84,11 @@ def main(month):
         f.write(ret)
 
 if __name__ == '__main__':
-    month = "07"
+    month = "12"
+    """
     url_a = set[month]["url_a"]
     url_b = set[month]["url_b"]
     download(url_a, month + "a.html")
     download(url_b, month + "b.html")
+    """
     main(month)

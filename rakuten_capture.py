@@ -11,12 +11,12 @@ import json
 import base64
 import hashlib
 import hmac
-url = "https://payment-stg.global.rakuten.com/gp/Payment/V1/Authorize"
+url = "https://payment-stg.global.rakuten.com/gp/Payment/V1/Capture"
 kv = "1"
 # 貴社の情報を設定
 sid = "stg-rcjp-test"
 key = "C372E7021F7CA2A1E1C3C9258CF99220435B03089E438DB20C8C5FDC45297C8C"
-pid = "12311"
+pid = "123"
 # 現在時刻を設定
 #time = datetime.datetime.now().astimezone(timezone('UTC')).strftime('%Y --%m --%d %H:%M:%S.
 time = datetime.datetime.now().astimezone(timezone('UTC')).strftime('%Y-%m-%d %H:%M:%S.000')
@@ -24,26 +24,8 @@ time = datetime.datetime.now().astimezone(timezone('UTC')).strftime('%Y-%m-%d %H
 print("time: " + time)
 req = {
     "serviceId": sid,
-    "subServiceId": sid,
     "paymentId": pid,
-    "serviceReferenceId": "123",
-    "timestamp": time,
-    "agencyCode": "rakutencard",
-    "cardToken": {
-        "amount": "100",
-        "cardToken": "221028080016UDl7UPZtCo6z7nUZ0003",
-        "version": "2",
-        "withThreeDSecure": "false"
-
-    },
-    "currencyCode": "JPY",
-    "custom": "",
-    "grossAmount": "100",
-    "order": {
-        "email": "rakuten@card",
-        "ipAddress": "123.4.5.6",
-        "version": "1"
-    }
+    "timestamp": time
 }
 
 # リクエストパラメータを JSON 形式の文字列として設定
