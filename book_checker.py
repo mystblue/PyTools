@@ -72,12 +72,12 @@ def main(month):
         items = line.split(',')
         if len(items) > 4:
             for author in authors:
-                if author in items[3]:
+                if author in items[4]: # うまくa.csv が出力されない場合は、インデックスを確認する
                     ret = ret + line + "\n"
                     skip = True
             if not skip:
                 for title in titles:
-                    if title in items[2]:
+                    if title in items[3]: # うまくa.csv が出力されない場合は、インデックスを確認する
                         ret = ret + line + "\n"
 
         skip = False
