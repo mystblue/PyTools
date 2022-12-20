@@ -1,0 +1,138 @@
+■tms_php.conf
+3c3
+<     server_name dev-tms.paytg.jp;
+---
+>     server_name tms.paytg.jp;
+6c6
+<     add_header X-Frame-Options "SAMEORIGIN" always;
+---
+>     add_header X-Frame-Options "SAMEORIGIN";
+8,9c8,9
+<     add_header X-Content-Type-Options "nosniff" always;
+<     add_header Cache-Control "no-cache, no-store, must-revalidate" always;
+---
+>     add_header X-Content-Type-Options "nosniff";
+>     add_header Cache-Control "no-cache, no-store, must-revalidate";
+11,13d10
+<     add_header Content-Security-Policy "default-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';base-uri 'self';form-action 'self'; frame-ancestors 'none'" always;
+<     set_real_ip_from 10.200.92.0/24;
+<     real_ip_header X-Forwarded-For;
+36,45c33
+<             rewrite ^/updater/GetPspShortName /terminals/updater/GetPspShortName last;
+<             rewrite ^/updater/GetConfig/PspList /terminals/updater/PspList last;
+<             rewrite ^/updater/GetConfig /terminals/updater/PspSchema last;
+<             rewrite ^/updater/SettingInfo/Search /terminals/updater/SettingInfoSearch last;
+<             rewrite ^/updater/SettingInfo/Download /terminals/updater/SettingInfoDownload last;
+<             rewrite ^/updater/SettingInfo/Upload /terminals/updater/SettingInfoUpload last;
+<             rewrite ^/updater/JsonUpdateLog /terminals/updater/JsonUpdateLog last;
+<             rewrite ^/updater/CheckSchemaUpdate /terminals/check/CheckSchemaUpdate last;
+<             rewrite ^/updater/CheckPspListUpdate /terminals/check/CheckPspListUpdate last;
+<             rewrite ^/updater/CheckTerminalSettingUpdate /terminals/check/CheckTerminalSettingUpdate last;
+---
+>             rewrite ^/updater/GetPublicKey/?$ /terminals/GetPublicKey/index last;
+80d67
+< 
+
+
+■tms_php.ini
+379d378
+< ;expose_php = On
+850c849
+< max_file_uploads = 20
+---
+> max_file_uploads = 10M
+1680,1686d1678
+< 
+< ; Enable the extension
+< extension = trend_app_protect.so
+< 
+< ; Add key and secret from the Application Protection dashboard
+< trend_app_protect.key = 67b4c7d5-eebc-4480-ad06-7afdcb5d49a4
+< trend_app_protect.secret = 656e250f-884c-4688-b508-585ee3b500a4
+
+
+■tms_www.conf
+24c24
+< user =nginx
+---
+> user = nginx
+
+
+■tmsweb_php.conf
+3c3
+<     server_name dev-mgr.paytg.jp;
+---
+>     server_name mgr01.paytg.jp;
+12a13,14
+>     add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://ssl.google-analytics.com; img-src 'self' https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com 'self' https://themes.googleusercontent.com; frame-src 'none'; object-src 'none'";
+> 
+62d63
+< 
+
+
+■tmsweb_php.ini
+923c923
+< ;date.timezone =
+---
+> date.timezone = "Asia/Tokyo"
+1301c1301
+< session.cookie_samesite =
+---
+> session.cookie_samesite = None
+1679d1678
+< date.timezone = "Asia/Tokyo"
+
+
+■tmsweb_www.conf
+
+
+■gw_php.conf
+3c3
+<     server_name dev-gw.paytg.jp;
+---
+>     server_name gw.paytg.jp;
+12,14d11
+< #    set_real_ip_from 10.200.92.0/24;
+< #    real_ip_header X-Forwarded-For;
+< 
+39a37
+> 
+
+
+■gw_php.ini
+846c846
+< upload_max_filesize = 10M
+---
+> upload_max_filesize = 2M
+874c874
+< default_socket_timeout = 300
+---
+> default_socket_timeout = 60
+
+
+■gw_www.conf
+115c115
+< pm.max_children = 100
+---
+> pm.max_children = 50
+120c120
+< pm.start_servers = 10
+---
+> pm.start_servers = 5
+125c125
+< pm.min_spare_servers = 10
+---
+> pm.min_spare_servers = 5
+130c130
+< pm.max_spare_servers = 50
+---
+> pm.max_spare_servers = 35
+342c342
+< request_terminate_timeout = 300
+---
+> ;request_terminate_timeout = 0
+400a401
+> env[PATH] = /usr/bin:/usr/sbin
+439,440d439
+< 
+< env[PATH] = /usr/bin:/usr/sbin

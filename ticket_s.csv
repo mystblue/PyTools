@@ -1,0 +1,266 @@
+"課題番号","課題概要","状態","git変更","添付ファイル"
+"PTG_DEV-409","【Smart TG】スタンドアローン機能拡充","処理中","〇","P2Pro スタンドアローン.pptx
+P2Pro スタンドアローン_データフロー.pptx
+P2Pro スタンドアローン_詳細検討.pptx
+既存のPCアプリのHTMLをAndroidのWebViewでの確認結果.xlsx
+P2Pro スタンドアローン_サーバ検討.pptx
+P2Pro スタンドアローン_サーバ概要設計.xlsx
+P2Pro スタンドアローン_サーバ概要設計_20220613.xlsx
+P2Pro スタンドアローン_サーバ概要設計_20220614.xlsx
+スタンドアロン機能拡充_画面遷移案.xlsx
+内部コンフィグ仕様書.xlsx
+json.zip
+スタンドアロン機能拡充_画面遷移案_220705.xlsx
+スタンドアロン機能拡充_画面遷移案_220705-yamagishi.xlsx
+SmartTGスタンドアローン案.xlsx
+SmartTG_工数見積もり_スタンドアロン拡充_202200803.xlsx
+SmartTgTMS工数_20220818.xlsx
+Smart TG スタンドアロンDB設計.xlsx
+Smart TG スタンドアロンDB設計_20220824.xlsx
+スタンドアロン機能拡充_画面遷移案_220831.xlsx
+pasted-2022.09.08-18.04.29.png
+更新の流れ.txt
+設定同期.xlsx
+リライトルール.txt
+.htaccess
+pasted-2022.09.21-16.46.10.png
+スタンドアロン機能拡充_画面遷移案_220922.xlsx
+pasted-2022.09.22-18.22.02.png
+pasted-2022.09.22-18.22.14.png
+pasted-2022.09.22-18.22.27.png
+SmartTG_端末単体テスト項目_20221003.xlsx
+SmartTG_スタンドアロン改修_TMS単体テスト仕様書.xlsx
+SmartTG_スタンドアロン改修_TMS単体テスト仕様書 (1).xlsx
+SmartTG_端末単体テスト項目_20221004.xlsx
+SmartTG_TMS結合テスト仕様書_20221004.xlsx
+SmartTGスタンドアロン_総合テスト仕様書_20221104.xlsx
+PSP_LIST差分.png
+schema差分.png
+"
+"PTG_DEV-425","【Smart TG】本番版リリースビルド作成時手順改善","処理済み","×","releasebuild作業.xlsx
+"
+"PTG_DEV-426","【Smart TG】アプリ起動時ネットワーク接続のタイムアウト処理","処理済み","×","network_retry検討.xlsx
+"
+"PTG_DEV-427","【Smart TG】SUNMIパートナーサイトの本番リリース手順見直し","処理中","×","pasted-2022.07.27-14.09.31.png
+App Store登録および更新手順書_1.0.1.xlsx
+pasted-2022.08.31-17.27.04.png
+pasted-2022.08.31-17.28.34.png
+"
+"PTG_DEV-433","【Smart TG】スタンドアロン機能開発環境を構築する","処理済み","×","pasted-2022.09.08-10.40.30.png
+pasted-2022.09.08-10.41.28.png
+pasted-2022.09.08-10.42.32.png
+pasted-2022.09.08-10.42.47.png
+pasted-2022.09.13-09.58.44.png
+"
+"PTG_DEV-436","履歴削除バッチで terminal_json テーブルとアップデートログの１年以上経過したログを削除するように既存のバッチを修正する","処理済み","〇","取引履歴.png
+端末アップデートログ.png
+端末スタンドアローン設定履歴一覧.png
+pasted-2022.09.15-14.02.27.png
+pasted-2022.09.15-14.03.01.png
+pasted-2022.09.15-14.03.36.png
+pasted-2022.09.15-14.04.01.png
+pasted-2022.09.15-14.14.43.png
+"
+"PTG_DEV-437","terminal_json テーブルの閲覧画面を作成する","処理済み","〇","pasted-2022.09.12-18.33.36.png
+新規追加メニュー.png
+pasted-2022.09.13-13.56.48.png
+PTG_DEV-437単体証跡.xlsx
+"
+"PTG_DEV-440","ペイジェントでオーソリ承認番号を返却できるように GW と PC アプリを修正する","処理中","×","paygent.png
+PTG_DEV-440_レスポンス追加手順.xlsx
+pasted-2022.09.14-13.40.00.png
+pasted-2022.09.14-13.41.02.png
+pasted-2022.09.14-13.41.11.png
+pasted-2022.09.14-13.42.42.png
+pasted-2022.09.14-13.42.48.png
+pasted-2022.09.14-13.43.13.png
+pasted-2022.09.14-13.45.36.png
+"
+"PTG_DEV-441","【Smart TG】マニュアル入力、磁気/IC読み取り、両方のモードを作る","処理中","×","pasted-2022.09.21-12.51.36.png
+pasted-2022.09.21-12.52.09.png
+conf_read_method.sql
+"
+"PTG_DEV-442","【Smart TG】P2Proの磁気/IC読み取りの案内画像をアニメーション化する","処理済み","×","pasted-2022.09.21-12.54.47.png
+slide_animation_20220928.mp4
+slide_w.mp4
+slide_y.mp4
+cardAnimation_green.mp4
+"
+"PTG_DEV-443","TMS のソースコードレビューを行う","処理済み","〇",""
+"PTG_DEV-444","Smart TG スタンドアロン総合テスト仕様書を作成する","処理済み","×","SmartTGスタンドアロン_総合テスト仕様書.xlsx
+"
+"PTG_DEV-446","日本語入力キーボード設定","処理済み","×",""
+"PTG_DEV-447","スタンドアロンモードで金額にカンマを入て決済するとアプリが落ちる","処理済み","×","pasted-2022.10.13-16.15.27.png
+pasted-2022.10.13-16.15.41.png
+pasted-2022.10.13-16.15.55.png
+pasted-2022.10.13-16.16.07.png
+pasted-2022.10.13-16.16.21.png
+pasted-2022.10.13-16.16.37.png
+"
+"PTG_DEV-448","ソニーペイメントと SMBC-FS で P2Pro からの決済送信パラメータに transactionDate を追加する","処理済み","×","pasted-2022.10.14-10.53.16.png
+pasted-2022.10.14-11.02.23.png
+"
+"PTG_DEV-449","スタンドアロンモードのソニーペイメントが動作しない","処理済み","×","pasted-2022.10.13-13.49.34.png
+pasted-2022.10.13-14.10.10.png
+pasted-2022.10.13-14.13.58.png
+sony_scheme.JPG.png
+pasted-2022.10.17-13.44.52.png
+pasted-2022.10.17-13.45.10.png
+pasted-2022.10.17-13.45.21.png
+pasted-2022.10.17-13.45.30.png
+pasted-2022.10.17-13.45.39.png
+pasted-2022.10.17-13.45.50.png
+"
+"PTG_DEV-450","スタンドアロンモードで文字サイズを変更すると、PC 連動でも反映される","実装完了","×",""
+"PTG_DEV-451","スタンドアロンモードの決済完了後の画面、レシートを仕様検討して、実装する","処理中","×","IMG_4768.JPG
+"
+"PTG_DEV-452","P2Pro の IC リーダーで読めないカードがある","未対応","×",""
+"PTG_DEV-453","P2Pro 起動時にTMSの更新がうまくいかず落ちることがある","処理済み","×","P211211C00517.png
+P211211C00063.png
+P211211C00517_log.png
+P211211C00063_log.png
+P211211C00517_log2.png
+P211211C00063_log2.png
+P211211C00063_log3.png
+P211211C00517_log3.png
+codeigniter.log
+DSC_0337.JPG
+pasted-2022.10.13-13.19.16.png
+pasted-2022.10.13-14.06.02.png
+"
+"PTG_DEV-454","スタンドアローンでpsplist.jsonのアップデートログの表示がおかしい","処理済み","×","pasted-2022.10.12-18.52.27.png
+sc.png
+"
+"PTG_DEV-455","決済データ入力で「店舗コード」が設定できない。","単体テスト完了","×","pasted-2022.10.14-10.48.21.png
+sc2.png
+pasted-2022.10.14-10.50.11.png
+pasted-2022.10.14-10.51.06.png
+発行ID_1_0_36.JPG
+"
+"PTG_DEV-456","GMO-PG カード預かり登録 確認画面表示について","処理済み","×","109_4.JPG
+109_11.JPG
+確認画面-レシート.xlsx
+device-2022-10-17-140010.png
+device-2022-10-17-135911.png
+"
+"PTG_DEV-457","PC連動・スタンドアローンのカード預かり登録リクエスト項目の差異","処理済み","×",""
+"PTG_DEV-458","設定同期後の端末の起動時エラー","処理済み","×","IMG_3296.JPG
+11_006.JPG
+11_004.JPG
+11_001.JPG
+11_005.JPG
+11_002.JPG
+11_003.JPG
+"
+"PTG_DEV-459","スタンドアローンで設定同期実施時のシリアル番号選択画面の表示について","処理済み","×","10_20.JPG
+10_21.JPG
+10_22.JPG
+10_001.JPG
+"
+"PTG_DEV-460","【SMBC GMO PAYMENT】カード預かり挙動変更について","処理中","×","2022-11リリースデータベース変更手順書.xlsx
+testResult_20221019174255.csv
+smbc-gp_test.json
+validation.csv
+psp_parameter_conv.csv
+v3_9_setting_smbc-gp.json
+v3_10_setting_smbc-gp.json
+smbc_gp.png
+pasted-2022.10.25-09.24.14.png
+pasted-2022.10.25-09.31.24.png
+pasted-2022.10.25-09.39.04.png
+V3_10_setting_smbc-gp (1).json
+pasted-2022.10.25-09.41.47.png
+pasted-2022.10.25-09.42.48.png
+pasted-2022.10.25-09.52.37.png
+pasted-2022.10.25-09.53.27.png
+V3_9_full_setting_smbc-gp.json
+pasted-2022.10.25-09.56.13.png
+pasted-2022.10.25-09.57.59.png
+pasted-2022.10.25-09.58.08.png
+pasted-2022.10.25-09.58.44.png
+V3_10_full_setting_smbc-gp.json
+pasted-2022.10.25-10.00.38.png
+pasted-2022.10.25-10.00.49.png
+"
+"PTG_DEV-461","Pay TG V3.10 のインストーラおよびアップデータを作成する","処理中","×","pasted-2022.10.19-15.20.04.png
+pasted-2022.10.19-15.20.13.png
+pasted-2022.10.19-15.20.21.png
+update.png
+update2.png
+"
+"PTG_DEV-462","Smart TG V1.6 のインストーラおよびアップデータを作成する","処理中","×","update3.png
+update1.png
+update2.png
+update5.png
+update4.png
+update7.png
+update6.png
+"
+"PTG_DEV-463","スタンドアローンモードでボーナス月指定の月指定・分割払いの回数指定を未指定の場合に正しいメッセージが表示されない","処理済み","×","1_007.JPEG
+1_006.JPEG
+6_007.JPG
+6_008.JPG
+"
+"PTG_DEV-464","PCアプリでの環境依存文字使用による決済処理結果画面のエラー表示「想定外のエラーが発生しました」","処理済み","×","517_001.png
+517_002.png
+th1.png
+th2.png
+517_002 (1).png
+517_006.png
+517_003.png
+"
+"PTG_DEV-465","PCアプリとスタンドアロンでの初期値登録動作の差異","処理済み","×","34_007.JPG
+34_009.JPG
+34_011.JPG
+34_010.JPG
+"
+"PTG_DEV-467","DGFTスタンドアロンモードのカード預かり登録で異常終了発生","処理済み","×","IMG_3895.JPEG
+IMG_3896.JPEG
+IMG_3897.JPEG
+IMG_3898.JPEG
+IMG_3894.JPEG
+pasted-2022.10.25-13.16.20.png
+pasted-2022.10.25-13.18.38.png
+pasted-2022.10.25-13.27.42.png
+pasted-2022.10.25-13.28.07.png
+21_3.JPG
+21_6.JPG
+"
+"PTG_DEV-468","ペイジェント・スタンドアロンのカード預かり登録で補足情報4のエラー","処理済み","×","79_002.JPG
+79_003.JPG
+79_004.JPG
+pasted-2022.10.26-11.58.04.png
+pasted-2022.10.26-11.58.54.png
+pasted-2022.10.26-12.00.41.png
+343_006.png
+343_005.png
+343_004.png
+343_003.png
+343_002.png
+343_007.JPG
+343_001.png
+81_002.JPG
+343_012.png
+"
+"PTG_DEV-469","脆弱性チェックについて","実装完了","×","asia.cardservice.smarttg.xlsx
+"
+"PTG_DEV-471","【Smart TG】スタンドアローンでマルチPSP使用時に、同一決済代行事業者名の契約が複数あると正常動作しない","実装完了","×","pasted-2022.10.28-10.18.09.png
+pasted-2022.10.31-18.04.46.png
+初期画面.JPG
+GMO_PG設定済み.JPG
+GMO_MB設定済み.JPG
+gmo1.png
+gmo1-1.png
+gmo2.png
+gmo2-2.png
+"
+"PTG_DEV-473","【Smart TG】psplist.jsonが不正なフォーマットである場合の動作","単体テスト完了","×","10_1.png
+10_2.JPG
+"
+"PTG_DEV-475","NTコムオンラインでPSP設定の編集が出来ない","単体テスト完了","×","NTTコム設定編集.JPG
+"
+"PTG_DEV-476","PC連動で決済エラー時に完了ボタンが見切れる","単体テスト完了","×","PC連動エラー時.JPG
+PC連動エラー画面_1_0_36.JPG
+"
+"PTG_DEV-477","GWサーバーがシャットダウンした状態で取引を実行するとアプリが強制終了する","実装完了","×","GWシャットダウン時.JPG
+"

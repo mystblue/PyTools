@@ -1,0 +1,10 @@
+zip sony.json.zip sony.json
+zip gmo-mb.json.zip gmo-mb.json
+zip gmo-pg.json.zip gmo-pg.json
+zip ncoms.json.zip ncoms.json
+zip paygent.json.zip paygent.json
+zip smbc-fs.json.zip smbc-fs.json
+zip smbc-gp.json.zip smbc-gp.json
+zip veritrans.json.zip veritrans.json
+zip yamato.json.zip yamato.json
+zip zeus.json.zip zeus.json
