@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>本の管理</title>
+	<!-- BootstrapのCSS読み込み -->
+	<link href="bootstrap-4.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery読み込み -->
+	<script src="bootstrap-4.1.3-dist/js/jquery-3.4.1.min.js"></script>
+	<!-- BootstrapのJS読み込み -->
+	<script src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		h2 {
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.contents {
+			padding-top: 0.5em;
+			padding-bottom: 0.8em;
+			padding-left: 1em;
+		}
+
+		p {
+			white-space: pre-line;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-sm-12 blog-main">
+				<h2>目次</h2>
+				<ul>
+					<li><a href="#ファイル名">ファイル名</a></li>
+					<li><a href="#作成方法">作成方法</a></li>
+					<ul>
+						<li><a href="#imagemagick">imagemagick</a></li>
+					</ul>
+				</ul>
+
+				<h2 id="ファイル名">ファイル名</h2>
+				<div class="contents">
+					<p>尾田栄一郎_ONE-PIECE_01.cbz
+						尾田栄一郎_ONE-PIECE_01c.cbz
+						尾田栄一郎_ONE-PIECE_01_.cbz
+
+						_ で区切る
+						スペースが含まれる場合は「-」に変換する
+						ダウンロードは「_」をつける。
+						c カラー版
+						s セミカラー版
+						t 特装版
+						p png 形式
+						j jpg形式
+						d ダウンロード版
+					</p>
+				</div>
+				<div class="contents">
+					<p>[尾田栄一郎] ONE PIECE 01.cbz
+						[尾田栄一郎] ONE PIECE 01 (color mp).cbz
+						[尾田栄一郎] ONE PIECE 01 (color).cbz
+
+						() の中に半角スペース区切りで属性をつける。
+						m 自分で処理したフラグ
+						p png 形式
+						color カラー版
+						f 問題あり
+						s 雑誌寄せ集め
+					</p>
+				</div>
+
+				<h2 id="作成方法">作成方法</h2>
+				<div class="contents">
+					<table class="table table-dark(thead-light) table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>ツール</th>
+								<th>ファイル形式</th>
+								<th>品質</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>imagemagick</td>
+								<td>png</td>
+								<td>デフォルト（75）</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h3 id="imagemagick">imagemagick</h3>
+				<div class="contents">
+					<p>jpg で保存していたのを png で保存するように見直し。
+						まず最初の画像は、2.2MB。
+						余白を削除し、imagemagick で保存し直すと 1.04 MB になった。
+					</p>
+					<pre><code>magick 0008.png -crop 1080x1696+0+112 0008c.png</code></pre>
+					<p>圧縮率を変更しても 1.03 MB になった。
+					</p>
+					<pre><code>magick 0008.png -quality 90  -crop 1080x1696+0+112 0008c.png</code></pre>
+					<p>原因を調べてみると、無圧縮から圧縮になったので、ファイルサイズが小さくなったのではないようだ。
+						「truecolor+alpha」が「grayscale」になったことによってファイルサイズが小さくなっているようだ。
+						試しにカラーの画像を変更するとほとんど差がなかった。
+					</p>
+				</div>
+
+				<h3 id="imagemagick">Pillow</h3>
+				<div class="contents">
+					<p>Pillow で png を crop し、png 形式で保存すると、容量はほとんど変わらない。</p>
+					<p>truecolor のままだからのようだ。ImageMagick を使うと自動で grayscale への変換が行われるようだ。</p>
+					<p>自動変換ではなく、インデックスカラーで保存されている？256色以下の色数だと インデックスカラーで保存されるらしい。</p>
+				</div>
+
+				<h3 id="imagemagick">PNG の詳細の調べ方</h3>
+				<div class="contents">
+					<p>identify -verbose 【ファイル名】でわかるようだ。</p>
+					<p>https://iwb.jp/png8-png24-png32-analyze/</p>
+				</div>
+			</div>
+
+		</div>
+		<!--row-->
+
+	</div>
+	<!--container-->
+</body>
+
+</html>
