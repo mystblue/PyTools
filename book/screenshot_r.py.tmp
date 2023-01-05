@@ -19,5 +19,5 @@ if __name__ == '__main__':
         #os.system('adb shell input touchscreen swipe 500 500 1500 500')
         #reverse
         # 右閉じ 普通のコミック 右→左めくり
-        os.system('adb shell input touchscreen swipe 1000 500 500 500')
+        os.system('adb shell input touchscreen swipe 1000 500 300 500')
         time.sleep(0.5)
