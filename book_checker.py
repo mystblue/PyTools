@@ -27,7 +27,9 @@ set = {
     "12" : {"url_a": 'https://hon-hikidashi.jp/enjoy/158107/',
             "url_b": 'https://hon-hikidashi.jp/enjoy/158108/'},
     "01" : {"url_a": 'https://hon-hikidashi.jp/enjoy/159974/',
-            "url_b": 'https://hon-hikidashi.jp/enjoy/159975/'}
+            "url_b": 'https://hon-hikidashi.jp/enjoy/159975/'},
+    "02" : {"url_a": 'https://hon-hikidashi.jp/enjoy/161402/',
+            "url_b": 'https://hon-hikidashi.jp/enjoy/161403/'}
 }
 
 url_a ='https://hon-hikidashi.jp/enjoy/156084/'
@@ -86,7 +88,7 @@ def main(month):
         f.write(ret)
 
 if __name__ == '__main__':
-    month = "01"
+    month = "02"
     url_a = set[month]["url_a"]
     url_b = set[month]["url_b"]
     download(url_a, month + "a.html")
