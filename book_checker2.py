@@ -55,7 +55,7 @@ def parse(filename):
     with open(filename, "r", encoding="utf-8") as f:
         buf = f.read()
     soup = BeautifulSoup(buf, "html.parser")
-    body = soup.find(id="contents_body_main")
+    body = soup.find('div', class_="article__contents")
     table = body.find("table")
     rows = table.findAll("tr")
     for row in rows:
@@ -80,12 +80,12 @@ def main(month):
         items = line.split(',')
         if len(items) > 4:
             for author in authors:
-                if author in items[3]: # うまくa.csv が出力されない場合は、インデックスを確認する
+                if author in items[4]: # うまくa.csv が出力されない場合は、インデックスを確認する
                     ret = ret + line + "\n"
                     skip = True
             if not skip:
                 for title in titles:
-                    if title in items[2]: # うまくa.csv が出力されない場合は、インデックスを確認する
+                    if title in items[3]: # うまくa.csv が出力されない場合は、インデックスを確認する
                         ret = ret + line + "\n"
 
         skip = False
@@ -97,6 +97,6 @@ if __name__ == '__main__':
     month = "05"
     url_a = set[month]["url_a"]
     url_b = set[month]["url_b"]
-    download(url_a, month + "a.html")
-    download(url_b, month + "b.html")
+    #download(url_a, month + "a.html")
+    #download(url_b, month + "b.html")
     main(month)
