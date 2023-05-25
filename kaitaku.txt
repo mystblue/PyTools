@@ -1,0 +1,443 @@
+<div id="main-contents">
+<div class="post">
+<h1 class="post-title">
+                    【崩壊スターレイル】開拓レベルの上げ方とマイレージを効率良く稼ぐ方法            </h1>
+<div class="h-koushin-box clearfix">
+<p class="saisyu-txt"><time datetime="2023-05-25T10:13:28+09:00" itemprop="dateModified">最終更新：2023年5月25日(木) 10:13</time></p>
+</div>
+<div class="contents clearfix">
+<div class="article">
+<p><img alt="開拓レベルの上げ方" class="aligncenter eyecatch-img" src="https://img.altema.jp/houkaistarrail/uploads/2023/05/2023y05m08d_1236068751.jpg" width="100%"/></p>
+<div class="attentionBox">
+<dl><dt>景元が新登場！期間限定で景元ガチャ開催中！</dt>
+<dd>・<a href="/houkaistarrail/chara/20">景元の評価</a> / <a href="/houkaistarrail/keigenparty">景元のおすすめパーティ</a></dd>
+<dd>・<a href="/houkaistarrail/honpo">景元ガチャは引くべきか</a> / <a href="/houkaistarrail/gacha/2">景元ガチャシミュ</a></dd>
+<dd>・<a href="/houkaistarrail/saikyo">最強キャラランキング</a> / <a href="/houkaistarrail/saikyopt">最強パーティ編成考察</a></dd>
+</dl></div>
+<p class="lead">崩壊スターレイル(崩スタ)の開拓レベル(ランク)の上げ方とマイレージを効率良く稼ぐ集める方法をご紹介。開拓レベル14・24・29・34・40と段階に応じた効率の良いレベリングについても記載しています。</p>
+<table class="center"><tbody><tr><th class="" colspan="2" style="text-align: center;">関連記事</th>
+</tr><tr><td class="" style="text-align: center;"><a href="/houkaistarrail/joban">序盤の効率的な進め方</a></td>
+<td class="" style="text-align: center;"><a href="/houkaistarrail/charalevel">キャラレベルの効率的な上げ方</a></td>
+</tr><tr><td class="" style="text-align: center;"><a href="/houkaistarrail/ibutugensen">遺物厳選のやり方</a></td>
+<td class="" style="text-align: center;"><a href="/houkaistarrail/mogiutyu">模擬宇宙の攻略</a></td>
+</tr></tbody></table><div class="mokujiInfo">
+<p class="mokujiTitle">目次</p>
+<ul><li><a href="#01">▼開拓レベルの上げ方</a></li>
+<li><a href="#02">▼マイレージの効率的な稼ぎ方</a></li>
+<li><a href="#07">▼開拓レベルで解放される要素</a></li>
+<li><a href="#08">▼開拓レベルの報酬一覧</a></li>
+</ul></div><div class="new_koukokuwaku_wrapper" style="width: 300px; height: 250px; margin: 0 auto 10px;">
+<!-- /39582320/PC_目次下_レクタングル -->
+<div id="div-gpt-ad-1570091764860-0" style="width: 300px; height: 250px;">
+</div>
+</div>
+<h2 id="01">開拓レベルの上げ方</h2>
+<div class="procedure-list">
+<div class="title">レベリングの手順</div>
+<ol><li>レベル14まではクエストや疑似花萼を重視</li>
+<li>レベル24まではデイリークエストや行動要旨も意識</li>
+<li>レベル29まではクエストとスタミナ消費を継続</li>
+<li>レベル34までは模擬宇宙3までのクリアを目指す</li>
+<li>レベル40以降からは遺物厳選もあり</li>
+</ol></div>
+<p>開拓レベルは、クエストや疑似花萼を進めつつ、まずは14レベルを目指しましょう。メインクエストの「刃の切っ先をずっと待つ彼女」をクリアするとデイリークエストが解放されるので、行動要旨なども併せて攻略します。</p>
+<p><a class="gachaBtn" href="/houkaistarrail/mainiti">毎日やるべきことまとめはこちら</a></p>
+<h3 id="03">開拓レベル14まで効率良く上げる方法</h3>
+<p><img alt="開拓レベル14まで効率良く上げる方法" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m28d_1924170357.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/></p>
+<p>開拓レベル14までは、<span class="b-red">メインクエストを軸にサブクエストも消化</span>していきましょう。ストーリーの序盤で開拓レベルやキャラのレベリングに重要な疑似花萼(金)も解放されるので、開拓力を消費して挑戦します。</p>
+<p class="">疑似花萼(金)はスタミナが存在します。毎日挑戦回数が決まっているため、必ず消費するようにしましょう。<span class="b-red">疑似花萼のスタミナは18時間で全回復する</span>ため、無駄なく消費して全回復状態で放置するのはやめましょう。</p>
+<ul><li><a href="/houkaistarrail/story">▶ストーリー攻略と進め方はこちら</a></li>
+<li><a href="/houkaistarrail/boukenquest">▶冒険クエストの攻略一覧はこちら</a></li>
+</ul><h3 id="04">開拓レベル24まで効率良く上げる方法</h3>
+<p><img alt="開拓レベル24まで効率良く上げる方法" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m28d_1916525079.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/></p>
+<p>開拓レベル24までは、<span class="b-red">デイリークエストや行動要旨を意識して消化</span>しましょう。どちらもクリアすることで開拓レベルの経験値である「マイレージ」を効率良く回収できます。</p>
+<p class="">また、メインクエスト、冒険クエスト、疑似花萼(金)もマイレージ稼ぎには重要な要素です。すべて満遍なくをクリアすることで効率良く上げられるため、どれか1つをやればいいというわけではありません。</p>
+<h3 id="019">開拓レベル29まで効率良く上げる方法</h3>
+<p><img alt="クエスト" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/05/2023y05m01d_1539041906.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/></p>
+<p>開拓レベル29までは、<span class="b-red">レベル24までとやることは変わりません</span>。メッセージの確認やマップの探索をして、発生した冒険クエストと同行クエストを片っ端からこなしましょう。</p>
+<p>また、フィールドのギミック宝箱や強敵宝箱もマイレージを稼ぐ上では重要です。1個ごとの獲得マイレージは少ないですが、スタミナの消費無しでマイレージが獲得できます。</p>
+<div class="new_koukokuwaku_wrapper" style="width: 336px; height: 280px; margin: 0 auto 10px;">
+<!-- /39582320/PC_ミドル1st_レクタングル -->
+<div id="div-gpt-ad-1570091116147-0">
+</div>
+</div><h3 id="020">開拓レベル34まで効率良く上げる方法</h3>
+<p><img alt="模擬宇宙" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/05/2023y05m01d_1537360323.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/></p>
+<p class="">開拓レベル34までは、模擬宇宙の第三世界までクリアを目指しましょう。難易度は高いですが、初回クリアで600マイレージ稼げるので、パーティをしっかり育成してから挑みましょう。</p>
+<p class="">また、今まで同様、冒険クエスト・同行クエスト・スタミナ消費などもマイレージ稼ぎでは重要です。素早く開拓レベル34まで目指すなら、星玉でのスタミナ回復も視野に入れましょう。</p>
+<h3 id="022">開拓レベル40まで効率良くあげる効率</h3>
+<p><img alt="本格的な遺物厳選は均衡レベル6以降" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/05/2023y05m02d_1810212568.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/></p>
+<p class="">開拓レベル40以降からは、遺物厳選も開拓レベル上げの選択肢に入ります。開拓レベル40以降は、最高レアの星5の遺物が入手できるので、開拓力を使って遺物を集める価値が高まります。</p>
+<p>ただし、遺物を最高率で厳選できるようになるのは、開拓レベル60からなので、強化素材集めが終わったら行う程度にとどめておきましょう。</p>
+<div class="new_koukokuwaku_wrapper" style="width: 336px; height: 280px; margin: 0 auto 10px;">
+<!-- /39582320/PC_ミドル2nd_レクタングル -->
+<div id="div-gpt-ad-1570091352862-0">
+</div>
+</div><h2 id="02">マイレージの効率的な稼ぎ方</h2>
+<div class="procedure-list">
+<div class="title">マイレージの回収手順</div>
+<ol><li>デイリー訓練を毎日行う</li>
+<li>疑似花萼などの開拓力消費コンテンツを消化</li>
+<li>行動要旨をクリアする</li>
+<li>宝箱を回収する</li>
+<li>各種クエストを攻略する</li>
+</ol></div>
+<p>マイレージはデイリー訓練を毎日行い、疑似花萼などの開拓力消費コンテンツを消化しましょう。冒険クエストなどのサブクエストは推奨レベルに近づき次第、攻略するのが良いです。</p>
+<h3 id="05">デイリー訓練を毎日行う</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/deiriisyuusei.jpg"><img alt="デイリー訓練を毎日行う" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/deiriisyuusei.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>デイリー訓練は必ず毎日行いましょう。アクティブ度を500達成すると1,000マイレージを獲得でき、ガチャに必要な星玉やゲーム内通貨の信用ポイントなども入手できます。</p>
+<p><a class="gachaBtn" href="/houkaistarrail/dailykunren">デイリー訓練の解放条件はこちら</a></p>
+<h3 id="06">疑似花萼を周回する</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/gijinanntonanosyuukai.jpg"><img alt="疑似花萼を周回する" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/gijinanntonanosyuukai.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>疑似花萼は解放され次第、開拓力を諸費して挑戦しましょう。ヤリーロⅥの郊外雪原に到達すると解放され、1回クリアする度に50のマイレージとキャラの育成素材を入手できます。</p>
+<h3 id="09">行動要旨をクリアする</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/koudouyousisyuusei.jpg"><img alt="行動要旨をクリアする" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/koudouyousisyuusei.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>行動要旨は、クリアする度に100マイレージを獲得できます。デイリー訓練や疑似花萼などの消化が終わったら、確認してみましょう。</p>
+<div class="new_koukokuwaku_wrapper" style="width: 336px; height: 280px; margin: 0 auto 10px;">
+<!-- /39582320/PC_ミドル3rd_レクタングル -->
+<div id="div-gpt-ad-1570091412674-0">
+</div>
+</div><h3 id="010">宝箱を回収する</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/takarabakowokaisyuusuru.jpg"><img alt="宝箱を回収する" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/takarabakowokaisyuusuru.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>宝箱からは、マイレージが獲得できます。宝箱から入手できるマイレージ量は僅かですが、信用ポイントなどの育成素材も同時に入手できるので、見つけ次第回収しましょう。</p>
+<p><a class="gachaBtn" href="/houkaistarrail/takarabakoichiran">宝箱(戦利品)の場所一覧はこちら</a></p>
+<h3 id="011">各種クエストを消化する</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/kakusyukuesutowokouryakusuru.jpg"><img alt="各種クエストを消化する" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/kakusyukuesutowokouryakusuru.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>マイレージは、メインクエストはもちろん、冒険クエストなどのサブクエストも消化しましょう。戦闘関連のクエストは、推奨レベル付近までキャラが育成されているか確認してから挑戦するのが良いです。</p>
+<div class="new_koukokuwaku_wrapper" style="width: 336px; height: 280px; margin: 0 auto 10px;">
+<!-- /39582320/PC_ミドル4th_レクタングル -->
+<div id="div-gpt-ad-1570091442052-0">
+</div>
+</div><h2 id="07">開拓レベルで解放される要素</h2>
+<div class="procedure-list">
+<div class="title">解放される要素</div>
+<ol><li>メインストーリーを進められる</li>
+<li>キャラの昇格が可能(レベルの上限解放)</li>
+<li>均衡のレベル上げが可能</li>
+<li>ナナシの勲功が解放</li>
+<li>依頼が解放</li>
+<li>開拓レベル報酬を入手できる</li>
+<li>イベント報酬を入手できる</li>
+<li>遺物合成が解放</li>
+</ol></div>
+<p>開拓レベルは、メインストーリーの進行やキャラの育成などに必須なレベルです。レベルが上がるとナナシの勲功や依頼などの解放の他、パムからのレベル達成報酬やイベント報酬を入手できます。</p>
+<h3 id="012">メインストーリーの進行</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/meinnnosinnkou.jpg"><img alt="メインストーリーの進行" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/meinnnosinnkou.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>開拓レベルが上がると、メインストーリーを進行できます。メインストーリーには、それぞれレベルの制限が設けられているので、制限値以上のレベリングが必要です。</p>
+<p><a class="gachaBtn" href="/houkaistarrail/story">ストーリー攻略と進め方はこちら</a></p>
+<h3 id="013">キャラの昇格が可能</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/kyarasyoukaku.jpg"><img alt="キャラの昇格が可能" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/kyarasyoukaku.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>開拓レベルが上がると、キャラのレベル上限を解放できます。ただし、キャラの昇格には昇格素材も必要なので、併せて準備しておきましょう。</p>
+<h3 id="014">均衡のレベル上げが可能</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/kinnkoureberuage.jpg"><img alt="均衡のレベル上げが可能" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/kinnkoureberuage.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>開拓レベルが20に達すると突破クエストが解放され、クリアすることで均衡レベルが上がります。均衡レベルが上がると、疑似花萼などの開拓力消費コンテンツの報酬が増すので、解放され次第挑戦してみましょう。</p>
+<p><a class="gachaBtn" href="/houkaistarrail/naido">均衡レベルの上げ方とメリットはこちら</a></p>
+<div class="new_koukokuwaku_wrapper" style="width: 336px; height: 280px; margin: 0 auto 10px;">
+<!-- /39582320/PC_ミドル5th_レクタングル -->
+<div id="div-gpt-ad-1570091515226-0">
+</div>
+</div><h3 id="015">ナナシの勲功が解放</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/nanasinokunnkougakaihou.jpg"><img alt="ナナシの勲功が解放" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/nanasinokunnkougakaihou.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>開拓レベルが13になると、ナナシの勲功が解放されます。ミッションをクリアして、期間内に最大レベルまで上げると豪華な報酬を獲得できるので、毎日確認しておきましょう。</p>
+<h3 id="016">依頼が解放</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/iraigakaihou.jpg"><img alt="依頼が解放" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/iraigakaihou.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>開拓レベル13では、依頼も解放されます。依頼は、指定したキャラを派遣させることで報酬を入手できるので、ログインしたら優先して行いましょう。</p>
+<h3 id="017">開拓レベル報酬を入手できる</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/kaitakureberuhousyuu.jpg"><img alt="開拓レベル報酬を入手できる" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/kaitakureberuhousyuu.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>開拓レベルは、1上がる度にパムから報酬を入手できます。パムは列車のラウンジにいるので、レベルが上がり次第話しかけましょう。</p>
+<div class="new_koukokuwaku_wrapper" style="width: 336px; height: 280px; margin: 0 auto 10px;">
+<!-- /39582320/PC_ミドル6th_レクタングル -->
+<div id="div-gpt-ad-1570091581873-0" style="width: 300px; height: 250px;">
+</div>
+</div><h3 id="018">イベント報酬を入手できる</h3>
+<p><a class="imgExpansion" href="https://img.altema.jp/houkaistarrail/kakudaiyou/ibenntohousyuuwonyuusyu.jpg"><img alt="イベント報酬を入手できる" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/kakudaiyou/ibenntohousyuuwonyuusyu.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/><span class="img_kakudai">拡大する</span></a></p>
+<p>開拓レベルが上がると、無期限イベント「宇宙を行く開拓者の志」の報酬を入手できます。報酬の獲得レベルまで達したら忘れずに回収しておきましょう。</p>
+<h3 id="021">遺物合成が解放される</h3>
+<p><img alt="遺物合成" class="aligncenter" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/05/2023y05m04d_113925759.jpg" src="https://img.altema.jp/common/1x1.trans.gif" width="100%"/></p>
+<p>開拓レベルが40まで上がると、遺物合成が解放されます。遺物合成とは、不要な星5遺物を10個分解すると、好きな遺物を1つ作成できる機能です。</p>
+<p>また、ナナシの勲功の報酬で手に入る「自堕樹脂」を使用すると、好きなオプションまで選ぶことができます。</p>
+<p><a class="gachaBtn" href="/houkaistarrail/kunko">ナナシの勲功の仕様解説はこちら</a></p>
+<div class="new_koukokuwaku_wrapper" style="width: 336px; height: 280px; margin: 0 auto 10px;">
+<!-- /39582320/PC_ミドル7th_レクタングル -->
+<div id="div-gpt-ad-1583813192415-0">
+</div>
+</div><h2 id="08">開拓レベルの報酬一覧</h2>
+<table class="tableLine"><tbody><tr><th style="width: 20%; text-align: center;">開拓レベル</th>
+<th style="text-align: center;">報酬内容</th>
+</tr><tr><td style="text-align: center;">2</td>
+<td style="text-align: left;">・旅の見聞×5<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">3</td>
+<td style="text-align: left;">・星玉×50<br/>・旅の見聞×5<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">4</td>
+<td style="text-align: left;">・旅の見聞×5<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">5</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・旅の見聞×5<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">6</td>
+<td style="text-align: left;">・旅の見聞×10<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">7</td>
+<td style="text-align: left;">・希薄なエーテル×4<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">8</td>
+<td style="text-align: left;">・星玉×50<br/>・旅の見聞×10<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">9</td>
+<td style="text-align: left;">・希薄なエーテル×4<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">10</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・旅の見聞×10<br/>・信用ポイント10,000</td>
+</tr><tr><td style="text-align: center;">11</td>
+<td style="text-align: left;">・希薄なエーテル×4<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">12</td>
+<td style="text-align: left;">・燃料×1<br/>・冒険記録×4<br/>・エナジードリンク×10<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">13</td>
+<td style="text-align: left;">・星玉×50<br/>・希薄なエーテル×10<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">14</td>
+<td style="text-align: left;">・燃料×1<br/>・冒険記録×4<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">15</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・希薄なエーテル×10<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">16</td>
+<td style="text-align: left;">・燃料×1<br/>・冒険記録×4<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">17</td>
+<td style="text-align: left;">・聖騎士の赦しのヘルム(星3遺物)<br/>・聖騎士の沈黙の誓いの指輪(星3遺物)<br/>・聖騎士の厳かな鎧(星3遺物)<br/>・聖騎士の秩序の鉄靴(星3遺物)<br/>・希薄なエーテル×10<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">18</td>
+<td style="text-align: left;">・星玉×50<br/>・燃料×1<br/>・冒険記録×4<br/>・破砕の刃切×5<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">19</td>
+<td style="text-align: left;">・「壊滅」の影×1<br/>・希薄なエーテル×10<br/>・狩獣の矢×5<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">20</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・燃料×1<br/>・等価交換(光円錐)×1<br/>・着想のカギ×5<br/>・信用ポイント20,000</td>
+</tr><tr><td style="text-align: center;">突破クエスト</td>
+<td style="text-align: left;">・開拓進行計×1<br/>・星軌チケット×3<br/>・漫遊指南×5<br/>・精製エーテル×4<br/>・大宇宙チャーハン×5<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">21</td>
+<td style="text-align: left;">・精製エーテル×3<br/>・青銅の執着×5<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">22</td>
+<td style="text-align: left;">・燃料×1<br/>・漫遊指南×3<br/>・黯淡の黒曜×5<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">23</td>
+<td style="text-align: left;">・星玉×100<br/>・精製エーテル×3<br/>・調和のハーモニー×5<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">24</td>
+<td style="text-align: left;">・燃料×1<br/>・漫遊指南×3<br/>・豊穣の種×5<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">25</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・燃料×1<br/>・精製エーテル×3<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">26</td>
+<td style="text-align: left;">・燃料×1<br/>・漫遊指南×3<br/>・過客の迎春かんざし(星4遺物)<br/>・過客の冥土遊歴(星4遺物)<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">27</td>
+<td style="text-align: left;">・燃料×1<br/>・精製エーテル×3<br/>・過客の游龍腕甲(星4遺物)<br/>・過客の刺繍の解れた外套(星4遺物)<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">28</td>
+<td style="text-align: left;">・星玉×100<br/>・燃料×1<br/>・漫遊指南×6<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">29</td>
+<td style="text-align: left;">・燃料×1<br/>・精製エーテル×6<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">30</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・「壊滅」の影×1<br/>・燃料×1<br/>・漫遊指南×6<br/>・信用ポイント30,000</td>
+</tr><tr><td style="text-align: center;">突破クエスト</td>
+<td style="text-align: left;">・開拓進行計×1<br/>・星軌チケット×3<br/>・漫遊指南×8<br/>・精製エーテル×6<br/>・怒りのグローブ×3<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">31</td>
+<td style="text-align: left;">・燃料×1<br/>・精製エーテル×6<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">32</td>
+<td style="text-align: left;">・燃料×1<br/>・漫遊指南×10<br/>・聖騎士の赦しのヘルム(星4遺物)<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">33</td>
+<td style="text-align: left;">・星玉×100<br/>・燃料×1<br/>・精製エーテル×10<br/>・聖騎士の厳かな鎧(星4遺物)<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">34</td>
+<td style="text-align: left;">・燃料×1<br/>・漫遊指南×10<br/>・聖騎士の沈黙の誓いの指輪(星4遺物)<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">35</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・燃料×1<br/>・精製エーテル×10<br/>・聖騎士の秩序の鉄靴(星4遺物)<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">36</td>
+<td style="text-align: left;">・燃料×1<br/>・漫遊指南×10<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">37</td>
+<td style="text-align: left;">・燃料×1<br/>・精製エーテル×10<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">38</td>
+<td style="text-align: left;">・星玉×100<br/>・燃料×1<br/>・漫遊指南×10<br/>・深邃の星外物質×3<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">39</td>
+<td style="text-align: left;">・燃料×1<br/>・精製エーテル×10<br/>・深邃の星外物質×3<br/>・信用ポイント40,000</td>
+</tr><tr><td style="text-align: center;">40</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・燃料×1<br/>・漫遊指南×10<br/>・信用ポイント×40,000</td>
+</tr><tr><td style="text-align: center;">突破クエスト</td>
+<td style="text-align: left;">・星軌チケット×3<br/>・漫遊指南×12<br/>・精製エーテル×10<br/>・信用ポイント50,000</td>
+</tr><tr><td style="text-align: center;">41</td>
+<td style="text-align: left;">・運命の足跡×1<br/>・燃料×1<br/>・精製エーテル×10<br/>・信用ポイント45,000</td>
+</tr><tr><td style="text-align: center;">42</td>
+<td style="text-align: left;">・燃料×1<br/>・漫遊指南×15<br/>・信用ポイント×45,000</td>
+</tr><tr><td style="text-align: center;">43</td>
+<td style="text-align: left;">・星玉×100<br/>・燃料×1<br/>・精製エーテル×15<br/>・信用ポイント×45,000</td>
+</tr><tr><td style="text-align: center;">44</td>
+<td style="text-align: left;">・聖騎士の赦しのヘルム×1<br/>・燃料×1<br/>・漫遊指南×15<br/>・信用ポイント×45,000</td>
+</tr><tr><td style="text-align: center;">45</td>
+<td style="text-align: left;">・星軌チケット×1<br/>・燃料×1<br/>・精製エーテル×15<br/>・信用ポイント45,000</td>
+</tr><tr><td style="text-align: center;">46</td>
+<td style="text-align: left;">・運命の足跡×1<br/>・燃料×1<br/>・漫遊指南×15<br/>・信用ポイント×45,000</td>
+</tr><tr><td style="text-align: center;">47</td>
+<td style="text-align: left;">・聖騎士の厳かな鎧×1<br/>・燃料×1<br/>・精製エーテル×15<br/>・信用ポイント×45,000</td>
+</tr><tr><td style="text-align: center;">48</td>
+<td style="text-align: left;">・星玉×100<br/>・燃料×1<br/>・漫遊指南×15<br/>・深邃の星外物質×4<br/>・信用ポイント×45,000</td>
+</tr><tr><td style="text-align: center;">49</td>
+<td style="text-align: left;">・燃料×1<br/>・精製エーテル×15<br/>・深邃の星外物質×4<br/>・信用ポイント×45,000</td>
+</tr></tbody></table>
+
+
+
+</div>
+<span class="lead"></span><h2>崩壊スターレイルの注目記事</h2> <ul class="osusume-navi" style="display:table; width:100%;"><li class="otabactive" data-otab="recommend_list">
+<a href="javascript:%20;">おすすめ記事</a>
+</li> <li class="" data-otab="ninki-list">
+<a href="javascript:%20;">人気ページ</a>
+</li>
+</ul><div class="ninki-ranking otabdetail" id="recommend_list">
+<dl><dt><img alt="最強キャラランキング(Tier表)｜景元のランク追加！" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m20d_1240470917.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>最強キャラランキング(Tier表)｜景元のランク追加！</dd>
+<dd><a href="/houkaistarrail/saikyo"></a></dd>
+</dl><dl><dt><img alt="毎日やるべきことまとめ" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m28d_1810427868.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>毎日やるべきことまとめ</dd>
+<dd><a href="/houkaistarrail/mainiti"></a></dd>
+</dl><dl><dt><img alt="均衡レベルの上げ方と解放要素｜均衡の試練はどこ？" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m25d_165243563.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>均衡レベルの上げ方と解放要素｜均衡の試練はどこ？</dd>
+<dd><a href="/houkaistarrail/naido"></a></dd>
+</dl><dl><dt><img alt="宝箱(戦利品)の場所一覧" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m28d_1325128799.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>宝箱(戦利品)の場所一覧</dd>
+<dd><a href="/houkaistarrail/takarabakoichiran"></a></dd>
+</dl><dl><dt><img alt="最新版！シリアルコード一覧と入力方法" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m28d_1810445477.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>最新版！シリアルコード一覧と入力方法</dd>
+<dd><a href="/houkaistarrail/serialcode"></a></dd>
+</dl><dl><dt><img alt="最強パーティと編成のコツ｜景元パーティ追加" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2022/06/2022y06m01d_1125350431.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>最強パーティと編成のコツ｜景元パーティ追加</dd>
+<dd><a href="/houkaistarrail/saikyopt"></a></dd>
+</dl><dl><dt><img alt="ゼーレの評価｜おすすめ遺物・光円錐・凸数" data-lazy-src="https://img.altema.jp/houkaistarrail/chara/banner/19.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>ゼーレの評価｜おすすめ遺物・光円錐・凸数</dd>
+<dd><a href="/houkaistarrail/chara/19"></a></dd>
+</dl></div>
+<div class="ninki-ranking otabdetail hide" id="ninki-list">
+<dl><dt><img alt="最強キャラランキング(Tier表)｜景元のランク追加！" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m20d_1240470917.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>最強キャラランキング(Tier表)｜景元のランク追加！</dd>
+<dd><a href="/houkaistarrail/saikyo"></a></dd>
+</dl><dl><dt><img alt="ゼーレの評価｜おすすめ遺物・光円錐・凸数" data-lazy-src="https://img.altema.jp/houkaistarrail/chara/banner/19.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>ゼーレの評価｜おすすめ遺物・光円錐・凸数</dd>
+<dd><a href="/houkaistarrail/chara/19"></a></dd>
+</dl><dl><dt><img alt="ゼーレガチャシミュレーター" data-lazy-src="https://img.altema.jp/houkaistarrail/gacha_kari/banner/1.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>ゼーレガチャシミュレーター</dd>
+<dd><a href="/houkaistarrail/gacha/1"></a></dd>
+</dl><dl><dt><img alt="景元(けいげん)の評価とおすすめ遺物｜光円錐・凸数" data-lazy-src="https://img.altema.jp/houkaistarrail/chara/banner/20.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>景元(けいげん)の評価とおすすめ遺物｜光円錐・凸数</dd>
+<dd><a href="/houkaistarrail/chara/20"></a></dd>
+</dl><dl><dt><img alt="停雲(ていうん)の評価｜おすすめ遺物・光円錐・凸数" data-lazy-src="https://img.altema.jp/houkaistarrail/chara/banner/28.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>停雲(ていうん)の評価｜おすすめ遺物・光円錐・凸数</dd>
+<dd><a href="/houkaistarrail/chara/28"></a></dd>
+</dl><dl><dt><img alt="景元ガチャシミュレーター" data-lazy-src="https://img.altema.jp/houkaistarrail/gacha_kari/banner/2.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>景元ガチャシミュレーター</dd>
+<dd><a href="/houkaistarrail/gacha/2"></a></dd>
+</dl><dl><dt><img alt="最強光円錐ランキング｜おすすめ武器" data-lazy-src="https://img.altema.jp/houkaistarrail/uploads/2022/06/2022y06m01d_1125362659.jpg" src="https://img.altema.jp/common/1x1.trans.gif"/></dt>
+<dd>最強光円錐ランキング｜おすすめ武器</dd>
+<dd><a href="/houkaistarrail/saikyokouensui"></a></dd>
+</dl><span class="more_rank" style="font-size: small;font-weight: inherit;"><a href="/houkaistarrail/ninki">もっと見る</a></span>
+</div>
+</div>
+</div>
+<h2>この記事を書いた人</h2><table class="tableLine"><tbody><tr><th colspan="3" style="width: 30%; background-color: #7a7a7a; text-align: center;"><span style="color: #ffffff;">記事を書いた人</span></th>
+</tr><tr><td colspan="3" style="width: 30%; text-align: center;"><img alt="崩壊スターレイル攻略班" class="aligncenter iconsize-60" height="60" src="https://img.altema.jp/houkaistarrail/uploads/2023/04/2023y04m26d_1727559583.jpg" width="60"/><span class="b">崩壊スターレイル攻略班</span></td>
+</tr><tr><th style="width: 30%; text-align: center;">開拓レベル</th>
+<td colspan="2" style="text-align: left;">56<br/> ※5月17日時点</td>
+</tr><tr><th style="text-align: center;">アチーブメント</th>
+<td colspan="2" style="text-align: left;">239</td>
+</tr></tbody></table><div class="sns-copytxt clearfix">
+<ul class="share-box"><li class="share-btn">
+<a class="btn" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Faltema.jp%2Fhoukaistarrail%2Fkaitaku&amp;text=%E3%80%90%E5%B4%A9%E5%A3%8A%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%AC%E3%82%A4%E3%83%AB%E3%80%91%E9%96%8B%E6%8B%93%E3%83%AC%E3%83%99%E3%83%AB%E3%81%AE%E4%B8%8A%E3%81%92%E6%96%B9%E3%81%A8%E3%83%9E%E3%82%A4%E3%83%AC%E3%83%BC%E3%82%B8%E3%82%92%E5%8A%B9%E7%8E%87%E8%89%AF%E3%81%8F%E7%A8%BC%E3%81%90%E6%96%B9%E6%B3%95%E3%80%90%E5%B4%A9%E3%82%B9%E3%82%BF%E3%80%91+-+%E3%82%A2%E3%83%AB%E3%83%86%E3%83%9E&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Faltema.jp%2Fhoukaistarrail%2Fkaitaku&amp;hashtags=%E5%B4%A9%E5%A3%8A%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%AC%E3%82%A4%E3%83%AB,%E5%B4%A9%E3%82%B9%E3%82%BF,%E3%82%A2%E3%83%AB%E3%83%86%E3%83%9E&amp;" id="b" onclick="gtag('event', 'click', {'event_category': 'tweet','event_label': 'side'});">ツイート</a>
+</li>
+<li class="url-copy-btn" onclick="gtag('event', 'click', {'event_category': 'URLhakkou','event_label': 'side'});">URL発行</li>
+<li class="favorite-button" onclick="gtag('event', 'click', {'event_category': 'okiniiri','event_label': 'side'});">お気に入り</li>
+</ul></div> <div class="contents">
+<div class="ikenform-area">
+<p class="ikenform-btn"><a class="gachaBtn" href="javascript:%20">記事について指摘する</a></p>
+</div>
+<div data-ikenform-postdata="" id="ikenform-postdata"></div>
+<h2 class="exclude-h2-cnt" id="02">【急上昇】話題の人気ゲームランキング</h2>
+<table class="PRrank-icon2 tableLine" data-type="4"><tbody><tr><td style="width: 35%; text-align: center;"><a class="rank-1" href="https://s.g123.jp/t6l0vqon"><img alt="クイーンズブレイドリミットブレイク" class="aligncenter" height="60" src="https://img.altema.jp/altema/uploads/2023/05/2023y05m23d_1748083884.jpg" width="60"/>クイーンズブレイドリミットブレイク<br/></a></td>
+<td><span class="b" style="color: #ff6600;">【美闘士の絶頂突破を体感】</span>
+<p>敗北すらも美しい戦士たちの超絶華麗なる新作ゲーム登場！<br/> あなたも限界なんでしょう？美少女総勢100名以上！</p>
+<div class="osusumerank-dlbt"><a href="https://s.g123.jp/t6l0vqon">DL不要</a></div>
+</td>
+</tr><tr><td style="width: 35%; text-align: center;"><a class="rank-2" href="https://h5.g123.jp/game/hyakka?platform=altema&amp;utm_source=altema&amp;utm_campaign=%E7%99%BE%E8%8A%B1%E7%B9%9A%E4%B9%B1&amp;utm_adgroup=%E9%80%9A%E5%B8%B8%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E6%9E%A0&amp;utm_keyword=altema"><img alt="百花繚乱 -パッションワールド" class="aligncenter" src="https://img.altema.jp/altema/uploads/2022/06/2022y06m14d_1028533415.jpg" width="60"/>百花繚乱 -パッションワールド</a></td>
+<td><span class="b" style="color: #ff6600;">【全キャラ衣装が過激すぎ？】</span>
+<p>空から美少女が降ってきた――。剣姫達、契り結びて強くなる。美少女たちと平誠を駆け抜けるファンタジーRPG</p>
+<div class="osusumerank-dlbt"><a href="https://h5.g123.jp/game/hyakka?platform=altema&amp;utm_source=altema&amp;utm_campaign=%E7%99%BE%E8%8A%B1%E7%B9%9A%E4%B9%B1&amp;utm_adgroup=%E9%80%9A%E5%B8%B8%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E6%9E%A0&amp;utm_keyword=altema">DL不要</a></div>
+</td>
+</tr><tr><td style="width: 35%; text-align: center;"><a class="rank-3" href="https://h5.g123.jp/game/goblinslayer?platform=altema&amp;utm_source=altema&amp;utm_campaign=goblinslayer_ja_altema_media_all&amp;utm_adgroup=all&amp;lang=ja"><img alt="ゴブリンスレイヤー エンドレスハンティング" class="aligncenter" src="https://img.altema.jp/altema/uploads/2023/05/2023y05m23d_1748071425.jpg" width="60"/>ゴブリンスレイヤー エンドレスハンティング</a></td>
+<td><span class="b" style="color: #ff6600;">【世界の救済よりもゴブリンを殺せ】</span>
+<p>シリーズ累計900万部突破！ゴブスレ最新作ゲーム好評配信中！ゴブリンどもを駆逐する終わりなき戦いが始まる</p>
+<div class="osusumerank-dlbt"><a href="https://h5.g123.jp/game/goblinslayer?platform=altema&amp;utm_source=altema&amp;utm_campaign=goblinslayer_ja_altema_media_all&amp;utm_adgroup=all&amp;lang=ja">DL不要</a></div>
+</td>
+</tr><tr><td style="width: 35%; text-align: center;"><a class="rank-4" href="https://h5.g123.jp/game/auo?platform=altema&amp;utm_source=altema&amp;utm_campaign=auo_ja_altema_media_all&amp;utm_adgroup=all&amp;lang=ja"><img alt="英雄王、武を極めるため転生す　ブレロド" class="aligncenter" src="https://img.altema.jp/altema/uploads/2023/05/2023y05m23d_1748093376.jpg" width="60"/>英雄王、武を極めるため転生す ブレロド</a></td>
+<td><span class="b" style="color: #ff6600;">【麗しき世界最強の見習い騎士♀】</span>
+<p>TVアニメ放送中！新作ゲームがリリース！ミッションクリアでガチャチケ100連分もらえる！</p>
+<div class="osusumerank-dlbt"><a href="https://h5.g123.jp/game/auo?platform=altema&amp;utm_source=altema&amp;utm_campaign=auo_ja_altema_media_all&amp;utm_adgroup=all&amp;lang=ja">DL不要</a></div>
+</td>
+</tr><tr><td style="width: 35%; text-align: center;"><a class="rank-5" href="https://s.g123.jp/iyxpv8yl"><img alt="艦隊少女" class="aligncenter" height="60" src="https://img.altema.jp/altema/uploads/2023/03/2023y03m01d_1402268202.jpg" width="60"/>艦隊少女</a></td>
+<td><span class="b" style="color: #ff6600;"><span class="b" style="color: #ff6600;">【気持ち良いパズルゲーム】</span></span>
+<p>超高速パズルRPGがリリース！美少女キャラクターがヌルヌル動く！仲を深めてストーリーやボイスを解禁しよう</p>
+<div class="osusumerank-dlbt"><a href="https://s.g123.jp/iyxpv8yl">DL不要</a></div>
+</td>
+</tr></tbody></table><a id="commentstart" name="commentstart"></a>
+<!--comment--><div data-all-size="20480" data-extensions='["jpg","jpeg","gif","png"]' data-is-keijiban="false" data-jpeg-compression="90" data-one-side-length="640" data-size="10240" id="comment_config">
+</div>
+<p class="t-bt-comment" id="comment_jump" style="display: none;">
+<a href="#comment_title">コメント<span>0</span>件</a>
+</p>
+<h2 class="exclude-h2-cnt" id="comment_title">書き込み<span class="comment-page-title"></span></h2>
+<span id="comments"></span>
+<form accept-charset="utf-8" action="https://altema.jp/api/houkaistarrail/comment_api.php" class="commentToukou_wp" enctype="multipart/form-data" id="comment_form" method="post" name="comment_form">
+<div id="dummy_comment">
+<input id="dummy" name="dummy" placeholder="書き込む" size="22" tabindex="1" type="text" value=""/></div>
+<div id="real_comment" style="display:none;">
+<input name="dummytextarea" style="display: none;" type="text" value=""/><p class="comment_author"><label for="author"><small>名前</small></label></p>
+<p>
+<input data-copybutton_flg="0" data-necessary_flg="0" id="author" name="comment_author" placeholder="" size="22" tabindex="1" type="text" value=""/></p>
+<p class="comment_honbun">本文                            </p>
+<p id="comment_honbun_hensin_area" style="display: none;">
+<span class="b-red" id="comment_honbun_hensin_num"></span>
+<span id="comment_honbun_hensin_close_btn" style="cursor: pointer;">×</span>
+</p>
+<p><textarea cols="40" data-add_name="本文" data-copybutton_flg="0" data-necessary_flg="0" id="comment" name="comment_content" placeholder="" rows="10" tabindex="4"></textarea></p>
+<p id="throwsSpamAway">不適切な内容の書き込みがあった場合、予告なく削除やIPの規制を行う場合がございます。</p>
+<p>
+<input name="comment_post_ID" type="hidden" value="224"/><input name="comment_post_ID" type="hidden" value="224"/><input name="comment_ins_title" type="hidden" value=""/><input name="comment_post_ID" type="hidden" value="224"/><input name="comment_ins_title" type="hidden" value=""/><input name="comment_parent" type="hidden" value="0"/><input name="method" type="hidden" value="save"/></p>
+<div id="comment-image-wrapper">
+<p id="comment-image-error"></p>
+<ul><li>
+<label for="file_photo_0">
+<span class="file_path">＋写真を選択</span>
+<input data-img-area="comment_local_photo_0" id="file_photo_0" name="comment_image" style="display:none;" type="file"/></label>
+</li>
+<li>
+<label for="file_photo_1">
+<span class="file_path">＋写真を選択</span>
+<input data-img-area="comment_local_photo_1" id="file_photo_1" name="comment_image" style="display:none;" type="file"/></label>
+</li>
+<li>
+<label for="file_photo_2">
+<span class="file_path">＋写真を選択</span>
+<input data-img-area="comment_local_photo_2" id="file_photo_2" name="comment_image" style="display:none;" type="file"/></label>
+</li>
+<li>
+<label for="file_photo_3">
+<span class="file_path">＋写真を選択</span>
+<input data-img-area="comment_local_photo_3" id="file_photo_3" name="comment_image" style="display:none;" type="file"/></label>
+</li>
+</ul><ul><li>
+<div class="local_photo" id="comment_local_photo_0"></div>
+</li>
+<li>
+<div class="local_photo" id="comment_local_photo_1"></div>
+</li>
+<li>
+<div class="local_photo" id="comment_local_photo_2"></div>
+</li>
+<li>
+<div class="local_photo" id="comment_local_photo_3"></div>
+</li>
+</ul></div>
+<p class="commentimgsub">
+                    画像添付(任意) 10MB以内<a class="hide" href="javascript:%20;%20" id="comment_upload_reset">ファイル選択をクリアする</a>
+</p>
+<!-- #comment-image-wrapper -->
+<p id="comment_submit_button">
+<input id="submitbtn" name="comment_submit" onclick="return false" tabindex="5" type="submit" value="書き込む"/></p>
+<p>
+<span id="comment_close">閉じる</span>
+</p>
+</div>
+</form>
+<span id="comreload">最新を表示する</span>
+<ol class="commentlist" style="position: relative;"></ol><div class="comment-pagenavi goto-comment-list"></div>
+<!--/comment--></div>
+</div>
