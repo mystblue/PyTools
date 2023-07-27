@@ -13,7 +13,7 @@ __version__ = '1.0.0'
 import requests
 from bs4 import BeautifulSoup
 
-set = {
+"""2022年
     "07" : {"url_a": 'https://hon-hikidashi.jp/enjoy/150087/',
             "url_b": 'https://hon-hikidashi.jp/enjoy/150088/'},
     "08" : {"url_a": 'https://hon-hikidashi.jp/enjoy/151491/',
@@ -26,6 +26,9 @@ set = {
             "url_b": 'https://hon-hikidashi.jp/enjoy/156085/'},
     "12" : {"url_a": 'https://hon-hikidashi.jp/enjoy/158107/',
             "url_b": 'https://hon-hikidashi.jp/enjoy/158108/'},
+"""
+
+set = {
     "01" : {"url_a": 'https://hon-hikidashi.jp/enjoy/159974/',
             "url_b": 'https://hon-hikidashi.jp/enjoy/159975/'},
     "02" : {"url_a": 'https://hon-hikidashi.jp/enjoy/161402/',
@@ -37,7 +40,11 @@ set = {
     "05" : {"url_a": 'https://hon-hikidashi.jp/news/1644/',
             "url_b": 'https://hon-hikidashi.jp/news/1645/'},
     "06" : {"url_a": 'https://hon-hikidashi.jp/news/4440/',
-            "url_b": 'https://hon-hikidashi.jp/news/4441/'}
+            "url_b": 'https://hon-hikidashi.jp/news/4441/'},
+    "07" : {"url_a": 'https://hon-hikidashi.jp/news/7808/',
+            "url_b": 'https://hon-hikidashi.jp/news/7809/'},
+    "08" : {"url_a": 'https://hon-hikidashi.jp/news/11193/',
+            "url_b": 'https://hon-hikidashi.jp/news/11194/'}
 }
 
 url_a ='https://hon-hikidashi.jp/enjoy/156084/'
@@ -96,7 +103,7 @@ def main(month):
         f.write(ret)
 
 if __name__ == '__main__':
-    month = "06"
+    month = "08"
     url_a = set[month]["url_a"]
     url_b = set[month]["url_b"]
     download(url_a, month + "a.html")
