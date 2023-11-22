@@ -79,8 +79,14 @@ if __name__ == '__main__':
             request_param['ttyId'] = term['ttyid'] + datetime_str[:-1]
             request_param['sn'] = term['sn']
             
+            if 'orderId' in request_param and '${date}' in request_param['orderId']:
+                request_param['orderId'] = request_param['orderId'].replace('${date}', datetime_str)
+
+            if 'customerId' in request_param and '${date}' in request_param['customerId']:
+                request_param['customerId'] = request_param['customerId'].replace('${date}', datetime_str)
+            
             request = create_request_param(term['sn'], term['iv'], request_param)
-                        
+
             response = http_connect(term['sn'], term['iv'], request)
             print("\nstatus code = " + str(response.status_code))
             print("\n・response = ")
