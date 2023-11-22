@@ -7,6 +7,9 @@ import requests
 import Crypto.Cipher.AES as AES
 from Crypto.Util import Padding
 
+import urllib.parse
+from urllib.parse import unquote
+
 iv = "cc7b9247ed6f8f7c41e9dcce0d340ef4"
 sn = '000118183306329'
 
@@ -42,14 +45,16 @@ if __name__ == '__main__':
     
     headers = {'IV': iv, 'SN':sn, 'Sver': '1000'}
     # POST with header
-    r = requests.post('http://52.192.213.221', 
+    r = requests.post('https://10.200.91.141', 
         data=base64.b64encode(ret),
-        headers=headers)
+        headers=headers, verify=False)
     print(r.status_code)
     print(r.text)
     text = base64.b64decode(r.text)
     dec = AES.new(key=get_key(sn), mode=AES.MODE_CBC, iv=get_iv(iv))
     mes = dec.decrypt(text)
     print(mes)
+    mes = Padding.unpad(mes, AES.block_size, 'pkcs7')
     print(mes.decode("utf-8"))
+    print(urllib.parse.parse_qs(mes.decode("utf-8")))
     

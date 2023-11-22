@@ -27,12 +27,17 @@ def get_key(sn):
     return bytes.fromhex(key_orgs)
 
 if __name__ == '__main__':
-    data = '5UrOrNd++1hB7LPAfIJZ1NNBcA+VsJSbi7NLN71fslE='
+    data = '''GT2MP2bQBC+EQciyqd96GJAop4SIUE1C/KWL7ZBPJNfNCgFmugHz1XSSG38q8pW6pSl6RQDoJ8qi
+EcutxejJKPUJdP8gvuK9wNjCyWgYObMICeFPex0c2LrSzli8ZhTVdM43gGQjKbimHNMF0XvV/AcQ
+7jlV3JvU0tsOcCGBfzuG9jlQthDeTM3he+gZIQrzLGS6lQf6Ssdw9H7U+wmgaRzMUkGjtKblACXe
+kGwkPFchQzJy3/OeovMsXdKv+3Cr0OG6kb3wjXrh+Lv08emj1SbE0yej+dbSLhgUx/kK6TE='''
     text = base64.b64decode(data)
     dec = AES.new(key=get_key(sn), mode=AES.MODE_CBC, iv=get_iv(iv))
     mes = dec.decrypt(text)
+    #mes = Padding.unpad(mes, 32)
     print(mes)
     res = unquote(mes.decode('utf-8'))
+    #res = Padding.unpad(res, AES.block_size, 'pkcs7')
     print(res)
     dic = urllib.parse.parse_qs(res)
     keys = dic.keys()
