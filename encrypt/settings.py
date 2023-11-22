@@ -5,9 +5,8 @@ seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['nicos-pg']
+#psp_list = ['nicos-pg']
 """
-psp_list = [
     'dgft',
     'sony',
     'paygent',
@@ -15,15 +14,16 @@ psp_list = [
     'smbc-fs',
     'yamato',
     'zeus',
-    'smbc-gmo'
+    'smbc-gmo',
     'gmo-mb',
     'nicos',
-    'ncoms-pg',
+"""
+psp_list = [
+    'ncoms',
     'rakuten',
     'pay-jp',
     'sbps',
 ]
-"""
 
 terminal = {
     'paygent' :  {
