@@ -1,21 +1,19 @@
 # -*- coding: utf-8 -*-
 
 import base64
-
+import datetime
+import json
 import requests
+import settings
+import urllib.parse
+from urllib.parse import unquote
 
 import Crypto.Cipher.AES as AES
 from Crypto.Util import Padding
 
-import urllib.parse
-from urllib.parse import unquote
-
-iv = "cc7b9247ed6f8f7c41e9dcce0d340ef4"
-sn = '000118183306329'
-
-request = 'requestDate=20230224183901&sn=000118183306329&cardNumber=4111111111111111&cardExpire=1225&securityCode=8888&orderId=8888aaaaaaaaaagwewataa2&ttyId=00000027000112023091900032&category=4&transactionDate=20230224183901'
-
-
+import urllib3
+from urllib3.exceptions import InsecureRequestWarning
+urllib3.disable_warnings(InsecureRequestWarning)
 
 def get_iv(str):
     # hex2bin 相当
@@ -28,33 +26,65 @@ def get_key(sn):
     key_orgs = key_org[0:32]
     return bytes.fromhex(key_orgs)
 
-if __name__ == '__main__':
-    print(base64.b64encode(get_iv(iv)))
-    print(base64.b64encode(get_key(sn)))
-    print(type(base64.b64encode(get_key(sn))))
-    
-    reflesh_length = AES.block_size - len(request) % AES.block_size
-    #request += chr(16) * reflesh_length
-    
+def create_request_param(sn, iv, request_param):
+    request = urllib.parse.urlencode(request_param)
+
+    print('・request = ' + request)
     enc = AES.new(key=get_key(sn), mode=AES.MODE_CBC, iv=get_iv(iv))
     data = Padding.pad(request.encode('utf-8'), AES.block_size, 'pkcs7')
     ret = enc.encrypt(data)
-    print(base64.b64encode(ret))
-    
-    
-    
+    encrypt_data = base64.b64encode(ret)
+    return encrypt_data
+
+def http_connect(sn, iv, request):
     headers = {'IV': iv, 'SN':sn, 'Sver': '1000'}
     # POST with header
-    r = requests.post('https://10.200.91.141', 
-        data=base64.b64encode(ret),
-        headers=headers, verify=False)
-    print(r.status_code)
-    print(r.text)
-    text = base64.b64decode(r.text)
+    response = requests.post(settings.url, 
+                   data=request,
+                   headers=headers,
+                   verify=False,
+                   cert=settings.cert)
+    return response
+
+def print_response(sn, iv, respose):
+    text = base64.b64decode(respose.text)
     dec = AES.new(key=get_key(sn), mode=AES.MODE_CBC, iv=get_iv(iv))
     mes = dec.decrypt(text)
-    print(mes)
+    #print(mes)
     mes = Padding.unpad(mes, AES.block_size, 'pkcs7')
-    print(mes.decode("utf-8"))
+    #print(mes.decode("utf-8"))
     print(urllib.parse.parse_qs(mes.decode("utf-8")))
-    
+
+if __name__ == '__main__':
+    print("■GW URL = " + settings.url + "\n")
+    for psp in settings.psp_list:
+        print("■PSP = " + psp)
+        
+        # 端末情報取得
+        term = settings.terminal[psp]
+        
+        # パラメータ json 読み込み
+        request_param_list = []
+        with open('json\\' + psp + '.json', 'r', encoding="utf-8") as fp:
+            request_param_list = json.load(fp)
+        
+        now = datetime.datetime.now()
+        datetime_str = now.strftime('%Y%m%d%H%M%S')
+        date_str = now.strftime('%Y%m%d')
+        
+        # PSP ごとの処理
+        for request_param in request_param_list:
+            request_param['requestDate'] = datetime_str
+            request_param['transactionDate'] = date_str
+            request_param['ttyId'] = term['ttyid'] + datetime_str[:-1]
+            request_param['sn'] = term['sn']
+            
+            request = create_request_param(term['sn'], term['iv'], request_param)
+                        
+            response = http_connect(term['sn'], term['iv'], request)
+            print("\nstatus code = " + str(response.status_code))
+            print("\n・response = ")
+            print(response.text)
+            
+            print_response(term['sn'], term['iv'], response)
+            

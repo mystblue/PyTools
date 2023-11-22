@@ -1,0 +1,12 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "88881234567890192",
+        "customerNameKanji": "てすとたろう",
+        "tmpCode1": "52191",
+        "tmpPassword1": "paytg52191",
+        "category": "1"
+    }
+]

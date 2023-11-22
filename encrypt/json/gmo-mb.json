@@ -1,0 +1,11 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "customerId": "8888aaaaaaaaaagwewataa2",
+        "customerNameKanji": "テスト太郎",
+        "customerName": "test taro",
+        "category": "4"
+    }
+]
