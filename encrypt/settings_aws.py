@@ -1,11 +1,11 @@
-url = 'https://10.200.91.8'
+#url = 'https://10.200.91.141'
+url = 'https://dev-gw-v2.paytg.jp'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['sbps']
-"""
+#psp_list = ['sbps']
 psp_list = [
     'dgft',
     'sony',
@@ -22,7 +22,6 @@ psp_list = [
     'pay-jp',
     'sbps',
 ]
-"""
 
 terminal = {
     'paygent' :  {
@@ -50,10 +49,10 @@ terminal = {
                      'ttyid' : '0000000500007'
                  },
     'pay-jp' :   {
-                     'sn'    : '916501470337665',
+                     'sn'    : '334714378614310',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000003300003'
+                     'ttyid' : '0000003300002'
                  },
     'sony' :     {
                      'sn'    : '778505488804181',
@@ -62,16 +61,16 @@ terminal = {
                      'ttyid' : '0000000200001'
                  },
     'rakuten' :  {
-                     'sn'    : '916501470337666',
+                     'sn'    : '000118183306329',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000002700001'
+                     'ttyid' : '0000002700011'
                  },
     'sbps' :     {
                      'sn'    : '916501470337654',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000003700001'
+                     'ttyid' : '0000003600001'
                  },
     'smbc-fs' :  {
                      'sn'    : '664498427667744',
@@ -104,10 +103,10 @@ terminal = {
                      'ttyid' : '0000001000001'
                  },
     'nicos-pg' :   {
-                     'sn'    : '259518121236779',
+                     'sn'    : '334714378614308',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000001100001'
+                     'ttyid' : '0000004200002'
                  },
 }
 
