@@ -5,7 +5,7 @@ seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['nicos-pg']
+psp_list = ['rakuten']
 """
 psp_list = [
     'dgft',
@@ -24,7 +24,6 @@ psp_list = [
     'sbps',
 ]
 """
-
 terminal = {
     'paygent' :  {
                      'sn'    : '900123123456456',
@@ -63,10 +62,10 @@ terminal = {
                      'ttyid' : '0000000200001'
                  },
     'rakuten' :  {
-                     'sn'    : '000118183306329',
+                     'sn'    : '916501470337666',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000002700011'
+                     'ttyid' : '0000002700001'
                  },
     'sbps' :     {
                      'sn'    : '916501470337654',
