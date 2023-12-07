@@ -5,7 +5,7 @@ seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['rakuten']
+psp_list = ['gmo-mb']
 """
 psp_list = [
     'dgft',
