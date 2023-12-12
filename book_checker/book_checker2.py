@@ -28,7 +28,7 @@ from bs4 import BeautifulSoup
             "url_b": 'https://hon-hikidashi.jp/enjoy/158108/'},
 """
 
-set = {
+"""2023年
     "01" : {"url_a": 'https://hon-hikidashi.jp/enjoy/159974/',
             "url_b": 'https://hon-hikidashi.jp/enjoy/159975/'},
     "02" : {"url_a": 'https://hon-hikidashi.jp/enjoy/161402/',
@@ -41,18 +41,27 @@ set = {
             "url_b": 'https://hon-hikidashi.jp/news/1645/'},
     "06" : {"url_a": 'https://hon-hikidashi.jp/news/4440/',
             "url_b": 'https://hon-hikidashi.jp/news/4441/'},
+"""
+
+set = {
     "07" : {"url_a": 'https://hon-hikidashi.jp/news/7808/',
             "url_b": 'https://hon-hikidashi.jp/news/7809/'},
     "08" : {"url_a": 'https://hon-hikidashi.jp/news/11193/',
             "url_b": 'https://hon-hikidashi.jp/news/11194/'},
     "09" : {"url_a": 'https://hon-hikidashi.jp/news/14949/',
-            "url_b": 'https://hon-hikidashi.jp/news/14950/'}
+            "url_b": 'https://hon-hikidashi.jp/news/14950/'},
+    "11" : {"url_a": 'https://hon-hikidashi.jp/news/22664/',
+            "url_b": 'https://hon-hikidashi.jp/news/22665/'},
+    "12" : {"url_a": 'https://hon-hikidashi.jp/news/22664/',
+            "url_b": 'https://hon-hikidashi.jp/news/22665/'},
+    "01" : {"url_a": 'https://hon-hikidashi.jp/news/25784/',
+            "url_b": 'https://hon-hikidashi.jp/news/25785/'}
 }
 
 url_a ='https://hon-hikidashi.jp/enjoy/156084/'
 url_b = 'https://hon-hikidashi.jp/enjoy/156085/'
 
-titles = ["女神のカフェテラス", "もののがたり", "ギルティサークル", "出会って5秒でバトル", "ぐらんぶる", "てんぷる", "バツハレ", "制裁学園", "EDENS", "イジらないで、長瀞さん", "恋愛志向生徒会", "トリアージ", "トリニティセブン", "カッコウの許嫁", "ダンダダン", "キングダム", "終末のハーレム", "はぐれアイドル", "魔都精兵のスレイブ", "あやかしトライアングル", "彼女、お借りします", "絶対聖域のチェリオン", "甘神さんちの縁結び", "俺の現実", "賭ケグルイ",  "性食鬼", "冒険王ビィト", "呪術廻戦", "さわらないで小手指くん", "化物語", "神呪のネクタール", "ダーウィンズゲーム", "チェンソーマン", "タダでは抱かれません", "不徳のギルド", "異世界迷宮で"]
+titles = ["女神のカフェテラス", "もののがたり", "ギルティサークル", "出会って5秒でバトル", "ぐらんぶる", "てんぷる", "バツハレ", "制裁学園", "EDENS", "イジらないで、長瀞さん", "恋愛志向生徒会", "トリアージ", "トリニティセブン", "カッコウの許嫁", "ダンダダン", "キングダム", "終末のハーレム", "はぐれアイドル", "魔都精兵のスレイブ", "あやかしトライアングル", "彼女、お借りします", "絶対聖域のチェリオン", "甘神さんちの縁結び", "俺の現実", "賭ケグルイ",  "性食鬼", "冒険王ビィト", "呪術廻戦", "さわらないで小手指くん", "化物語", "神呪のネクタール", "ダーウィンズゲーム", "チェンソーマン", "タダでは抱かれません", "不徳のギルド", "異世界迷宮で", "EROS"]
 authors = ["瀬尾公治", "冨樫義博", "あきばるいき", "オニグンソウ", "尾田栄一郎", "赤坂一夫", "真島ヒロ", "タスクオーナ", "佐原玄清", "堀越耕平", "春輝", "神田ゆう", "井荻寿一", "岬ゆきひろ"]
 
 def download(url, filename):
@@ -105,7 +114,7 @@ def main(month):
         f.write(ret)
 
 if __name__ == '__main__':
-    month = "09"
+    month = "12"
     url_a = set[month]["url_a"]
     url_b = set[month]["url_b"]
     download(url_a, month + "a.html")

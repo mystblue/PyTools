@@ -1,11 +1,10 @@
-#url = 'https://10.200.91.141'
-url = 'https://dev-gw-v2.paytg.jp'
+url = 'https://10.200.91.8'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['gmo-mb']
+psp_list = ['sbps']
 """
 psp_list = [
     'dgft',
@@ -24,6 +23,7 @@ psp_list = [
     'sbps',
 ]
 """
+
 terminal = {
     'paygent' :  {
                      'sn'    : '900123123456456',
@@ -50,10 +50,10 @@ terminal = {
                      'ttyid' : '0000000500007'
                  },
     'pay-jp' :   {
-                     'sn'    : '334714378614310',
+                     'sn'    : '916501470337665',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000003300002'
+                     'ttyid' : '0000003300003'
                  },
     'sony' :     {
                      'sn'    : '778505488804181',
@@ -71,7 +71,7 @@ terminal = {
                      'sn'    : '916501470337654',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000003600001'
+                     'ttyid' : '0000003700001'
                  },
     'smbc-fs' :  {
                      'sn'    : '664498427667744',
@@ -104,10 +104,10 @@ terminal = {
                      'ttyid' : '0000001000001'
                  },
     'nicos-pg' :   {
-                     'sn'    : '334714378614308',
+                     'sn'    : '259518121236779',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000004200002'
+                     'ttyid' : '0000001100001'
                  },
 }
 
