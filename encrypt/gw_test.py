@@ -34,6 +34,7 @@ def create_request_param(sn, iv, request_param):
     data = Padding.pad(request.encode('utf-8'), AES.block_size, 'pkcs7')
     ret = enc.encrypt(data)
     encrypt_data = base64.b64encode(ret)
+    print(encrypt_data)
     return encrypt_data
 
 def http_connect(sn, iv, request):
