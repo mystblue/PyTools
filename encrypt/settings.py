@@ -1,10 +1,10 @@
-url = 'https://10.200.91.8'
+url = 'https://10.200.91.141'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['gmo-mb']
+psp_list = ['rakuten']
 """
 psp_list = [
     'dgft',
@@ -62,10 +62,10 @@ terminal = {
                      'ttyid' : '0000000200001'
                  },
     'rakuten' :  {
-                     'sn'    : '916501470337666',
+                     'sn'    : '334714378614309',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000002700001'
+                     'ttyid' : '0000002100002'
                  },
     'sbps' :     {
                      'sn'    : '916501470337654',
