@@ -1,5 +1,6 @@
 #url = 'https://10.200.91.141'
 url = 'https://dev-gw-v2.paytg.jp'
+#url = 'https://localhost'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
