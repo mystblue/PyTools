@@ -4,5 +4,14 @@
         "cardExpire": "0225",
         "securityCode": "",
         "category": "1"
+    },
+    {
+        "cardNumber": "43354234695434691",
+        "cardExpire": "0225",
+        "securityCode": "",
+        "jpo": "10",
+        "amount": "1000",
+        "merchantFree1": "test",
+        "category": "3"
     }
 ]
