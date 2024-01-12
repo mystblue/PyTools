@@ -6,7 +6,7 @@ seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['rakuten']
+psp_list = ['nicos-pg']
 """
 psp_list = [
     'dgft',
@@ -69,10 +69,10 @@ terminal = {
                      'ttyid' : '0000002000003'
                  },
     'sbps' :     {
-                     'sn'    : '916501470337654',
+                     'sn'    : '440808393041358',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000003600001'
+                     'ttyid' : '0000004000001'
                  },
     'smbc-fs' :  {
                      'sn'    : '045538703227172',
@@ -105,10 +105,10 @@ terminal = {
                      'ttyid' : '0000001000001'
                  },
     'nicos-pg' :   {
-                     'sn'    : '334714378614307',
+                     'sn'    : '334714378614308',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000001400003'
+                     'ttyid' : '0000001400004'
                  },
 }
 
