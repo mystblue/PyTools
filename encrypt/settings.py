@@ -6,7 +6,7 @@ seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB5AA.pem'
 
-psp_list = ['dgft']
+psp_list = ['gmo-mb-m']
 """
 psp_list = [
     'dgft',
@@ -103,6 +103,12 @@ terminal = {
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
                      'ttyid' : '0000001000001'
+                 },
+    'gmo-mb-m' :   {
+                     'sn'    : '751347591905118',
+                     'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
+                     'sver'  : '1000',
+                     'ttyid' : '0000001300001'
                  },
     'nicos-pg' :   {
                      'sn'    : '334714378614308',
