@@ -4,9 +4,9 @@ url = 'https://dev-gw-v2.paytg.jp'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
-cert = './cert/D19CF1C348EAB53B.pem'
+cert = './cert/D19CF1C348EAB5AA.pem'
 
-psp_list = ['pay-jp']
+psp_list = ['gmo-mb-m']
 """
 psp_list = [
     'dgft',
@@ -33,7 +33,7 @@ terminal = {
                      'ttyid' : '0000000400001'
                  },
     'ncoms' :    {
-                     'sn'    : '883587303990566',
+                     'sn'    : '711359556720335',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
                      'ttyid' : '0000001200001'
@@ -69,10 +69,10 @@ terminal = {
                      'ttyid' : '0000002000003'
                  },
     'sbps' :     {
-                     'sn'    : '916501470337654',
+                     'sn'    : '440808393041355',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000003600001'
+                     'ttyid' : '0000003200005'
                  },
     'smbc-fs' :  {
                      'sn'    : '045538703227172',
@@ -87,7 +87,7 @@ terminal = {
                      'ttyid' : '0000000900001'
                  },
     'yamato' :   {
-                     'sn'    : '736975652462638',
+                     'sn'    : '358014990049381',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
                      'ttyid' : '0000000700001'
@@ -104,11 +104,17 @@ terminal = {
                      'sver'  : '1000',
                      'ttyid' : '0000001000001'
                  },
-    'nicos-pg' :   {
-                     'sn'    : '334714378614307',
+    'gmo-mb-m' :   {
+                     'sn'    : '751347591905118',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000001400003'
+                     'ttyid' : '0000001300001'
+                 },
+    'nicos-pg' :   {
+                     'sn'    : '334714378614308',
+                     'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
+                     'sver'  : '1000',
+                     'ttyid' : '0000001400004'
                  },
 }
 
