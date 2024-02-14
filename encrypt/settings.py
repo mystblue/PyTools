@@ -6,7 +6,7 @@ seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB5AA.pem'
 
-psp_list = ['gmo-mb-m']
+psp_list = ['gmo-pg']
 """
 psp_list = [
     'dgft',

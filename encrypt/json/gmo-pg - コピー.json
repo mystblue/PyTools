@@ -3,13 +3,9 @@
         "cardNumber": "4111111111111111",
         "cardExpire": "1225",
         "securityCode": "8888",
-        "jpo": "10",
-        "amount": "1000",
         "orderId": "8888aaaaa${date}",
-        "customerId": "V463E6h3ODGHczaEFN0mmP5EP1l1sxya586Ko${10AUTO}",
         "tmpCode1": "tshop00031397",
         "tmpPassword1": "tm2r4du3",
-        "readMethod": "IC",
-        "category": "2"
+        "category": "1"
     }
 ]

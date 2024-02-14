@@ -3,6 +3,7 @@
 import base64
 import datetime
 import json
+import random
 import requests
 import settings
 import urllib.parse
@@ -86,12 +87,17 @@ if __name__ == '__main__':
             if 'customerId' in request_param and '${date}' in request_param['customerId']:
                 request_param['customerId'] = request_param['customerId'].replace('${date}', datetime_str)
             
+            if 'customerId' in request_param and '${10AUTO}' in request_param['customerId']:
+                random_str = random.randrange(1000000000, 9999999999, 1)
+                request_param['customerId'] = request_param['customerId'].replace('${10AUTO}', str(random_str))
+            
             request = create_request_param(term['sn'], term['iv'], request_param)
 
             response = http_connect(term['sn'], term['iv'], request)
             print("\nstatus code = " + str(response.status_code))
             print("\n・response = ")
             print(response.text)
+            print(response.headers)
             
             print_response(term['sn'], term['iv'], response)
             
