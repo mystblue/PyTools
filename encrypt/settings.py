@@ -6,7 +6,10 @@ seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB5AA.pem'
 
-psp_list = ['gmo-pg']
+# 失効した証明書
+#cert = './cert/D19CF1C348EAB7E7.pem'
+
+psp_list = ['yamato']
 """
 psp_list = [
     'dgft',
@@ -25,6 +28,7 @@ psp_list = [
     'sbps',
 ]
 """
+
 terminal = {
     'paygent' :  {
                      'sn'    : '338534947935133',
