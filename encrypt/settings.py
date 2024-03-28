@@ -1,10 +1,10 @@
-url = 'https://stg-trialgw-v2.paytg.jp/'
+url = 'https://10.200.91.8'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
-cert = './cert/D9DAA9555C27F936.pem'
+cert = './cert/D19CF1C348EAB53B.pem'
 
-psp_list = ['yamato']
+psp_list = ['paygent']
 """
 psp_list = [
     'dgft',
@@ -26,7 +26,7 @@ psp_list = [
 
 terminal = {
     'paygent' :  {
-                     'sn'    : '290175366250542',
+                     'sn'    : '900123123456456',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
                      'ttyid' : '0000000400001'
@@ -86,7 +86,7 @@ terminal = {
                      'ttyid' : '0000000900001'
                  },
     'yamato' :   {
-                     'sn'    : '753697787013750',
+                     'sn'    : '736975652462638',
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
                      'ttyid' : '0000000700001'
