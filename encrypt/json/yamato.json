@@ -8,6 +8,7 @@
         "phoneNumber": "09012345678",
         "email": "test@test.com",
         "customerName": "test taro",
+        "address1": "やまと住所",
         "category": "1"
     }
 ]

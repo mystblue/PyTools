@@ -23,6 +23,8 @@ def parse(filename):
     rows = table.findAll("tr")
     for trs in rows:
         for cell in trs:
+            if cell.name == "th":
+                ret = ret + "|" + cell.text
             if cell.name == "td":
                 if len(cell.find_all("p")) > 0:
                     #print(cell.find_all("p")[0].text)
@@ -31,7 +33,7 @@ def parse(filename):
                         ret = ret + p.text.strip() + "<br>"
                     ret = ret[:-4]
                 else:
-                    ret = ret + "|_." + cell.text
+                    ret = ret + "|" + cell.text
         ret += "|\n"
 
     return ret
