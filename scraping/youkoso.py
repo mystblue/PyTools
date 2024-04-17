@@ -50,6 +50,9 @@ def parse(filename):
                         elif item.name == 'br':
                             #ret += "\n"
                             pass
+                        elif item.name == 'em':
+                            #ret += "\n"
+                            ret += "{{" + item.text + "}}"
                         else:
                             print("未知のタグです。" + item.name)
                     else:
