@@ -3,8 +3,11 @@
         "cardNumber": "5111111111111111",
         "cardExpire": "1225",
         "securityCode": "8888",
-        "customerId": "GMOPGtest20240611v2",
+        "customerId": "GMOPGtest20240611v6",
         "cardId": "0",
+        "orderId": "GMOPGtest20240611v9",
+        "tmpCode1": "tshop00031397",
+        "tmpPassword1": "tm2r4du3",
         "category": "4"
     }
 ]

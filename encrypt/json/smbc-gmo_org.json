@@ -6,11 +6,6 @@
         "orderId": "8888aaaaa${date}",
         "tmpCode1": "tshop00000836",
         "tmpPassword1": "7bp1vabv",
-        "amount": "1000",
-        "jpo": "10",
-        "readMethod": "IC",
-        "cardholderName":"TEST TAROJIROU",
-        "customerId": "test26a363268taaaaaaaaatryweyw3282",
-        "category": "3"
+        "category": "1"
     }
 ]
