@@ -1,0 +1,572 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "決済ID",
+                "placeholder": "半角英数字一部記号29桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_\\.]{0,29}$",
+                "validRuleMessage": "半角英数字一部記号29桁以内",
+                "validErrorMessage": "決済IDは半角英数字一部記号29桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-orderId"
+            },
+            {
+                "key": "customerId",
+                "title": "サービス側管理ID",
+                "placeholder": "半角英数字記号50桁以内",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,50}$",
+                "validRuleMessage": "半角英数字記号50桁以内",
+                "validErrorMessage": "サービス側管理IDは半角英数字記号50桁以内入力としてください",
+                "isHidden": true,
+                "mapping": "101-customerId"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "カスタム",
+                "placeholder": "1500Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,1500}$",
+                "validRuleMessage": "1500Byte以内",
+                "validErrorMessage": "カスタムは1500Byte以内入力としてください",
+                "isHidden": true,
+                "bytelen": 1500,
+                "mapping": "101-merchantFree1"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "1 以上 9,999,999 以下",
+                "validErrorMessage": "金額は 1 以上  9,999,999 以下の入力としてください",
+                "defaultValue": "",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～999回以内",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9]{1,2})$",
+                "validRuleMessage": "半角数字2～999回以内",
+                "validErrorMessage": "支払回数は半角数字2～999回以内の入力としてください",
+                "mapping": "101-count"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サービスID",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,40}$",
+                "validRuleMessage": "半角英数字記号40桁以内",
+                "validErrorMessage": "サービスIDは半角英数字記号40桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "orderId",
+                "title": "決済ID"
+            },
+            {
+                "key": "top6",
+                "title": "カード番号上6桁"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号下4桁"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "有効期限月"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限年"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "token",
+                "title": "トークン"
+            },
+            {
+                "key": "tranDate",
+                "title": "取引時間"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "オーソリ売上",
+        "check": false,
+        "dealtype": "102",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "決済ID",
+                "placeholder": "半角英数字一部記号29桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_\\.]{0,29}$",
+                "validRuleMessage": "半角英数字一部記号29桁以内",
+                "validErrorMessage": "決済IDは半角英数字一部記号29桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-orderId"
+            },
+            {
+                "key": "customerId",
+                "title": "サービス側管理ID",
+                "placeholder": "半角英数字記号50桁以内",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,50}$",
+                "validRuleMessage": "半角英数字記号50桁以内",
+                "validErrorMessage": "サービス側管理IDは半角英数字記号50桁以内入力としてください",
+                "isHidden": true,
+                "mapping": "102-customerId"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "カスタム",
+                "placeholder": "1500Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,1500}$",
+                "validRuleMessage": "1500Byte以内",
+                "validErrorMessage": "カスタムは1500Byte以内入力としてください",
+                "isHidden": true,
+                "bytelen": 1500,
+                "mapping": "102-merchantFree1"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "1 以上 9,999,999 以下",
+                "validErrorMessage": "金額は 1 以上  9,999,999 以下の入力としてください",
+                "defaultValue": "",
+                "mapping": "102-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "102-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～999回以内",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9]{1,2})$",
+                "validRuleMessage": "半角数字2～999回以内",
+                "validErrorMessage": "支払回数は半角数字2～999回以内の入力としてください",
+                "mapping": "102-count"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サービスID",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,40}$",
+                "validRuleMessage": "半角英数字記号40桁以内",
+                "validErrorMessage": "サービスIDは半角英数字記号40桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "orderId",
+                "title": "決済ID"
+            },
+            {
+                "key": "top6",
+                "title": "カード番号上6桁"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号下4桁"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "有効期限月"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限年"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "token",
+                "title": "トークン"
+            },
+            {
+                "key": "tranDate",
+                "title": "取引時間"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カードチェック",
+        "check": false,
+        "dealtype": "103",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "決済ID",
+                "placeholder": "半角英数字一部記号29桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_\\.]{0,29}$",
+                "validRuleMessage": "半角英数字一部記号29桁以内",
+                "validErrorMessage": "決済IDは半角英数字一部記号29桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-orderId"
+            },
+            {
+                "key": "customerId",
+                "title": "サービス側管理ID",
+                "placeholder": "半角英数字記号50桁以内",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,50}$",
+                "validRuleMessage": "半角英数字記号50桁以内",
+                "validErrorMessage": "サービス側管理IDは半角英数字記号50桁以内入力としてください",
+                "isHidden": true,
+                "mapping": "103-customerId"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "カスタム",
+                "placeholder": "1500Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,1500}$",
+                "validRuleMessage": "1500Byte以内",
+                "validErrorMessage": "カスタムは1500Byte以内入力としてください",
+                "isHidden": true,
+                "bytelen": 1500,
+                "mapping": "103-merchantFree1"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サービスID",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,40}$",
+                "validRuleMessage": "半角英数字記号40桁以内",
+                "validErrorMessage": "サービスIDは半角英数字記号40桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "orderId",
+                "title": "決済ID"
+            },
+            {
+                "key": "top6",
+                "title": "カード番号上6桁"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号下4桁"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "有効期限月"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限年"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "token",
+                "title": "トークン"
+            },
+            {
+                "key": "tranDate",
+                "title": "取引時間"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "決済ID",
+                "placeholder": "半角英数字一部記号29桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_\\.]{0,29}$",
+                "validRuleMessage": "半角英数字一部記号29桁以内",
+                "validErrorMessage": "決済IDは半角英数字一部記号29桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-orderId"
+            },
+            {
+                "key": "customerId",
+                "title": "サービス側管理ID",
+                "placeholder": "半角英数字記号50桁以内",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,50}$",
+                "validRuleMessage": "半角英数字記号50桁以内",
+                "validErrorMessage": "サービス側管理IDは半角英数字記号50桁以内入力としてください",
+                "isHidden": true,
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "カスタム",
+                "placeholder": "1500Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,1500}$",
+                "validRuleMessage": "1500Byte以内",
+                "validErrorMessage": "カスタムは1500Byte以内入力としてください",
+                "isHidden": true,
+                "bytelen": 1500,
+                "mapping": "104-merchantFree1"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サービスID",
+                "isRequired": false,
+                "validRule": "^[!-~]{1,40}$",
+                "validRuleMessage": "半角英数字記号40桁以内",
+                "validErrorMessage": "サービスIDは半角英数字記号40桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "orderId",
+                "title": "決済ID"
+            },
+            {
+                "key": "top6",
+                "title": "カード番号上6桁"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号下4桁"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "有効期限月"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限年"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "token",
+                "title": "トークン"
+            },
+            {
+                "key": "tranDate",
+                "title": "取引時間"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    }
+]

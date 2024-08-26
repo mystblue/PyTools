@@ -1,0 +1,862 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "顧客ID",
+                "placeholder": "半角英数記号 64 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,64}$",
+                "validRuleMessage": "半角英数記号 64 桁以内",
+                "validErrorMessage": "顧客IDは半角英数記号 64 桁以内の入力としてください",
+                "bytelen": 64,
+                "defaultValue": "",
+                "mapping": "101-customerId"
+            },
+            {
+                "key": "orderId",
+                "title": "購入ID",
+                "placeholder": "半角英数記号 38 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,38}$",
+                "validRuleMessage": "半角英数記号 38 桁以内",
+                "validErrorMessage": "購入IDは半角英数記号 38 桁以内の入力としてください",
+                "bytelen": 38,
+                "defaultValue": "",
+                "mapping": "101-orderId"
+            },
+            {
+                "key": "merchantFree4",
+                "title": "商品ID",
+                "placeholder": "半角英数記号 32 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,32}$",
+                "validRuleMessage": "半角英数記号 32 桁以内",
+                "validErrorMessage": "商品IDは半角英数記号 32 桁以内の入力としてください",
+                "bytelen": 32,
+                "defaultValue": "",
+                "mapping": "101-merchantFree4"
+            },
+            {
+                "key": "productName",
+                "title": "商品名称",
+                "placeholder": "40 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,40}$",
+                "validRuleMessage": "40 Byte以内",
+                "validErrorMessage": "商品名称は40 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 40,
+                "defaultValue": "",
+                "mapping": "101-productName"
+            },
+            {
+                "key": "amount",
+                "title": "金額（税込）(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "2 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[2-9]$|^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{1,6}$",
+                "validRuleMessage": "2 以上 9,999,999 以下",
+                "validErrorMessage": "金額（税込）は2 以上 9,999,999 以下の入力としてください",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "取引区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボ払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な取引区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "分割回数",
+                "placeholder": "2 以上 999 以下",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9]{1,2})$",
+                "validRuleMessage": "半角数字2～999回以内",
+                "validErrorMessage": "分割回数は2 以上 999 以下の入力としてください",
+                "mapping": "101-count"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "自由欄１",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "自由欄１は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "101-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "自由欄２",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "自由欄２は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "101-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "自由欄３",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "自由欄３は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "101-merchantFree3"
+            },
+            {
+                "key": "acntNo2",
+                "title": "請求番号枝番",
+                "placeholder": "半角数字 2 桁以内",
+                "isRequired": false,
+                "validRule": "^([0-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字 2 桁以内",
+                "validErrorMessage": "請求番号枝番は半角数字 2 桁以内の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-acntNo2"
+            },
+            {
+                "key": "acntNo1",
+                "title": "SBPS 顧客情報返却フラグ",
+                "choice": [
+                    {
+                        "title": "SBPS 顧客情報を返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "SBPS 顧客情報を返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "SBPS 顧客情報返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "101-acntNo1"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "クレジットカード情報保存フラグ",
+                "choice": [
+                    {
+                        "title": "クレジットカード情報の登録/更新を行わない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "クレジットカード情報の登録/更新を行う",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "クレジットカード情報保存フラグに選択可能な値以外が指定されています",
+                "defaultValue": "0",
+                "mapping": "101-defaultFlag"
+            },
+            {
+                "key": "seikyuuHoho",
+                "title": "クレジットカードブランド返却フラグ",
+                "choice": [
+                    {
+                        "title": "返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "クレジットカードブランド返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "101-seikyuuHoho"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID+サービスID",
+                "isRequired": false,
+                "validRule": "^[0-9]{8}$",
+                "validRuleMessage": "半角数字8文字",
+                "validErrorMessage": "マーチャントID+サービスIDは半角数字8桁の入力としてください",
+                "mapping": "101-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "processId",
+                "title": "処理SBPS トランザクションID"
+            },
+            {
+                "key": "transactionId",
+                "title": "処理トラッキングID"
+            },
+            {
+                "key": "issurId",
+                "title": "クレジット会社コード"
+            },
+            {
+                "key": "brand",
+                "title": "カード会社ブランドコード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "customerCardId",
+                "title": "処理SBPS 顧客ID"
+            },
+            {
+                "key": "method",
+                "title": "処理SBPS 支払方法管理番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "処理完了日時"
+            },
+            {
+                "key": "authResDate",
+                "title": "レスポンス日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カードチェック",
+        "check": false,
+        "dealtype": "103",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "顧客ID",
+                "placeholder": "半角英数記号 64 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,64}$",
+                "validRuleMessage": "半角英数記号 64 桁以内",
+                "validErrorMessage": "顧客IDは半角英数記号 64 桁以内の入力としてください",
+                "bytelen": 64,
+                "defaultValue": "",
+                "mapping": "103-customerId"
+            },
+            {
+                "key": "orderId",
+                "title": "購入ID",
+                "placeholder": "半角英数記号 38 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,38}$",
+                "validRuleMessage": "半角英数記号 38 桁以内",
+                "validErrorMessage": "購入IDは半角英数記号 38 桁以内の入力としてください",
+                "bytelen": 38,
+                "defaultValue": "",
+                "mapping": "103-orderId"
+            },
+            {
+                "key": "merchantFree4",
+                "title": "商品ID",
+                "placeholder": "半角英数記号 32 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,32}$",
+                "validRuleMessage": "半角英数記号 32 桁以内",
+                "validErrorMessage": "商品IDは半角英数記号 32 桁以内の入力としてください",
+                "bytelen": 32,
+                "defaultValue": "",
+                "mapping": "103-merchantFree4"
+            },
+            {
+                "key": "productName",
+                "title": "商品名称",
+                "placeholder": "40 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,40}$",
+                "validRuleMessage": "40 Byte以内",
+                "validErrorMessage": "商品名称は40 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 40,
+                "defaultValue": "",
+                "mapping": "103-productName"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "自由欄１",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "自由欄１は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "103-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "自由欄２",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "自由欄２は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "103-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "自由欄３",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "自由欄３は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "103-merchantFree3"
+            },
+            {
+                "key": "acntNo2",
+                "title": "請求番号枝番",
+                "placeholder": "半角数字 2 桁以内",
+                "isRequired": false,
+                "validRule": "^([0-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字 2 桁以内",
+                "validErrorMessage": "請求番号枝番は半角数字 2 桁以内の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-acntNo2"
+            },
+            {
+                "key": "acntNo1",
+                "title": "SBPS 顧客情報返却フラグ",
+                "choice": [
+                    {
+                        "title": "SBPS 顧客情報を返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "SBPS 顧客情報を返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "SBPS 顧客情報返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "103-acntNo1"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "クレジットカード情報保存フラグ",
+                "choice": [
+                    {
+                        "title": "クレジットカード情報の登録/更新を行わない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "クレジットカード情報の登録/更新を行う",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "クレジットカード情報保存フラグに選択可能な値以外が指定されています",
+                "defaultValue": "0",
+                "mapping": "103-defaultFlag"
+            },
+            {
+                "key": "seikyuuHoho",
+                "title": "クレジットカードブランド返却フラグ",
+                "choice": [
+                    {
+                        "title": "返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "クレジットカードブランド返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "103-seikyuuHoho"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID+サービスID",
+                "isRequired": false,
+                "validRule": "^[0-9]{8}$",
+                "validRuleMessage": "半角数字8文字",
+                "validErrorMessage": "マーチャントID+サービスIDは半角数字8桁の入力としてください",
+                "mapping": "103-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "processId",
+                "title": "処理SBPS トランザクションID"
+            },
+            {
+                "key": "transactionId",
+                "title": "処理トラッキングID"
+            },
+            {
+                "key": "issurId",
+                "title": "クレジット会社コード"
+            },
+            {
+                "key": "brand",
+                "title": "カード会社ブランドコード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "customerCardId",
+                "title": "処理SBPS 顧客ID"
+            },
+            {
+                "key": "method",
+                "title": "処理SBPS 支払方法管理番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "処理完了日時"
+            },
+            {
+                "key": "authResDate",
+                "title": "レスポンス日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "顧客ID",
+                "placeholder": "半角英数記号 64 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,64}$",
+                "validRuleMessage": "半角英数記号 64 桁以内",
+                "validErrorMessage": "顧客IDは半角英数記号 64 桁以内の入力としてください",
+                "bytelen": 64,
+                "defaultValue": "",
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "備考欄１",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "備考欄１は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "104-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "備考欄２",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "備考欄２は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "104-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "備考欄３",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "備考欄３は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "104-merchantFree3"
+            },
+            {
+                "key": "acntNo1",
+                "title": "SBPS 顧客情報返却フラグ",
+                "choice": [
+                    {
+                        "title": "SBPS 顧客情報を返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "SBPS 顧客情報を返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "SBPS 顧客情報返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "104-acntNo1"
+            },
+            {
+                "key": "seikyuuHoho",
+                "title": "クレジットカードブランド返却フラグ",
+                "choice": [
+                    {
+                        "title": "返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "クレジットカードブランド返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "104-seikyuuHoho"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID+サービスID",
+                "isRequired": false,
+                "validRule": "^[0-9]{8}$",
+                "validRuleMessage": "半角数字8文字",
+                "validErrorMessage": "マーチャントID+サービスIDは半角数字8桁の入力としてください",
+                "mapping": "104-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "processId",
+                "title": "処理SBPS トランザクションID"
+            },
+            {
+                "key": "brand",
+                "title": "カード会社ブランドコード"
+            },
+            {
+                "key": "customerCardId",
+                "title": "処理SBPS 顧客ID"
+            },
+            {
+                "key": "method",
+                "title": "処理SBPS 支払方法管理番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "処理完了日時"
+            },
+            {
+                "key": "authResDate",
+                "title": "レスポンス日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり更新",
+        "check": false,
+        "dealtype": "105",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "顧客ID",
+                "placeholder": "半角英数記号 64 桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9a-zA-Z\\*\\-_@ \\.]{1,64}$",
+                "validRuleMessage": "半角英数記号 64 桁以内",
+                "validErrorMessage": "顧客IDは半角英数記号 64 桁以内の入力としてください",
+                "bytelen": 64,
+                "defaultValue": "",
+                "mapping": "105-customerId"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "備考欄１",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "備考欄１は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "105-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "備考欄２",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "備考欄２は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "105-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "備考欄３",
+                "placeholder": "20 Byte以内",
+                "isRequired": false,
+                "validRule": ".{0,20}$",
+                "validRuleMessage": "20 Byte以内",
+                "validErrorMessage": "備考欄３は20 Byte以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 20,
+                "defaultValue": "",
+                "mapping": "105-merchantFree3"
+            },
+            {
+                "key": "acntNo1",
+                "title": "SBPS 顧客情報返却フラグ",
+                "choice": [
+                    {
+                        "title": "SBPS 顧客情報を返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "SBPS 顧客情報を返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "SBPS 顧客情報返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "105-acntNo1"
+            },
+            {
+                "key": "seikyuuHoho",
+                "title": "クレジットカードブランド返却フラグ",
+                "choice": [
+                    {
+                        "title": "返却しない",
+                        "value": "0"
+                    },
+                    {
+                        "title": "返却する",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "クレジットカードブランド返却フラグに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "0",
+                "mapping": "105-seikyuuHoho"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID+サービスID",
+                "isRequired": false,
+                "validRule": "^[0-9]{8}$",
+                "validRuleMessage": "半角数字8文字",
+                "validErrorMessage": "マーチャントID+サービスIDは半角数字8桁の入力としてください",
+                "mapping": "105-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "processId",
+                "title": "処理SBPS トランザクションID"
+            },
+            {
+                "key": "brand",
+                "title": "カード会社ブランドコード"
+            },
+            {
+                "key": "customerCardId",
+                "title": "処理SBPS 顧客ID"
+            },
+            {
+                "key": "method",
+                "title": "処理SBPS 支払方法管理番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "処理完了日時"
+            },
+            {
+                "key": "authResDate",
+                "title": "レスポンス日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    }
+]

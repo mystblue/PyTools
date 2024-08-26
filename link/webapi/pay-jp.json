@@ -1,0 +1,648 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "amount",
+                "title": "支払い額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "50 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[5-9][0-9]$|^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9]{3}$|^[1-9][0-9]{2,6}$",
+                "validRuleMessage": "50以上9,999,999以下",
+                "validErrorMessage": "支払い額は 50 以上  9,999,999 以下の入力としてください",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10)$",
+                "validRuleMessage": "一括払いのみ",
+                "validErrorMessage": "支払区分は10を指定してください",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "seikyuuKaishiYm",
+                "title": "認証期間(デフォルト＝7日)",
+                "placeholder": "半角数字1～60日以内",
+                "isRequired": false,
+                "validRule": "^([1-9]|[1-5][0-9]|60)$",
+                "validRuleMessage": "半角数字1～60以内",
+                "validErrorMessage": "認証期間は半角数字1～60日以内の入力としてください",
+                "isHidden": true,
+                "defaultValue": "7",
+                "mapping": "101-seikyuuKaishiYm"
+            },
+            {
+                "key": "productName",
+                "title": "概要",
+                "placeholder": "255文字以内",
+                "isRequired": false,
+                "validRule": ".{0,255}$",
+                "validRuleMessage": "255文字以内",
+                "validErrorMessage": "概要は255文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "101-productName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "パブリックキー",
+                "isRequired": false,
+                "validRule": "^([a-z0-9_]{32}|[a-z0-9_]{64})$",
+                "validRuleMessage": "半角英数字(アンダースコア含む)32文字または64文字(英字は小文字のみ)",
+                "validErrorMessage": "パブリックキーは半角英数字(アンダースコア含む)32文字または64文字(英字は小文字のみ)の入力としてください",
+                "mapping": "101-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "issurName",
+                "title": "エラー全文"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "エラー種別"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "エラー詳細"
+            },
+            {
+                "key": "formatType",
+                "title": "エラー対象項目"
+            },
+            {
+                "key": "reqId",
+                "title": "cardID"
+            },
+            {
+                "key": "processId",
+                "title": "chargeID"
+            },
+            {
+                "key": "uriKaiageYmd",
+                "title": "カード作成時のタイムスタンプ"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号の下四桁"
+            },
+            {
+                "key": "tel",
+                "title": "有効期限月"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限年"
+            },
+            {
+                "key": "brand",
+                "title": "カードブランド名"
+            },
+            {
+                "key": "processPass",
+                "title": "トークン生成時のcvc値チェック結果（この結果は決済に影響しません）"
+            },
+            {
+                "key": "numOfCards",
+                "title": "クレジットカード番号に紐づく値"
+            },
+            {
+                "key": "authReqDate",
+                "title": "この支払い作成時のUTCタイムスタンプ"
+            },
+            {
+                "key": "payTimes",
+                "title": "支払い額"
+            },
+            {
+                "key": "reqBrand",
+                "title": "3文字のISOコード"
+            },
+            {
+                "key": "resultCd",
+                "title": "認証処理が成功しているかどうか"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "認証状態が自動的に失効される日時のタイムスタンプ"
+            },
+            {
+                "key": "forward",
+                "title": "支払い処理を確定しているかどうか"
+            },
+            {
+                "key": "tranDate",
+                "title": "支払い処理確定時のUTCタイムスタンプ"
+            },
+            {
+                "key": "nameKanji",
+                "title": "概要"
+            },
+            {
+                "key": "acqId",
+                "title": "失敗した支払いのエラーコード"
+            },
+            {
+                "key": "acqName",
+                "title": "失敗した支払いの説明"
+            },
+            {
+                "key": "mcSecCd",
+                "title": "決済手数料率"
+            },
+            {
+                "key": "top6",
+                "title": "本番環境かどうか"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "オーソリ売上",
+        "check": false,
+        "dealtype": "102",
+        "request":
+        [
+            {
+                "key": "amount",
+                "title": "支払い額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "50 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[5-9][0-9]$|^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9]{3}$|^[1-9][0-9]{2,6}$",
+                "validRuleMessage": "50以上9,999,999以下",
+                "validErrorMessage": "支払い額は 50 以上  9,999,999 以下の入力としてください",
+                "mapping": "102-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10)$",
+                "validRuleMessage": "一括払いのみ",
+                "validErrorMessage": "支払区分は10を指定してください",
+                "defaultValue": "10",
+                "mapping": "102-jpo"
+            },
+            {
+                "key": "productName",
+                "title": "概要",
+                "placeholder": "255文字以内",
+                "isRequired": false,
+                "validRule": ".{0,255}$",
+                "validRuleMessage": "255文字以内",
+                "validErrorMessage": "概要は255文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "102-productName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "パブリックキー",
+                "isRequired": false,
+                "validRule": "^([a-z0-9_]{32}|[a-z0-9_]{64})$",
+                "validRuleMessage": "半角英数字(アンダースコア含む)32文字または64文字(英字は小文字のみ)",
+                "validErrorMessage": "パブリックキーは半角英数字(アンダースコア含む)32文字または64文字(英字は小文字のみ)の入力としてください",
+                "mapping": "102-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "issurName",
+                "title": "エラー全文"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "エラー種別"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "エラー詳細"
+            },
+            {
+                "key": "formatType",
+                "title": "エラー対象項目"
+            },
+            {
+                "key": "reqId",
+                "title": "cardID"
+            },
+            {
+                "key": "processId",
+                "title": "chargeID"
+            },
+            {
+                "key": "uriKaiageYmd",
+                "title": "カード作成時のタイムスタンプ"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号の下四桁"
+            },
+            {
+                "key": "tel",
+                "title": "有効期限月"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限年"
+            },
+            {
+                "key": "brand",
+                "title": "カードブランド名"
+            },
+            {
+                "key": "processPass",
+                "title": "トークン生成時のcvc値チェック結果（この結果は決済に影響しません）"
+            },
+            {
+                "key": "numOfCards",
+                "title": "クレジットカード番号に紐づく値"
+            },
+            {
+                "key": "authReqDate",
+                "title": "この支払い作成時のUTCタイムスタンプ"
+            },
+            {
+                "key": "payTimes",
+                "title": "支払い額"
+            },
+            {
+                "key": "reqBrand",
+                "title": "3文字のISOコード"
+            },
+            {
+                "key": "resultCd",
+                "title": "認証処理が成功しているかどうか"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "認証状態が自動的に失効される日時のタイムスタンプ"
+            },
+            {
+                "key": "forward",
+                "title": "支払い処理を確定しているかどうか"
+            },
+            {
+                "key": "tranDate",
+                "title": "支払い処理確定時のUTCタイムスタンプ"
+            },
+            {
+                "key": "nameKanji",
+                "title": "概要"
+            },
+            {
+                "key": "acqId",
+                "title": "失敗した支払いのエラーコード"
+            },
+            {
+                "key": "acqName",
+                "title": "失敗した支払いの説明"
+            },
+            {
+                "key": "mcSecCd",
+                "title": "決済手数料率"
+            },
+            {
+                "key": "top6",
+                "title": "本番環境かどうか"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "acntNo1",
+                "title": "都道府県",
+                "placeholder": "4文字以内",
+                "isRequired": false,
+                "validRule": ".{0,4}$",
+                "validRuleMessage": "4文字以内",
+                "validErrorMessage": "都道府県は4文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-acntNo1"
+            },
+            {
+                "key": "acntNo2",
+                "title": "市区町村",
+                "placeholder": "50文字以内",
+                "isRequired": false,
+                "validRule": ".{0,50}$",
+                "validRuleMessage": "50文字以内",
+                "validErrorMessage": "市区町村は50文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-acntNo2"
+            },
+            {
+                "key": "address1",
+                "title": "番地など",
+                "placeholder": "50文字以内",
+                "isRequired": false,
+                "validRule": ".{0,50}$",
+                "validRuleMessage": "50文字以内",
+                "validErrorMessage": "番地などは50文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-address1"
+            },
+            {
+                "key": "address2",
+                "title": "建物名など",
+                "placeholder": "50文字以内",
+                "isRequired": false,
+                "validRule": ".{0,50}$",
+                "validRuleMessage": "50文字以内",
+                "validErrorMessage": "建物名などは50文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-address2"
+            },
+            {
+                "key": "postal",
+                "title": "郵便番号",
+                "placeholder": "半角数字3桁-4桁 または 半角数字7桁(ハイフンなし)",
+                "isRequired": false,
+                "validRule": "^[0-9]{3}-?[0-9]{4}$",
+                "validRuleMessage": "半角数字3桁-4桁 または 半角数字7桁(ハイフンなし)",
+                "validErrorMessage": "郵便番号は半角数字3桁-4桁 または 半角数字7桁(ハイフンなし)の入力としてください",
+                "isHidden": true,
+                "mapping": "104-postal"
+            },
+            {
+                "key": "dateBirth",
+                "title": "ISOコード(2桁)",
+                "placeholder": "半角英字2桁",
+                "isRequired": false,
+                "validRule": "^[A-Za-z]{2}$",
+                "validRuleMessage": "半角英字2桁",
+                "validErrorMessage": "ISOコード(2桁)は半角英字2桁の入力としてください",
+                "isHidden": true,
+                "defaultValue": "JP",
+                "mapping": "104-dateBirth"
+            },
+            {
+                "key": "customerName",
+                "title": "カード保有者名",
+                "placeholder": "50文字以内",
+                "isRequired": false,
+                "validRule": ".{0,50}$",
+                "validRuleMessage": "50文字以内",
+                "validErrorMessage": "カード保有者名は50文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-customerName"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客ID",
+                "placeholder": "半角英数字(ハイフン、アンダースコア含む)100文字以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9\\-_]{0,100}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア含む)100文字以内",
+                "validErrorMessage": "顧客IDは半角英数字(ハイフン、アンダースコア含む)100文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "email",
+                "title": "メールアドレス",
+                "placeholder": "半角英数字記号50桁以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9\\-_.=\\(\\)\\/:;?!\\*'@\\$\\+%]{0,50}$",
+                "validRuleMessage": "半角英数字記号50桁以内",
+                "validErrorMessage": "メールアドレスは半角英数字記号50桁以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-email"
+            },
+            {
+                "key": "productName",
+                "title": "概要",
+                "placeholder": "255文字以内",
+                "isRequired": false,
+                "validRule": ".{0,255}$",
+                "validRuleMessage": "255文字以内",
+                "validErrorMessage": "概要は255文字以内の入力としてください",
+                "isHidden": true,
+                "mapping": "104-productName"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "メイン利用のカード",
+                "choice": [
+                    {
+                        "title": "設定する",
+                        "value": "true"
+                    },
+                    {
+                        "title": "設定しない",
+                        "value": "false"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(true|false)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "メイン利用のカードに選択可能な値以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "false",
+                "mapping": "104-defaultFlag"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "パブリックキー",
+                "isRequired": false,
+                "validRule": "^([a-z0-9_]{32}|[a-z0-9_]{64})$",
+                "validRuleMessage": "半角英数字(アンダースコア含む)32文字または64文字(英字は小文字のみ)",
+                "validErrorMessage": "パブリックキーは半角英数字(アンダースコア含む)32文字または64文字(英字は小文字のみ)の入力としてください",
+                "mapping": "104-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "issurName",
+                "title": "エラー全文"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "エラー種別"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "エラー詳細"
+            },
+            {
+                "key": "formatType",
+                "title": "エラー対象項目"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客ID"
+            },
+            {
+                "key": "reqId",
+                "title": "cardID"
+            },
+            {
+                "key": "uriKaiageYmd",
+                "title": "カード作成時のタイムスタンプ"
+            },
+            {
+                "key": "mcCardMei",
+                "title": "カード保有者名"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号の下四桁"
+            },
+            {
+                "key": "tel",
+                "title": "有効期限月"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限年"
+            },
+            {
+                "key": "brand",
+                "title": "カードブランド名"
+            },
+            {
+                "key": "processPass",
+                "title": "トークン生成時のcvc値チェック結果（この結果は決済に影響しません）"
+            },
+            {
+                "key": "numOfCards",
+                "title": "クレジットカード番号に紐づく値"
+            },
+            {
+                "key": "issurClass",
+                "title": "2桁のISOコード"
+            },
+            {
+                "key": "nameKanji",
+                "title": "概要"
+            },
+            {
+                "key": "zip",
+                "title": "郵便番号"
+            },
+            {
+                "key": "checkString",
+                "title": "address_zipの値のチェック結果（この結果は決済に影響しません）"
+            },
+            {
+                "key": "authResDate",
+                "title": "この顧客作成時のUTCタイムスタンプ"
+            },
+            {
+                "key": "email",
+                "title": "メールアドレス"
+            },
+            {
+                "key": "top6",
+                "title": "本番環境かどうか"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    }
+]
