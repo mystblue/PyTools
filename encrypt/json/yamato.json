@@ -9,6 +9,8 @@
         "email": "test@test.com",
         "customerName": "test taro",
         "address1": "やまと住所",
-        "category": "1"
+        "jpo": "10",
+        "amount": "1000",
+        "category": "2"
     }
 ]

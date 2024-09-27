@@ -1,0 +1,1824 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字6～32文字以内入力",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{6,32}$",
+                "validRuleMessage": "半角英数字6～32文字以内入力",
+                "validErrorMessage": "会員IDは半角英数字6～32文字以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-customerId"
+            },
+            {
+                "key": "customerPass",
+                "title": "会員パスワード",
+                "placeholder": "半角英数字6～12文字以内入力",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{6,12}$",
+                "validRuleMessage": "半角英数字6～12文字以内入力",
+                "validErrorMessage": "会員パスワードは半角英数字6～12文字以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-customerPass"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "1 以上 9,999,999 以下",
+                "validErrorMessage": "金額は1 以上 9,999,999 以下としてください",
+                "defaultValue": "",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "支払区分は10/21/61/80のいずれかを指定してください",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～84回以内入力",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-7][0-9]|8[0-4])$",
+                "validRuleMessage": "半角数字2～84回以内入力",
+                "validErrorMessage": "支払回数は半角数字2～84回以内の入力としてください",
+                "mapping": "101-count"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域1は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "101-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域2は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "101-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域3は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "101-merchantFree3"
+            },
+            {
+                "key": "kanaSei",
+                "title": "認証アシスト カナ氏名（姓）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（姓）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-kanaSei"
+            },
+            {
+                "key": "kanaMei",
+                "title": "認証アシスト カナ氏名（名）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（名）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-kanaMei"
+            },
+            {
+                "key": "birthDay",
+                "title": "認証アシスト 生月日",
+                "placeholder": "半角数字4桁(MMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁(MMDD)",
+                "validErrorMessage": "生月日は数字4桁(MMDD)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-birthDay"
+            },
+            {
+                "key": "telNo",
+                "title": "認証アシスト 電話番号下4桁",
+                "placeholder": "半角数字4桁",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁",
+                "validErrorMessage": "電話番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-telNo"
+            },
+            {
+                "key": "sex",
+                "title": "認証アシスト 性別",
+                "choice": [
+                    {
+                        "title": "男性",
+                        "value": "M"
+                    },
+                    {
+                        "title": "女性",
+                        "value": "F"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(M|F)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "性別はM/Fのいずれかを指定してください",
+                "isHidden": true,
+                "defaultValue": "M",
+                "mapping": "101-sex"
+            },
+            {
+                "key": "birthYear",
+                "title": "認証アシスト 誕生年",
+                "placeholder": "数字4桁(YYYY)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "数字4桁(YYYY)",
+                "validErrorMessage": "誕生年は数字4桁(YYYY)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-birthYear"
+            },
+            {
+                "key": "postal",
+                "title": "認証アシスト 郵便番号",
+                "placeholder": "数字7桁ハイフンなし",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "数字7桁ハイフンなし",
+                "validErrorMessage": "郵便番号は数字7桁ハイフンなし入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-postal"
+            },
+            {
+                "key": "acntNo1",
+                "title": "認証アシスト 銀行口座番号上4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号上4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-acntNo1"
+            },
+            {
+                "key": "acntNo2",
+                "title": "認証アシスト 銀行口座番号下4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-acntNo2"
+            },
+            {
+                "key": "customerName",
+                "title": "認証アシスト カード名義",
+                "placeholder": "半角英字記号26文字以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{0,26}$",
+                "validRuleMessage": "半角英字記号26文字以内",
+                "validErrorMessage": "カード名義は半角英字記号26文字以内入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-customerName"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号",
+                "placeholder": "半角数字7文字固定",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "半角数字7文字固定",
+                "validErrorMessage": "処理番号は半角数字7文字固定入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "101-orderId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,8}$",
+                "validRuleMessage": "半角数字8桁以内",
+                "validErrorMessage": "マーチャントIDは半角数字8桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "店舗コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,4}$",
+                "validRuleMessage": "半角数字4桁以内",
+                "validErrorMessage": "店舗コードは半角数字4桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-tmpCode1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "処理結果コード"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号"
+            },
+            {
+                "key": "processId",
+                "title": "プロセスID"
+            },
+            {
+                "key": "processPass",
+                "title": "プロセスパスワード"
+            },
+            {
+                "key": "cardTypeMsg",
+                "title": "会員ID"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3"
+            },
+            {
+                "key": "mcSecCd",
+                "title": "セキュリティコード 認証結果"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "カナ氏名（姓）認証結果"
+            },
+            {
+                "key": "mcKanaMei",
+                "title": "カナ氏名（名）認証結果"
+            },
+            {
+                "key": "mcBirthDay",
+                "title": "生月日 認証結果"
+            },
+            {
+                "key": "mcTelNo",
+                "title": "電話番号下4桁 認証結果"
+            },
+            {
+                "key": "mcSex",
+                "title": "性別 認証結果"
+            },
+            {
+                "key": "mcBirthYear",
+                "title": "誕生年 認証結果"
+            },
+            {
+                "key": "mcPostal",
+                "title": "郵便番号 認証結果"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "銀行口座番号上4桁 認証結果"
+            },
+            {
+                "key": "mcAcntNo2",
+                "title": "銀行口座番号下4桁 認証結果"
+            },
+            {
+                "key": "mcCardMei",
+                "title": "カード名義 認証結果"
+            },
+            {
+                "key": "transactionId",
+                "title": "処理通番"
+            },
+            {
+                "key": "acqId",
+                "title": "カード会社コード"
+            },
+            {
+                "key": "cardholderName",
+                "title": "カードホルダーネーム"
+            }
+        ]
+    },
+    {
+        "key": "オーソリ売上",
+        "check": false,
+        "dealtype": "102",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字6～32文字以内入力",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{6,32}$",
+                "validRuleMessage": "半角英数字6～32文字以内入力",
+                "validErrorMessage": "会員IDは半角英数字6～32文字以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-customerId"
+            },
+            {
+                "key": "customerPass",
+                "title": "会員パスワード",
+                "placeholder": "半角英数字6～12文字以内入力",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{6,12}$",
+                "validRuleMessage": "半角英数字6～12文字以内入力",
+                "validErrorMessage": "会員パスワードは半角英数字6～12文字以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-customerPass"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "1 以上 9,999,999 以下",
+                "validErrorMessage": "金額は1 以上 9,999,999 以下としてください",
+                "defaultValue": "",
+                "mapping": "102-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払い区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "102-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～84回以内入力",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-7][0-9]|8[0-4])$",
+                "validErrorMessage": "支払回数は半角数字2～84回以内の入力としてください",
+                "mapping": "102-count"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域1は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "102-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域2は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "102-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域3は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "102-merchantFree3"
+            },
+            {
+                "key": "kanaSei",
+                "title": "認証アシスト カナ氏名（姓）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（姓）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-kanaSei"
+            },
+            {
+                "key": "kanaMei",
+                "title": "認証アシスト カナ氏名（名）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（名）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-kanaMei"
+            },
+            {
+                "key": "birthDay",
+                "title": "認証アシスト 生月日",
+                "placeholder": "半角数字4桁(MMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁(MMDD)",
+                "validErrorMessage": "生月日は数字4桁(MMDD)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-birthDay"
+            },
+            {
+                "key": "telNo",
+                "title": "認証アシスト 電話番号下4桁",
+                "placeholder": "半角数字4桁",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁",
+                "validErrorMessage": "電話番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-telNo"
+            },
+            {
+                "key": "sex",
+                "title": "認証アシスト 性別",
+                "choice": [
+                    {
+                        "title": "男性",
+                        "value": "M"
+                    },
+                    {
+                        "title": "女性",
+                        "value": "F"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(M|F)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "性別はM/Fのいずれかを指定してください",
+                "isHidden": true,
+                "defaultValue": "M",
+                "mapping": "102-sex"
+            },
+            {
+                "key": "birthYear",
+                "title": "認証アシスト 誕生年",
+                "placeholder": "数字4桁(YYYY)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "数字4桁(YYYY)",
+                "validErrorMessage": "誕生年は数字4桁(YYYY)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-birthYear"
+            },
+            {
+                "key": "postal",
+                "title": "認証アシスト 郵便番号",
+                "placeholder": "数字7桁ハイフンなし",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "数字7桁ハイフンなし",
+                "validErrorMessage": "郵便番号は数字7桁ハイフンなし入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-postal"
+            },
+            {
+                "key": "acntNo1",
+                "title": "認証アシスト 銀行口座番号上4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号上4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-acntNo1"
+            },
+            {
+                "key": "acntNo2",
+                "title": "認証アシスト 銀行口座番号下4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-acntNo2"
+            },
+            {
+                "key": "customerName",
+                "title": "認証アシスト カード名義",
+                "placeholder": "半角英字記号26文字以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{0,26}$",
+                "validRuleMessage": "半角英字記号26文字以内",
+                "validErrorMessage": "カード名義は半角英字記号26文字以内入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-customerName"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号",
+                "placeholder": "半角数字7文字固定",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "半角数字7文字固定",
+                "validErrorMessage": "処理番号は半角数字7文字固定入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "102-orderId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,8}$",
+                "validRuleMessage": "半角数字8桁以内",
+                "validErrorMessage": "マーチャントIDは半角数字8桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "店舗コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,4}$",
+                "validRuleMessage": "半角数字4桁以内入力としてください",
+                "validErrorMessage": "店舗コードは半角数字4桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-tmpCode1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "処理結果コード"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号"
+            },
+            {
+                "key": "processId",
+                "title": "プロセスID"
+            },
+            {
+                "key": "processPass",
+                "title": "プロセスパスワード"
+            },
+            {
+                "key": "cardTypeMsg",
+                "title": "会員ID"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3"
+            },
+            {
+                "key": "mcSecCd",
+                "title": "セキュリティコード 認証結果"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "カナ氏名（姓）認証結果"
+            },
+            {
+                "key": "mcKanaMei",
+                "title": "カナ氏名（名）認証結果"
+            },
+            {
+                "key": "mcBirthDay",
+                "title": "生月日 認証結果"
+            },
+            {
+                "key": "mcTelNo",
+                "title": "電話番号下4桁 認証結果"
+            },
+            {
+                "key": "mcSex",
+                "title": "性別 認証結果"
+            },
+            {
+                "key": "mcBirthYear",
+                "title": "誕生年 認証結果"
+            },
+            {
+                "key": "mcPostal",
+                "title": "郵便番号 認証結果"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "銀行口座番号上4桁 認証結果"
+            },
+            {
+                "key": "mcAcntNo2",
+                "title": "銀行口座番号下4桁 認証結果"
+            },
+            {
+                "key": "mcCardMei",
+                "title": "カード名義 認証結果"
+            },
+            {
+                "key": "transactionId",
+                "title": "処理通番"
+            },
+            {
+                "key": "acqId",
+                "title": "カード会社コード"
+            },
+            {
+                "key": "cardholderName",
+                "title": "カードホルダーネーム"
+            }
+        ]
+    },
+    {
+        "key": "カードチェック",
+        "check": false,
+        "dealtype": "103",
+        "request":
+        [
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域1は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "103-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域2は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "103-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域3は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "103-merchantFree3"
+            },
+            {
+                "key": "kanaSei",
+                "title": "認証アシスト カナ氏名（姓）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（姓）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-kanaSei"
+            },
+            {
+                "key": "kanaMei",
+                "title": "認証アシスト カナ氏名（名）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（名）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-kanaMei"
+            },
+            {
+                "key": "birthDay",
+                "title": "認証アシスト 生月日",
+                "placeholder": "半角数字4桁(MMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁(MMDD)",
+                "validErrorMessage": "生月日は数字4桁(MMDD)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-birthDay"
+            },
+            {
+                "key": "telNo",
+                "title": "認証アシスト 電話番号下4桁",
+                "placeholder": "半角数字4桁",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁",
+                "validErrorMessage": "電話番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-telNo"
+            },
+            {
+                "key": "sex",
+                "title": "認証アシスト 性別",
+                "choice": [
+                    {
+                        "title": "男性",
+                        "value": "M"
+                    },
+                    {
+                        "title": "女性",
+                        "value": "F"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(M|F)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "性別はM/Fのいずれかを指定してください",
+                "isHidden": true,
+                "defaultValue": "M",
+                "mapping": "103-sex"
+            },
+            {
+                "key": "birthYear",
+                "title": "認証アシスト 誕生年",
+                "placeholder": "数字4桁(YYYY)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "数字4桁(YYYY)",
+                "validErrorMessage": "誕生年は数字4桁(YYYY)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-birthYear"
+            },
+            {
+                "key": "postal",
+                "title": "認証アシスト 郵便番号",
+                "placeholder": "数字7桁ハイフンなし",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "数字7桁ハイフンなし",
+                "validErrorMessage": "郵便番号は数字7桁ハイフンなし入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-postal"
+            },
+            {
+                "key": "acntNo1",
+                "title": "認証アシスト 銀行口座番号上4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号上4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-acntNo1"
+            },
+            {
+                "key": "acntNo2",
+                "title": "認証アシスト 銀行口座番号下4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-acntNo2"
+            },
+            {
+                "key": "customerName",
+                "title": "認証アシスト カード名義",
+                "placeholder": "半角英字記号26文字以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{0,26}$",
+                "validRuleMessage": "半角英字記号26文字以内",
+                "validErrorMessage": "カード名義は半角英字記号26文字以内入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-customerName"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号",
+                "placeholder": "半角数字7文字固定",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "半角数字7文字固定",
+                "validErrorMessage": "処理番号は半角数字7文字固定入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "103-orderId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,8}$",
+                "validRuleMessage": "半角数字8桁以内",
+                "validErrorMessage": "マーチャントIDは半角数字8桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "店舗コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,4}$",
+                "validRuleMessage": "半角数字4桁以内入力としてください",
+                "validErrorMessage": "店舗コードは半角数字4桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-tmpCode1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "処理結果コード"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号"
+            },
+            {
+                "key": "processId",
+                "title": "プロセスID"
+            },
+            {
+                "key": "processPass",
+                "title": "プロセスパスワード"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3"
+            },
+            {
+                "key": "mcSecCd",
+                "title": "セキュリティコード 認証結果"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "カナ氏名（姓）認証結果"
+            },
+            {
+                "key": "mcKanaMei",
+                "title": "カナ氏名（名）認証結果"
+            },
+            {
+                "key": "mcBirthDay",
+                "title": "生月日 認証結果"
+            },
+            {
+                "key": "mcTelNo",
+                "title": "電話番号下4桁 認証結果"
+            },
+            {
+                "key": "mcSex",
+                "title": "性別 認証結果"
+            },
+            {
+                "key": "mcBirthYear",
+                "title": "誕生年 認証結果"
+            },
+            {
+                "key": "mcPostal",
+                "title": "郵便番号 認証結果"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "銀行口座番号上4桁 認証結果"
+            },
+            {
+                "key": "mcAcntNo2",
+                "title": "銀行口座番号下4桁 認証結果"
+            },
+            {
+                "key": "mcCardMei",
+                "title": "カード名義 認証結果"
+            },
+            {
+                "key": "transactionId",
+                "title": "処理通番"
+            },
+            {
+                "key": "acqId",
+                "title": "カード会社コード"
+            },
+            {
+                "key": "cardholderName",
+                "title": "カードホルダーネーム"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字6～32文字以内入力",
+                "validRule": "^[A-Za-z0-9]{6,32}$",
+                "validRuleMessage": "半角英数字6～32文字以内入力",
+                "validErrorMessage": "会員IDは半角英数字6～32文字以内入力としてください",
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "customerPass",
+                "title": "会員パスワード",
+                "placeholder": "半角英数字6～12文字以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9]{6,12}$",
+                "validRuleMessage": "半角英数字6～12文字以内入力",
+                "validErrorMessage": "会員パスワードは半角英数字6～12文字以内入力としてください",
+                "mapping": "104-customerPass"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "洗替使用区分",
+                "choice": [
+                    {
+                        "title": "要",
+                        "value": "1"
+                    },
+                    {
+                        "title": "不要",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な洗替使用区分以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "1",
+                "mapping": "104-defaultFlag"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域1は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "104-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域2は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "104-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域3は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "104-merchantFree3"
+            },
+            {
+                "key": "kanaSei",
+                "title": "認証アシスト カナ氏名（姓）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（姓）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-kanaSei"
+            },
+            {
+                "key": "kanaMei",
+                "title": "認証アシスト カナ氏名（名）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（名）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-kanaMei"
+            },
+            {
+                "key": "birthDay",
+                "title": "認証アシスト 生月日",
+                "placeholder": "半角数字4桁(MMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁(MMDD)",
+                "validErrorMessage": "生月日は数字4桁(MMDD)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-birthDay"
+            },
+            {
+                "key": "telNo",
+                "title": "認証アシスト 電話番号下4桁",
+                "placeholder": "半角数字4桁",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁",
+                "validErrorMessage": "電話番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-telNo"
+            },
+            {
+                "key": "sex",
+                "title": "認証アシスト 性別",
+                "choice": [
+                    {
+                        "title": "男性",
+                        "value": "M"
+                    },
+                    {
+                        "title": "女性",
+                        "value": "F"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(M|F)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "性別はM/Fのいずれかを指定してください",
+                "isHidden": true,
+                "defaultValue": "M",
+                "mapping": "104-sex"
+            },
+            {
+                "key": "birthYear",
+                "title": "認証アシスト 誕生年",
+                "placeholder": "数字4桁(YYYY)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "数字4桁(YYYY)",
+                "validErrorMessage": "誕生年は数字4桁(YYYY)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-birthYear"
+            },
+            {
+                "key": "postal",
+                "title": "認証アシスト 郵便番号",
+                "placeholder": "数字7桁ハイフンなし",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "数字7桁ハイフンなし",
+                "validErrorMessage": "郵便番号は数字7桁ハイフンなし入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-postal"
+            },
+            {
+                "key": "acntNo1",
+                "title": "認証アシスト 銀行口座番号上4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号上4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-acntNo1"
+            },
+            {
+                "key": "acntNo2",
+                "title": "認証アシスト 銀行口座番号下4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-acntNo2"
+            },
+            {
+                "key": "customerName",
+                "title": "認証アシスト カード名義",
+                "placeholder": "半角英字記号26文字以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{0,26}$",
+                "validRuleMessage": "半角英字記号26文字以内",
+                "validErrorMessage": "カード名義は半角英字記号26文字以内入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-customerName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,8}$",
+                "validRuleMessage": "半角数字8桁以内",
+                "validErrorMessage": "マーチャントIDは半角数字8桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "店舗コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,4}$",
+                "validRuleMessage": "半角数字4桁以内入力としてください",
+                "validErrorMessage": "店舗コードは半角数字4桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-tmpCode1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "処理結果コード"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号"
+            },
+            {
+                "key": "processId",
+                "title": "プロセスID"
+            },
+            {
+                "key": "processPass",
+                "title": "プロセスパスワード"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3"
+            },
+            {
+                "key": "mcSecCd",
+                "title": "セキュリティコード 認証結果"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "カナ氏名（姓）認証結果"
+            },
+            {
+                "key": "mcKanaMei",
+                "title": "カナ氏名（名）認証結果"
+            },
+            {
+                "key": "mcBirthDay",
+                "title": "生月日 認証結果"
+            },
+            {
+                "key": "mcTelNo",
+                "title": "電話番号下4桁 認証結果"
+            },
+            {
+                "key": "mcSex",
+                "title": "性別 認証結果"
+            },
+            {
+                "key": "mcBirthYear",
+                "title": "誕生年 認証結果"
+            },
+            {
+                "key": "mcPostal",
+                "title": "郵便番号 認証結果"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "銀行口座番号上4桁 認証結果"
+            },
+            {
+                "key": "mcAcntNo2",
+                "title": "銀行口座番号下4桁 認証結果"
+            },
+            {
+                "key": "mcCardMei",
+                "title": "カード名義 認証結果"
+            },
+            {
+                "key": "transactionId",
+                "title": "処理通番"
+            },
+            {
+                "key": "acqId",
+                "title": "カード会社コード"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "cardholderName",
+                "title": "カードホルダーネーム"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり更新",
+        "check": false,
+        "dealtype": "105",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字6～32文字以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9]{6,32}$",
+                "validRuleMessage": "半角英数字6～32文字以内入力",
+                "validErrorMessage": "会員IDは半角英数字6～32文字以内入力としてください",
+                "mapping": "105-customerId"
+            },
+            {
+                "key": "customerPass",
+                "title": "会員パスワード",
+                "placeholder": "半角英数字6～12文字以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9]{6,12}$",
+                "validRuleMessage": "半角英数字6～12文字以内入力",
+                "validErrorMessage": "会員パスワードは半角英数字6～12文字以内入力としてください",
+                "mapping": "105-customerPass"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "洗替使用区分",
+                "choice": [
+                    {
+                        "title": "要",
+                        "value": "1"
+                    },
+                    {
+                        "title": "不要",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な洗替使用区分以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "1",
+                "mapping": "105-defaultFlag"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域1は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "105-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域2は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "105-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3",
+                "placeholder": "全角半角64バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,64}$",
+                "validRuleMessage": "全角半角64バイト以内",
+                "validErrorMessage": "貴社自由領域3は全角半角64バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 64,
+                "mapping": "105-merchantFree3"
+            },
+            {
+                "key": "kanaSei",
+                "title": "認証アシスト カナ氏名（姓）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（姓）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-kanaSei"
+            },
+            {
+                "key": "kanaMei",
+                "title": "認証アシスト カナ氏名（名）",
+                "placeholder": "半角カナ15文字",
+                "isRequired": false,
+                "validRule": "^[ｦ-ﾟ]{0,15}$",
+                "validRuleMessage": "半角カナ15文字",
+                "validErrorMessage": "カナ氏名（名）は半角カナ15文字入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-kanaMei"
+            },
+            {
+                "key": "birthDay",
+                "title": "認証アシスト 生月日",
+                "placeholder": "半角数字4桁(MMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁(MMDD)",
+                "validErrorMessage": "生月日は数字4桁(MMDD)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-birthDay"
+            },
+            {
+                "key": "telNo",
+                "title": "認証アシスト 電話番号下4桁",
+                "placeholder": "半角数字4桁",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁",
+                "validErrorMessage": "電話番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-telNo"
+            },
+            {
+                "key": "sex",
+                "title": "認証アシスト 性別",
+                "choice": [
+                    {
+                        "title": "男性",
+                        "value": "M"
+                    },
+                    {
+                        "title": "女性",
+                        "value": "F"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(M|F)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "性別はM/Fのいずれかを指定してください",
+                "isHidden": true,
+                "defaultValue": "M",
+                "mapping": "105-sex"
+            },
+            {
+                "key": "birthYear",
+                "title": "認証アシスト 誕生年",
+                "placeholder": "数字4桁(YYYY)",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "数字4桁(YYYY)",
+                "validErrorMessage": "誕生年は数字4桁(YYYY)入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-birthYear"
+            },
+            {
+                "key": "postal",
+                "title": "認証アシスト 郵便番号",
+                "placeholder": "数字7桁ハイフンなし",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "数字7桁ハイフンなし",
+                "validErrorMessage": "郵便番号は数字7桁ハイフンなし入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-postal"
+            },
+            {
+                "key": "acntNo1",
+                "title": "認証アシスト 銀行口座番号上4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号上4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-acntNo1"
+            },
+            {
+                "key": "acntNo2",
+                "title": "認証アシスト 銀行口座番号下4桁",
+                "placeholder": "半角数字4桁入力",
+                "isRequired": false,
+                "validRule": "^[0-9]{4}$",
+                "validRuleMessage": "半角数字4桁入力",
+                "validErrorMessage": "銀行口座番号下4桁は数字4桁入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-acntNo2"
+            },
+            {
+                "key": "customerName",
+                "title": "認証アシスト カード名義",
+                "placeholder": "半角英字記号26文字以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{0,26}$",
+                "validRuleMessage": "半角英字記号26文字以内",
+                "validErrorMessage": "カード名義は半角英字記号26文字以内入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "105-customerName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントID",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,8}$",
+                "validRuleMessage": "半角数字8桁以内",
+                "validErrorMessage": "マーチャントIDは半角数字8桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "105-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "店舗コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,4}$",
+                "validRuleMessage": "半角数字4桁以内入力としてください",
+                "validErrorMessage": "店舗コードは半角数字4桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "105-tmpCode1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "処理結果コード"
+            },
+            {
+                "key": "orderId",
+                "title": "処理番号"
+            },
+            {
+                "key": "processId",
+                "title": "プロセスID"
+            },
+            {
+                "key": "processPass",
+                "title": "プロセスパスワード"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "貴社自由領域1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "貴社自由領域2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "貴社自由領域3"
+            },
+            {
+                "key": "mcSecCd",
+                "title": "セキュリティコード 認証結果"
+            },
+            {
+                "key": "mcKanaSei",
+                "title": "カナ氏名（姓）認証結果"
+            },
+            {
+                "key": "mcKanaMei",
+                "title": "カナ氏名（名）認証結果"
+            },
+            {
+                "key": "mcBirthDay",
+                "title": "生月日 認証結果"
+            },
+            {
+                "key": "mcTelNo",
+                "title": "電話番号下4桁 認証結果"
+            },
+            {
+                "key": "mcSex",
+                "title": "性別 認証結果"
+            },
+            {
+                "key": "mcBirthYear",
+                "title": "誕生年 認証結果"
+            },
+            {
+                "key": "mcPostal",
+                "title": "郵便番号 認証結果"
+            },
+            {
+                "key": "mcAcntNo1",
+                "title": "銀行口座番号上4桁 認証結果"
+            },
+            {
+                "key": "mcAcntNo2",
+                "title": "銀行口座番号下4桁 認証結果"
+            },
+            {
+                "key": "mcCardMei",
+                "title": "カード名義 認証結果"
+            },
+            {
+                "key": "transactionId",
+                "title": "処理通番"
+            },
+            {
+                "key": "acqId",
+                "title": "カード会社コード"
+            },
+            {
+                "key": "cardholderName",
+                "title": "カードホルダーネーム"
+            }
+        ]
+    }
+]
