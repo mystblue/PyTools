@@ -173,4 +173,12 @@
         "readMethod"  : "Mag",
         "category"    : "2"
     }
+    {
+        "//"          : "カードチェック正常系",
+        "cardNumber"  : "3580000000001111",
+        "cardExpire"  : "0525",
+        "securityCode": "8888",
+        "customerId"  : "paygent20241105v2",
+        "category"    : "1"
+    }
 ]

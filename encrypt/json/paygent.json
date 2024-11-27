@@ -1,11 +1,14 @@
 [
     {
-        "//"          : "カード預かり登録正常系",
+        "//"          : "IC オーソリ売上正常系",
         "cardNumber"  : "3580000000001111",
         "cardExpire"  : "0525",
         "securityCode": "8888",
-        "customerId"  : "paygent20240805v1",
-        "readMethod"  : "Mag",
-        "category"    : "4"
+        "amount"      : "100000000",
+        "jpo"         : "10",
+        "orderId"     : "paygent20241105v2",
+        "customerId"  : "paygent20241105v2",
+        "readMethod"  : "IC",
+        "category"    : "3"
     }
 ]

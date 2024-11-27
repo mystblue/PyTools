@@ -8,5 +8,18 @@
         "tmpCode1": "52191",
         "tmpPassword1": "paytg52191",
         "category": "1"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "888${date}",
+        "customerNameKanji": "てすとたろう",
+        "jpo": "10",
+        "amount": "1000",
+        "tmpCode1": "52191",
+        "tmpPassword1": "paytg52191",
+        "readMethod": "IC",
+        "category": "2"
     }
 ]

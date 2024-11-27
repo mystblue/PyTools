@@ -1,12 +1,15 @@
 #url = 'https://10.200.91.141'
+#url = 'https://dev-gw-v2-tmp.paytg.jp'
+#url = 'https://d-i2m75i237h.execute-api.ap-northeast-1.amazonaws.com'
 url = 'https://dev-gw-v2.paytg.jp'
+#url = 'https://d-xegj6618e6.execute-api.ap-northeast-1.amazonaws.com'
 #url = 'https://localhost'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
 cert = './cert/D19CF1C348EAB5AA.pem'
 
-psp_list = ['yamato']
+psp_list = ['paygent']
 """
 psp_list = [
     'dgft',

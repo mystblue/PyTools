@@ -39,7 +39,7 @@ def create_request_param(sn, iv, request_param):
     return encrypt_data
 
 def http_connect(sn, iv, request):
-    headers = {'IV': iv, 'SN':sn, 'Sver': '1000'}
+    headers = {'IV': iv, 'SN':sn, 'Sver': '1000', 'User-Agent': 'd&rCGr!%y9+A$LI4pSoG_$3dJUE39+H&=AG/ak*rxL$TqgQHO+-1bKSCalkBe4OB'}
     # POST with header
     response = requests.post(settings.url, 
                    data=request,
@@ -52,6 +52,10 @@ def print_response(sn, iv, respose):
     text = base64.b64decode(respose.text)
     dec = AES.new(key=get_key(sn), mode=AES.MODE_CBC, iv=get_iv(iv))
     mes = dec.decrypt(text)
+
+    #            $decryptIV = '1234567890123456';
+    #            $decryptKey = '12345678901234567890123456789012';
+
     #print(mes)
     mes = Padding.unpad(mes, AES.block_size, 'pkcs7')
     #print(mes.decode("utf-8"))
