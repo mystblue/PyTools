@@ -1,7 +1,7 @@
 import glob  
 
-PATH = "C:\\Users\\314\\Documents\\git\\PyTools\\novel\\kage\\*.txt"
-OUTPUT = "C:\\Users\\314\\Documents\\git\\PyTools\\novel\\kage.txt"
+PATH = "C:\\Users\\314\\Documents\\git\\PyTools\\novel\\kage3\\*.txt"
+OUTPUT = "C:\\Users\\314\\Documents\\git\\PyTools\\novel\\kage_3.txt"
 
 txt_files = glob.glob(PATH) ##拡張子が「*txt」だけのファイルを返す
 
