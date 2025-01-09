@@ -2,6 +2,8 @@
 #url = 'https://dev-gw-v2-tmp.paytg.jp'
 #url = 'https://d-i2m75i237h.execute-api.ap-northeast-1.amazonaws.com'
 url = 'https://dev-gw-v2.paytg.jp'
+#url = 'https://7zgobn6rmh.execute-api.ap-northeast-1.amazonaws.com/v1'
+#url = 'https://paytg-dev-apigw-gw-test'
 #url = 'https://d-xegj6618e6.execute-api.ap-northeast-1.amazonaws.com'
 #url = 'https://localhost'
 

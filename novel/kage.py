@@ -3,7 +3,7 @@ import os.path
 import requests
 from bs4 import BeautifulSoup
 
-PATH = "C:\\Users\\314\\Documents\\git\\PyTools\\novel\\kage3"
+PATH = "C:\\Users\\314\\Documents\\git\\PyTools\\novel\\kage4"
 
 def get(num):
     url = "https://ncode.syosetu.com/n0611em/{0}/".format(num)
@@ -49,7 +49,7 @@ def save(text, num):
 if __name__ == '__main__':
     path = os.getcwd()
 
-    for i in range(43, 62):
+    for i in range(62, 90):
         num = str(i)
         get(num)
         text = parse(num)

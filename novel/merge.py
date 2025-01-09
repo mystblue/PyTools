@@ -1,6 +1,6 @@
 import glob  
 
-num = 3
+num = 4
 
 JS_TEMPLATE = """var key = "kage_{0}";
 var data = `# 陰の実力者になりたくて！ 第{0}章

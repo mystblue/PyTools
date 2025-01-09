@@ -24,7 +24,7 @@ def parse(filename):
     for trs in rows:
         for cell in trs:
             if cell.name == "th":
-                ret = ret + "|" + cell.text
+                ret = ret + "|_." + cell.text
             if cell.name == "td":
                 if len(cell.find_all("p")) > 0:
                     #print(cell.find_all("p")[0].text)
