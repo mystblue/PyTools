@@ -3,6 +3,9 @@
         "cardNumber": "4111111111111111",
         "cardExpire": "1225",
         "securityCode": "8888",
-        "category": "1"
+        "pspMerchantId": "00010965",
+        "category": "4",
+        "customerId": "sony20250117v1",
+        "customerPass": "sony26v1"
     }
 ]

@@ -4,11 +4,10 @@
         "cardNumber"  : "3580000000001111",
         "cardExpire"  : "0525",
         "securityCode": "8888",
-        "amount"      : "100000000",
+        "amount"      : "1000000",
         "jpo"         : "10",
         "orderId"     : "paygent20241105v2",
         "customerId"  : "paygent20241105v2",
-        "readMethod"  : "IC",
-        "category"    : "3"
+        "category"    : "2"
     }
 ]
