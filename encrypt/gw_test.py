@@ -63,6 +63,7 @@ def print_response(sn, iv, respose):
 
 if __name__ == '__main__':
     print("■GW URL = " + settings.url + "\n")
+    print("■クライアント証明書 = " + settings.cert + "\n")
     for psp in settings.psp_list:
         print("■PSP = " + psp)
         
