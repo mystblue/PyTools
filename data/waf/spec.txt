@@ -1,0 +1,33 @@
+ちょっと補足です。
+テストツールの IV は 0-F までの 16 進数を乱数で生成しています。
+IV はテストNo ごとに異なる想定です。（それでも偶然同じになる可能性はゼロではないです。）
+
+なので、以下を確認しています。
+・テスト件数とWAFのログの数が一致すること（どちらも 1022 件　※テストツールとWAFのログとの比較_追記.xlsx「テストツール結果」シート参照）
+・テストケースの sn、iv、SVer を元に WAF のログを一行ずつツールで検索し、一致するログが１行のみ見つかること
+　（偶然同じシリアル、同じ IV、同じ SVer のログが存在しないことを確認済　※下記補足）
+
+※さらに補足
+
+ダミーデータを作成し、IV、sn、SVer の重複があれば以下のように検知できることを確認
+>python check.py
+■ncoms_test.json
+■重複しています。
+
+実際のデータで重複がないことを確認
+>python check.py
+■ncoms_test.json
+■nicos-pg_test.json
+■smbc-fs_test.json
+■smbc-gp_test.json
+■sony_test.json
+■veritrans_test.json
+■yamato_test.json
+■zeus_test.json
+■gmo-mb_test.json
+■gmo-pg_test.json
+■multi_psp_test.json
+■paygent_test.json
+■pay-jp_test.json
+■rakuten_test.json
+■sbps_test.json
