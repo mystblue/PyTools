@@ -3,8 +3,8 @@
 #url = 'https://d-i2m75i237h.execute-api.ap-northeast-1.amazonaws.com'
 #url = 'https://dev-gw-v2.paytg.jp?username=admin&password=password%27%20OR%20%271%27=%271'
 #url = 'https://dev-gw-v2.paytg.jp/robots.txt'
-#url = 'https://dev-gw-v2.paytg.jp'
-url = 'https://stg-gw-v2.paytg.jp'
+url = 'https://dev-gw-v2.paytg.jp'
+#url = 'https://stg-gw-v2.paytg.jp'
 #url = 'https://stg-trialgw-v2.paytg.jp'
 #url = 'https://7zgobn6rmh.execute-api.ap-northeast-1.amazonaws.com/v1'?status=1%0d%0aSet-Cookie:%20sessionid%3d12345678
 #url = 'https://paytg-dev-apigw-gw-test'
@@ -13,11 +13,11 @@ url = 'https://stg-gw-v2.paytg.jp'
 
 seed = 'a949a6df9433d8cab20eb6f397e09540'
 
-#cert = './cert/D19CF1C348EAB5AA.pem'
-cert = './cert/D9DAA9555C27F998.pem'
+cert = './cert/D19CF1C348EAB5AA.pem'
+#cert = './cert/D9DAA9555C27F998.pem' # ステージング環境
 #cert = './cert/D9DAA9555C27F936.pem'
 
-psp_list = ['paygent']
+psp_list = ['sony']
 """
 psp_list = [
     'dgft',

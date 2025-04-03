@@ -83,7 +83,7 @@ if __name__ == '__main__':
         for request_param in request_param_list:
             request_param['requestDate'] = datetime_str
             request_param['transactionDate'] = date_str
-            request_param['ttyId'] = term['ttyid'] + datetime_str[:-1]
+            request_param['ttyId'] = term['ttyid'] + datetime_str[:-1] + "000000"
             request_param['sn'] = term['sn']
             
             if 'orderId' in request_param and '${date}' in request_param['orderId']:

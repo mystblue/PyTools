@@ -1,0 +1,8 @@
+otpauth://totp/SUPPORT:?secret=HZ3CGSZOEBITYLKZOIXGAPSILB5HKYKL&issuer=SUPPORT
+otpauth://totp/IBM%20Security%20Verify:00392648_sandbox?secret=UAS6NEWPT67AHF3A&issuer=IBM%20Security%20Verify
+otpauth://totp/Pay%20TG%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%B5%E3%82%A4%E3%83%88:k-kayama%40inos.co.jp?secret=H5GD2TKLKUUHASJUIZAW26REFM3HG5TH&issuer=Pay%20TG%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%B5%E3%82%A4%E3%83%88
+otpauth://totp/GitHub:mystblue?secret=WMQ6ABEKXEY3CKEL&issuer=GitHub
+otpauth://totp/my_app_name:test_2?secret=ZN47HFEJVDI463IZRT446OBA7RM3I74JC4PI7LGUPLTVRLO54ZFQ&issuer=my_app_name
+otpauth://totp/Amazon%20Web%20Services:kayama-pc%40613951263398?secret=GXVNEKS2MZO47FBZ3CSSWMYKBNUMMYABT6MT4JER3O324ITMKZZNAS5KYEY325YM&issuer=Amazon%20Web%20Services
+otpauth://totp/Smart%20TG%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%B5%E3%82%A4%E3%83%88:k-kayama%40inos.co.jp?secret=LMVVMWJNNA7WC2BAH44GY22JIQ2TCYCB&issuer=Smart%20TG%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%82%B5%E3%82%A4%E3%83%88
+otpauth://totp/Nulab%20Account:k-kayama%40inos.co.jp?secret=FRJUSRJX7SDUJMIF&issuer=Nulab%20Account
