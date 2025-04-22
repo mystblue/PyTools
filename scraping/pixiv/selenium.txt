@@ -1,0 +1,52 @@
+import bs4
+from bs4 import BeautifulSoup
+import os
+import re
+import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.by import By
+import shutil
+import time
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option('detach', True)
+options.add_experimental_option("prefs", {"download.default_directory": download})
+service = ChromeService(executable_path="./chromedriver.exe")
+driver = webdriver.Chrome(service=service, options=options)
+driver.get("https://www.pixiv.net/artworks/128504567")
+
+driver.get("https://i.pximg.net/img-master/img/2025/03/23/03/30/37/128504567_p0_master1200.jpg")
+
+
+def download_img(img_url, base_name):
+    # ダウンロード実行用スクリプトを生成＆実行
+    script_str = """
+    window.URL = window.URL || window.webkitURL;
+    
+    var xhr = new XMLHttpRequest(),
+    a = document.createElement('a'), file;
+    
+    xhr.open('GET', '""" + img_url + """', true);
+    xhr.responseType = 'blob';
+    xhr.onload = function () {
+    file = new Blob([xhr.response], { type : 'application/octet-stream' });
+    a.href = window.URL.createObjectURL(file);
+    a.download = '""" + base_name + """';
+    a.click();
+    };
+    xhr.send();
+    """
+    driver.execute_script(script_str)
+
+download_img("https://i.pximg.net/img-master/img/2025/03/23/03/30/37/128504567_p0_master1200.jpg", "128504567_p0_master1200.jpg")
+
+urllib.request.urlretrieve("https://i.pximg.net/img-master/img/2025/03/23/03/30/37/128504567_p0_master1200.jpg", "128504567_p0_master1200.jpg")
+
+
+driver.get('https://www.google.co.jp')
+download_img("https://www.google.co.jp/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png", "google.png")
+
+
+
+download_img("https://i.pximg.net/img-master/img/2025/03/23/03/30/37/128504567_p0_master1200.jpg", "128504567_p0_master1200.jpg")

@@ -1,7 +1,7 @@
 import qrcode
 
 # OTP URL
-otp_url = "otpauth://totp/GitHub:mystblue?secret=WMQ6ABEKXEY3CKEL&issuer=GitHub"
+otp_url = "otpauth://totp/Amazon%20Web%20Services:kayama-pc%40613951263398?secret=GXVNEKS2MZO47FBZ3CSSWMYKBNUMMYABT6MT4JER3O324ITMKZZNAS5KYEY325YM&issuer=Amazon%20Web%20Services"
 
 # QRコードの生成
 qr = qrcode.QRCode(
@@ -15,4 +15,4 @@ qr.make(fit=True)
 
 # QRコードの画像を保存
 img = qr.make_image(fill='black', back_color='white')
-img.save("otp_qr_code.png")
+img.save("aws_qr_code.png")

