@@ -43,11 +43,13 @@ if __name__ == '__main__':
     
     headers = {'IV': iv, 'SN':sn, 'Sver': '3000', 'Chgsn': '082306605710118', 'User-Agent': 'd&rCGr!%y9+A$LI4pSoG_$3dJUE39+H&=AG/ak*rxL$TqgQHO+-1bKSCalkBe4OB'}
     # POST with header
-    url = 'https://dev-tms-v2.paytg.jp/updater/checkUpdate'
+    #url = 'https://dev-tms-v2.paytg.jp/updater/checkUpdate'
+    url = 'https://dev-tms.paytg.jp/updater/checkUpdate'
     #url = 'https://dev-tms-v2.paytg.jp/updater/checkUpdate?username=admin&password=password%27%20OR%20%271%27=%271'
     #url = 'https://dev-tms-v2.paytg.jp:10443/css/font/ficon.woff?206623=+AND+1%3D1+--+'
     #url = 'https://dev-tms-v2.paytg.jp:10443/css/font/ficon.woff?206623=+OR+1%3D1+--+'
     #url = 'https://dev-tms-v2.paytg.jp:10443/css/font/ficon.woff'
+    print("url = " + url)
     r = requests.post(url, 
         data=base64.b64encode(ret),
         headers=headers, verify=False)
