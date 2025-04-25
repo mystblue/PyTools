@@ -1,0 +1,115 @@
+acl-libs	2.3.2-r1	Access control list utilities (libraries)
+alpine-baselayout	3.6.8-r1	Alpine base dir structure and init scripts
+alpine-baselayout-data	3.6.8-r1	Alpine base dir structure and init scripts
+alpine-keys	2.5-r0	Public keys for Alpine Linux packages
+alpine-release	3.21.3-r0	Alpine release data
+apk-tools	2.14.6-r3	Alpine Package Keeper - package manager for alpine
+argon2-libs	20190702-r5	The password hash Argon2, winner of PHC (libraries)
+aws-c-auth	0.8.0-r0	C99 library implementation of AWS client-side authentication: standard credentials providers and signing
+aws-c-cal	0.8.1-r0	AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives
+aws-c-common	0.10.5-r0	Core c99 package for AWS SDK for C including cross-platform primitives, configuration, data structures, and error handling
+aws-c-compression	0.3.0-r0	C99 implementation of huffman encoding/decoding
+aws-c-event-stream	0.5.0-r0	AWS C99 implementation of the vnd.amazon.eventstream content-type
+aws-c-http	0.9.2-r0	AWS C99 implementation of the HTTP/1.1 and HTTP/2 specifications
+aws-c-io	0.15.3-r0	Module for the AWS SDK for C handling all IO and TLS work for application protocols
+aws-c-mqtt	0.11.0-r0	AWS C99 implementation of the MQTT 3.1.1 specification
+aws-c-s3	0.7.4-r0	AWS C99 library implementation for communicating with the S3 service
+aws-c-sdkutils	0.2.1-r0	C99 library implementing AWS SDK specific utilities
+aws-checksums	0.2.2-r0	AWS Cross-Platform HW accelerated CRC32c and CRC32 with fallback to efficient SW implementations
+aws-cli	2.22.10-r0	Universal Command Line Interface for Amazon Web Services (v2)
+aws-cli-pyc	2.22.10-r0	Precompiled Python bytecode for aws-cli
+brotli-libs	1.1.0-r2	Generic lossless compressor (libraries)
+busybox	1.37.0-r12	Size optimized toolbox of many common UNIX utilities
+busybox-binsh	1.37.0-r12	busybox ash /bin/sh
+bzip2-dev	1.0.8-r6	A high-quality data compression program (development files)
+c-ares	1.34.3-r0	Asynchronous DNS/names resolver library
+ca-certificates	20241121-r1	Common CA certificates PEM files from Mozilla
+ca-certificates-bundle	20241121-r1	Pre generated bundle of Mozilla certificates
+curl	8.12.1-r0	URL retrival utility and library
+file	5.46-r2	File type identification utility
+gcompat	1.1.0-r4	GNU C Library compatibility layer for musl
+gdbm	1.24-r0	GNU dbm is a set of database routines that use extensible hashing
+gnu-libiconv-libs	1.17-r2	GNU charset conversion library for libc which doesn't implement it (libraries)
+icu	74.2-r0	International Components for Unicode library
+icu-data-en	74.2-r0	Stripped down ICU data with only en_US/GB locale and no legacy charset converters
+icu-dev	74.2-r0	International Components for Unicode library (development files)
+icu-libs	74.2-r0	International Components for Unicode library (libraries)
+libbz2	1.0.8-r6	Shared library for bz2
+libcrypto3	3.3.3-r0	Crypto library from openssl
+libcurl	8.12.1-r0	The multiprotocol file transfer library
+libexpat	2.7.0-r0	XML Parser library written in C (libraries)
+libffi	3.4.7-r0	portable, high level programming interface to various calling conventions.
+libgcc	14.2.0-r4	GNU C compiler runtime libraries
+libidn2	2.3.7-r0	Encode/Decode library for internationalized domain names
+libmagic	5.46-r2	File type identification library
+libncursesw	6.5_p20241006-r3	Console display library (libncursesw)
+libpanelw	6.5_p20241006-r3	Console display library (libpanelw)
+libpsl	0.21.5-r3	C library for the Publix Suffix List
+libsodium	1.0.20-r0	P(ortable|ackageable) NaCl-based crypto library
+libssl3	3.3.3-r0	SSL shared libraries
+libstdc++	14.2.0-r4	GNU C++ standard runtime library
+libucontext	1.3.2-r0	ucontext function implementations
+libunistring	1.2-r0	Library for manipulating Unicode strings and C strings
+libxml2	2.13.4-r5	XML parsing library, version 2
+libzip	1.11.2-r0	C library for manipulating zip archives
+libzip-dev	1.11.2-r0	C library for manipulating zip archives (development files)
+libzip-tools	1.11.2-r0	libzip cmp and merge tools
+mpdecimal	4.0.0-r0	complete implementation of the General Decimal Arithmetic Specification
+musl	1.2.5-r9	the musl c library (libc) implementation
+musl-obstack	1.2.3-r2	Standalone library to implement GNU libc's obstack
+musl-utils	1.2.5-r9	the musl c library (libc) implementation
+ncurses-terminfo-base	6.5_p20241006-r3	Descriptions of common terminals
+nghttp2-libs	1.64.0-r0	HTTP/2 C client, server and proxy (libraries)
+oniguruma	6.9.9-r0	a regular expressions library
+openssl	3.3.3-r0	Toolkit for Transport Layer Security (TLS)
+pkgconf	2.3.0-r0	development framework configuration tools
+py3-awscrt	0.23.3-r0	Python bindings for the AWS Common Runtime
+py3-awscrt-pyc	0.23.3-r0	Precompiled Python bytecode for py3-awscrt
+py3-certifi	2024.8.30-r0	Python3 package for providing Mozilla's CA Bundle
+py3-certifi-pyc	2024.8.30-r0	Precompiled Python bytecode for py3-certifi
+py3-cffi	1.17.1-r1	Foreign function interface for calling C code from Python3
+py3-cffi-pyc	1.17.1-r1	Precompiled Python bytecode for py3-cffi
+py3-colorama	0.4.6-r5	Simple cross-platform colored terminal text
+py3-colorama-pyc	0.4.6-r5	Precompiled Python bytecode for py3-colorama
+py3-cparser	2.22-r1	C parser written in Python3
+py3-cparser-pyc	2.22-r1	Precompiled Python bytecode for py3-cparser
+py3-cryptography	44.0.0-r0	Cryptographic recipes and primitives for Python
+py3-cryptography-pyc	44.0.0-r0	Precompiled Python bytecode for py3-cryptography
+py3-dateutil	2.9.0-r1	Python3 extensions for datetime module
+py3-dateutil-pyc	2.9.0-r1	Precompiled Python bytecode for py3-dateutil
+py3-distro	1.9.0-r2	A Linux OS platform information API
+py3-distro-pyc	1.9.0-r2	Precompiled Python bytecode for py3-distro
+py3-docutils	0.21.2-r0	Documentation Utilities for Python3
+py3-docutils-pyc	0.21.2-r0	Precompiled Python bytecode for py3-docutils
+py3-jmespath	1.0.1-r3	JMESPath is a query language for JSON
+py3-jmespath-pyc	1.0.1-r3	Precompiled Python bytecode for py3-jmespath
+py3-prompt_toolkit	3.0.47-r0	Library for building powerful interactive command lines in Python
+py3-prompt_toolkit-pyc	3.0.47-r0	Precompiled Python bytecode for py3-prompt_toolkit
+py3-ruamel.yaml	0.17.28-r1	Python YAML parser/emitter
+py3-ruamel.yaml-pyc	0.17.28-r1	Precompiled Python bytecode for py3-ruamel.yaml
+py3-ruamel.yaml.clib	0.2.8-r2	C version of reader, parser and emitter for ruamel.yaml
+py3-six	1.16.0-r9	Python 2 and 3 compatibility library
+py3-six-pyc	1.16.0-r9	Precompiled Python bytecode for py3-six
+py3-urllib3	1.26.20-r0	HTTP library with thread-safe connection pooling, file post, and more
+py3-urllib3-pyc	1.26.20-r0	Precompiled Python bytecode for py3-urllib3
+py3-wcwidth	0.2.13-r1	Measures number of Terminal column cells of wide-character codes
+py3-wcwidth-pyc	0.2.13-r1	Precompiled Python bytecode for py3-wcwidth
+pyc	3.12.9-r0	Meta package for pulling in all -pyc packages
+python3	3.12.9-r0	High-level scripting language
+python3-pyc	3.12.9-r0	High-level scripting language (install .pyc cache files)
+python3-pycache-pyc0	3.12.9-r0	High-level scripting language (.pyc pycache files)
+readline	8.2.13-r0	GNU readline library
+s2n-tls	1.5.9-r0	AWS C99 implementation of the TLS/SSL protocols
+scanelf	1.3.8-r1	Scan ELF binaries for stuff
+sqlite-libs	3.48.0-r0	C library that implements an SQL database engine (libraries)
+ssl_client	1.37.0-r12	External ssl_client for busybox wget
+tar	1.35-r2	Utility used to store, backup, and transport files
+tzdata	2025b-r0	Timezone data
+xz	5.6.3-r0	Library and CLI tools for XZ and LZMA compressed files
+xz-dev	5.6.3-r0	Library and CLI tools for XZ and LZMA compressed files (development files)
+xz-libs	5.6.3-r0	Library and CLI tools for XZ and LZMA compressed files (libraries)
+zlib	1.3.1-r2	A compression/decompression Library
+zlib-dev	1.3.1-r2	A compression/decompression Library (development files)
+zstd	1.5.6-r2	Zstandard - Fast real-time compression algorithm
+zstd-dev	1.5.6-r2	Zstandard - Fast real-time compression algorithm (development files)
+zstd-libs	1.5.6-r2	Zstandard - Fast real-time compression algorithm (libraries)
