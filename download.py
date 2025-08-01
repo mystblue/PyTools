@@ -61,4 +61,5 @@ def download(url, filename):
 
 if __name__ == '__main__':
     #download("https://altema.jp/houkaistarrail/kaitaku", "kaitaku.html")
-    cut("kaitaku.html", "kaitaku.txt")
+    download("https://yurasama.sakura.ne.jp/game/comp/kaguya_jd.html", "kaguya_jd")
+    #cut("kaitaku.html", "kaitaku.txt")

@@ -3,7 +3,7 @@
 #url = 'https://d-i2m75i237h.execute-api.ap-northeast-1.amazonaws.com'
 #url = 'https://dev-gw-v2.paytg.jp?username=admin&password=password%27%20OR%20%271%27=%271'
 #url = 'https://dev-gw-v2.paytg.jp/robots.txt'
-url = 'https://dev-gw-v2.paytg.jp'
+url = 'https://dev-gw-v2.paytg.jp' # 開発用 GW
 #url = 'https://stg-gw-v2.paytg.jp'
 #url = 'https://stg-trialgw-v2.paytg.jp'
 #url = 'https://7zgobn6rmh.execute-api.ap-northeast-1.amazonaws.com/v1'?status=1%0d%0aSet-Cookie:%20sessionid%3d12345678
@@ -37,11 +37,17 @@ psp_list = [
 ]
 """
 terminal = {
+    #'paygent' :  {
+    #                 'sn'    : '338534947935133', #SL100004
+    #                 'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
+    #                 'sver'  : '1000',
+    #                 'ttyid' : '0000000400001'
+    #             },
     'paygent' :  {
-                     'sn'    : '338534947935133',
+                     'sn'    : '466268368568139', #SL100003
                      'iv'    : 'cc7b9247ed6f8f7c41e9dcce0d340ef4',
                      'sver'  : '1000',
-                     'ttyid' : '0000000400001'
+                     'ttyid' : '0000000300001'
                  },
     'ncoms' :    {
                      'sn'    : '711359556720335',

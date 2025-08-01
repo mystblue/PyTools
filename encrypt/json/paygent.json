@@ -2,12 +2,13 @@
     {
         "//"          : "IC オーソリ売上正常系",
         "cardNumber"  : "3580000000001111",
-        "cardExpire"  : "0525",
+        "cardExpire"  : "0528",
         "securityCode": "8888",
-        "amount"      : "1000000",
+        "amount"      : "1000",
         "jpo"         : "10",
-        "orderId"     : "paygent20241105v2",
-        "customerId"  : "paygent20241105v2",
-        "category"    : "2"
+        "orderId"     : "paygent20250530v1",
+        "customerId"  : "paygent${date}",
+        "readMethod"  : "Mag",
+        "category"    : "3"
     }
 ]
