@@ -1,0 +1,47 @@
+https://www.dropbox.com/oauth2/authorize?client_id=5zjq0g87womfhmx&response_type=code&token_access_type=offline
+
+V_yKvb2Br7IAAAAAAACAs4A7LhYFIZDsZ74eoeajrSI
+
+
+
+
+
+
+🧭 ステップ1：Dropbox アプリの作成
+- Dropbox App Console にアクセス
+- 新しいアプリを作成し、OAuth2 設定で token_access_type=offline を有効にする
+- App key と App secret を控えておく
+
+🔐 ステップ2：Authorization Code の取得
+以下の URL にアクセスして認証コードを取得します（<APP_KEY> を自分の値に置き換えてください）：
+https://www.dropbox.com/oauth2/authorize?client_id=<APP_KEY>&response_type=code&token_access_type=offline
+
+
+- 認証画面を進めると、authorization code が表示されます（1回限り有効）
+
+🔄 ステップ3：リフレッシュトークンの取得
+Postman または curl を使って、以下のように Dropbox API に POST します：
+curl https://api.dropboxapi.com/oauth2/token \
+  -d code=<AUTHORIZATION_CODE> \
+  -d grant_type=authorization_code \
+  -u <APP_KEY>:<APP_SECRET>
+
+
+- 成功すると、access_token と refresh_token を含む JSON が返ってきます
+
+
+
+
+
+
+
+curl https://api.dropboxapi.com/oauth2/token \
+  -d code=V_yKvb2Br7IAAAAAAACAs4A7LhYFIZDsZ74eoeajrSI \
+  -d grant_type=authorization_code \
+  -u 5zjq0g87womfhmx:cp94ttjq87qbub6
+
+
+
+{"access_token": "sl.u.AF4NQRDBG5R36Bby5ogJWfr2bIV9hjYU-JekC2hw0NSW4TV8NECSNLEBm6f2vuhZ-irYEPF0SGczEiUhOyA6o4GM4NrewV3qTVDHC_ZTCL8kGPoVnsXDkzjPaXnVTGCxapSFKQh9NX6Ua_JDaec40uZWR_9wVLiWyYDtGb9XLO9rk3ncZoIvTugC0MRJOKwXogCo15RVcmikeAHRWPtgBIvThJtnpAStP3lJ8it465cZmXCP82PBSKUoQNlmBPqnCP0ylemQwHwEFpiwSp-9oAmSTIQ9c0Dh3saXlyHpd8w-kEN7bk6ncawnsSdoG7IuVeKofBXgg8yJiun27x6m-ZXBP0-t2wYeLKjqgT827ttP7CGBKhXh4aEU6gDo-Osog7itXOc8uxQ21P_I3V0HB6veghn62Hs8lMs9XaOsP8t1rQclx6HjdcQ_hZuqxlg3DO270v9cvu6Rqd4_Lbcl-WvEZOjw4qinNA3bhiBr0K00uMrYiEdOdN7UZboMaFK5X7ORJECREhG6oDwEs1kW3cZVljlNxUqz4_QhC8XJCumeNbEISmqbN9jI52ULAgX3gi8_G1wWc9sdb99e5hUXnpo_a49BYpguugphC-ue_2vQVwgKivkqeNsNojlK-hdJWQezwo6KD1yXCnnJyoPjBycY0RZpKl47H7yNOgmGXP_w-6Hbiqts8_zfwxtvUgxZgszmFEFUnBQ_O1D-xfV8c2AgeyN9W35fOKYgp8b86nyXS5TCXZsshXTZvIFHYPKq5GOlBG6CleI7YFtLWUDrNoM6bVhKtKNUZ_vkV4dJtIbb-SV5eGlGKyfeCBp5JakjAOFXjK19W2D2nk2_pkCeTJqwqiHiJcdvzChbRbbAUwzgkF7CnyQ6VhXnXavIF8YtdM8Nu068dW8KEJae8HhbDNJD96jAx_5WvXgqVTVYyvnWcVb4Bcap6zMf4z1TKpP43jzUzwrAl5yDR-xWm5peN35IxnyoFHl_omg3tQ0W9FVJBEyI0awSsYRPXwW_5DaRzPdBkIhjWL_Fxpclvx-48TH9S8PyiWYSVpuy7URZHSvdSggwqn7gvwiDCHFk6Ne2EbuWkWhiF-jaxGQP8LwD1C2NQQ15KQ2rbXJWEfvuEqQvimz8e8mC_sf17DoKV4cOyfoPZw7uyV7ejkPVvaWOODddzBPWsFbnCSVjXDpTss6JNHCpZqJQyTf_O-bYKVb6gHhZJddTUYc6SG7PETMm8PgLLwEOktxvlySgyxBNpHgXnHP0rgB8r_WOXMhOpP_CsREmC46-UUm9OJLZ_K7pc5sd", "token_type": "bearer", "expires_in": 14400, "refresh_token": "Hf7u7G-sL-UAAAAAAAAAAbAlWR2DicBJ8U8rWxPg1tR2U20LT4Td_6OaBJN4CzqR", "scope": "account_info.read files.content.read files.content.write files.metadata.read files.metadata.write", "uid": "36669000", "account_id": "dbid:AABeoERMd-T1K_FNbTyObpUB61ZAQGSXpGs"}
+
+
