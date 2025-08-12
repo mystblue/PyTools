@@ -1,0 +1,5 @@
+[dropbox/dropbox-sdk-python: The Official Dropbox API V2 SDK for Python](https://github.com/dropbox/dropbox-sdk-python?tab=readme-ov-file)
+
+[【Python】Dropbox AIPを使ってファイルを操作する](https://zerofromlight.com/blogs/detail/122/)
+
+[【Python】PythonでGoogle Driveにアクセスしてみる【Drive API】 #GoogleCloud - Qiita](https://qiita.com/flowernotfound/items/3edb31a786d6a588c6cc)
