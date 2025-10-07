@@ -8,7 +8,9 @@
         "jpo"         : "10",
         "orderId"     : "paygent20250530v1",
         "customerId"  : "paygent${date}",
-        "readMethod"  : "Mag",
+        "readMethod"  : "IC",
+        "pspShortName":"paygent",
+        "pspMerchantId":"",
         "category"    : "3"
     }
 ]

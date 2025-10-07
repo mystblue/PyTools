@@ -28,13 +28,18 @@ def get_key(sn):
     return bytes.fromhex(key_orgs)
 
 def create_request_param(sn, iv, request_param):
+    print("create_request_param")
+    print("sn = " + sn)
+    print("iv = " + iv)
     request = urllib.parse.urlencode(request_param)
+    print("request = " + request)
 
     print('・request = ' + request)
     enc = AES.new(key=get_key(sn), mode=AES.MODE_CBC, iv=get_iv(iv))
     data = Padding.pad(request.encode('utf-8'), AES.block_size, 'pkcs7')
     ret = enc.encrypt(data)
     encrypt_data = base64.b64encode(ret)
+    print('encrypt_data')
     print(encrypt_data)
     return encrypt_data
 
