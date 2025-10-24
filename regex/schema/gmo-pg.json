@@ -1,0 +1,1120 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "オーダーID",
+                "placeholder": "半角英数字27桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,27}$",
+                "validRuleMessage": "半角英数字27桁以内",
+                "validErrorMessage": "オーダーIDは半角英数字27桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "101-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "1 以上 9,999,999 以下",
+                "validErrorMessage": "金額は1 以上 9,999,999 以下としてください",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "ボーナス分割",
+                        "value": "31"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|31|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^(31|61)$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～99回以内",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字2～99回以内",
+                "validErrorMessage": "支払回数は半角数字2～99回以内の入力としてください",
+                "mapping": "101-count"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目1は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "101-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目2は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "101-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目3は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "101-merchantFree3"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サイトID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "サイトIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "ショップID",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "ショップIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字8桁以内",
+                "validErrorMessage": "ショップパスワードは半角英数字8桁以内入力としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "101-tmpPassword1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "レスポンスコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "レスポンス詳細"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "orderId",
+                "title": "オーダーID"
+            },
+            {
+                "key": "forward",
+                "title": "仕向先コード"
+            },
+            {
+                "key": "method",
+                "title": "支払方法"
+            },
+            {
+                "key": "payTimes",
+                "title": "支払回数"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "processId",
+                "title": "トランザクションID"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済日付"
+            },
+            {
+                "key": "checkString",
+                "title": "MD5ハッシュ"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード登録連番"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "issurClass",
+                "title": "国内発行フラグ"
+            },
+            {
+                "key": "issurId",
+                "title": "イシュアコード"
+            },
+            {
+                "key": "formatType",
+                "title": "デビット／プリペイドフラグ"
+            },
+            {
+                "key": "issurName",
+                "title": "デビット／プリペイドカード発行会社名"
+            },
+            {
+                "key": "cardKindCd",
+                "title": "最終仕向先のカード会社"
+            }
+        ]
+    },
+    {
+        "key": "オーソリ売上",
+        "check": false,
+        "dealtype": "102",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "オーダーID",
+                "placeholder": "半角英数字27桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,27}$",
+                "validRuleMessage": "半角英数字27桁以内",
+                "validErrorMessage": "オーダーIDは半角英数字27桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "102-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "1 以上 9,999,999 以下",
+                "validErrorMessage": "金額は1 以上 9,999,999 以下としてください",
+                "mapping": "102-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "ボーナス分割",
+                        "value": "31"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|31|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "102-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^(31|61)$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～99回以内",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字2～99回以内",
+                "validErrorMessage": "支払回数は半角数字2～99回以内の入力としてください",
+                "mapping": "102-count"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目1は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "102-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目2は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "102-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目3は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "102-merchantFree3"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サイトID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "サイトIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "ショップID",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "ショップIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字8桁以内",
+                "validErrorMessage": "ショップパスワードは半角英数字8桁以内入力としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "102-tmpPassword1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "レスポンスコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "レスポンス詳細"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "orderId",
+                "title": "オーダーID"
+            },
+            {
+                "key": "forward",
+                "title": "仕向先コード"
+            },
+            {
+                "key": "method",
+                "title": "支払方法"
+            },
+            {
+                "key": "payTimes",
+                "title": "支払回数"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "processId",
+                "title": "トランザクションID"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済日付"
+            },
+            {
+                "key": "checkString",
+                "title": "MD5ハッシュ"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード登録連番"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "issurClass",
+                "title": "国内発行フラグ"
+            },
+            {
+                "key": "issurId",
+                "title": "イシュアコード"
+            },
+            {
+                "key": "formatType",
+                "title": "デビット／プリペイドフラグ"
+            },
+            {
+                "key": "issurName",
+                "title": "デビット／プリペイドカード発行会社名"
+            },
+            {
+                "key": "cardKindCd",
+                "title": "最終仕向先のカード会社"
+            }
+        ]
+    },
+    {
+        "key": "カードチェック",
+        "check": false,
+        "dealtype": "103",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "オーダーID",
+                "placeholder": "半角英数字27桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,27}$",
+                "validRuleMessage": "半角英数字27桁以内",
+                "validErrorMessage": "オーダーIDは半角英数字27桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "103-orderId"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目1は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "103-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目2は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "103-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "加盟店自由項目3は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "103-merchantFree3"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サイトID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "サイトIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "ショップID",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "ショップIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字8桁以内",
+                "validErrorMessage": "ショップパスワードは半角英数字8桁以内入力としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "103-tmpPassword1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "レスポンスコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "レスポンス詳細"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "orderId",
+                "title": "オーダーID"
+            },
+            {
+                "key": "forward",
+                "title": "仕向先コード"
+            },
+            {
+                "key": "method",
+                "title": "支払方法"
+            },
+            {
+                "key": "payTimes",
+                "title": "支払回数"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "processId",
+                "title": "トランザクションID"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済日付"
+            },
+            {
+                "key": "checkString",
+                "title": "MD5ハッシュ"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード登録連番"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "issurClass",
+                "title": "国内発行フラグ"
+            },
+            {
+                "key": "issurId",
+                "title": "イシュアコード"
+            },
+            {
+                "key": "formatType",
+                "title": "デビット／プリペイドフラグ"
+            },
+            {
+                "key": "issurName",
+                "title": "デビット／プリペイドカード発行会社名"
+            },
+            {
+                "key": "cardKindCd",
+                "title": "最終仕向先のカード会社"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字記号60桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_@]{1,60}$",
+                "validRuleMessage": "半角英数字記号60桁以内",
+                "validErrorMessage": "会員IDは半角英数字60桁以内としてください",
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "cardId",
+                "title": "カード登録連番",
+                "placeholder": "半角数字4桁以内",
+                "isRequired": false,
+                "validRule": "^[0-9]{1,4}$",
+                "validRuleMessage": "半角数字4桁以内",
+                "validErrorMessage": "カード登録連番は半角数字4桁以内としてください",
+                "isHidden": true,
+                "mapping": "104-cardId"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "洗替・継続課金フラグ",
+                "choice": [
+                    {
+                        "title": "対象とする",
+                        "value": "1"
+                    },
+                    {
+                        "title": "対象としない",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な洗替・継続課金フラグ以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "1",
+                "mapping": "104-defaultFlag"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "会員名",
+                "placeholder": "全角半角255バイト以内",
+                "isRequired": false,
+                "validRule": ".{1,255}$",
+                "validRuleMessage": "全角半角255バイト以内",
+                "validErrorMessage": "会員名は全角半角255バイト以内としてください",
+                "isHidden": true,
+                "bytelen": 255,
+                "mapping": "104-customerNameKanji"
+            },
+            {
+                "key": "customerName",
+                "title": "名義人",
+                "placeholder": "半角英字、半角スペース50桁以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z ]{0,50}$",
+                "validRuleMessage": "半角英字、半角スペース50桁以内",
+                "validErrorMessage": "名義人は半角英字、半角スペース50桁としてください",
+                "isHidden": true,
+                "bytelen": 50,
+                "mapping": "104-customerName"
+            },
+            {
+                "key": "orderId",
+                "title": "オーダーID",
+                "placeholder": "半角英数字27桁以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,27}$",
+                "validRuleMessage": "半角英数字27桁以内",
+                "validErrorMessage": "オーダーIDは半角英数字27桁以内の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-orderId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サイトID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "サイトIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "ショップID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "ショップIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字8桁以内",
+                "validErrorMessage": "ショップパスワードは半角英数字8桁以内入力としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "104-tmpPassword1"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "レスポンスコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "レスポンス詳細"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "orderId",
+                "title": "オーダーID"
+            },
+            {
+                "key": "forward",
+                "title": "仕向先コード"
+            },
+            {
+                "key": "method",
+                "title": "支払方法"
+            },
+            {
+                "key": "payTimes",
+                "title": "支払回数"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "processId",
+                "title": "トランザクションID"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済日付"
+            },
+            {
+                "key": "checkString",
+                "title": "MD5ハッシュ"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード登録連番"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "issurClass",
+                "title": "国内発行フラグ"
+            },
+            {
+                "key": "issurId",
+                "title": "イシュアコード"
+            },
+            {
+                "key": "formatType",
+                "title": "デビット／プリペイドフラグ"
+            },
+            {
+                "key": "issurName",
+                "title": "デビット／プリペイドカード発行会社名"
+            },
+            {
+                "key": "cardKindCd",
+                "title": "最終仕向先のカード会社"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり更新",
+        "check": false,
+        "dealtype": "105",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字記号60桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_@]{1,60}$",
+                "validRuleMessage": "半角英数字記号60桁以内",
+                "validErrorMessage": "会員IDは半角英数字記号60桁以内としてください",
+                "mapping": "105-customerId"
+            },
+            {
+                "key": "cardId",
+                "title": "カード登録連番",
+                "placeholder": "半角数字4桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9]{1,4}$",
+                "validRuleMessage": "半角数字4桁以内",
+                "validErrorMessage": "カード登録連番は半角数字4桁以内としてください",
+                "isHidden": false,
+                "mapping": "105-cardId"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "洗替・継続課金フラグ",
+                "choice": [
+                    {
+                        "title": "対象とする",
+                        "value": "1"
+                    },
+                    {
+                        "title": "対象としない",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な洗替・継続課金フラグ以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "1",
+                "mapping": "105-defaultFlag"
+            },
+            {
+                "key": "customerName",
+                "title": "名義人",
+                "placeholder": "半角英字、半角スペース50桁以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z ]{0,50}$",
+                "validRuleMessage": "半角英字、半角スペース50桁以内",
+                "validErrorMessage": "名義人は半角英字、半角スペース50桁としてください",
+                "isHidden": true,
+                "bytelen": 50,
+                "mapping": "105-customerName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "サイトID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,13}$",
+                "validRuleMessage": "半角英数字13桁以内",
+                "validErrorMessage": "サイトIDは半角英数字13桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "105-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "レスポンスコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "レスポンス詳細"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "orderId",
+                "title": "オーダーID"
+            },
+            {
+                "key": "forward",
+                "title": "仕向先コード"
+            },
+            {
+                "key": "method",
+                "title": "支払方法"
+            },
+            {
+                "key": "payTimes",
+                "title": "支払回数"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "processId",
+                "title": "トランザクションID"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済日付"
+            },
+            {
+                "key": "checkString",
+                "title": "MD5ハッシュ"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "加盟店自由項目1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "加盟店自由項目2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "加盟店自由項目3"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード登録連番"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "brand",
+                "title": "国際ブランド"
+            },
+            {
+                "key": "issurClass",
+                "title": "国内発行フラグ"
+            },
+            {
+                "key": "issurId",
+                "title": "イシュアコード"
+            },
+            {
+                "key": "formatType",
+                "title": "デビット／プリペイドフラグ"
+            },
+            {
+                "key": "issurName",
+                "title": "デビット／プリペイドカード発行会社名"
+            },
+            {
+                "key": "cardKindCd",
+                "title": "最終仕向先のカード会社"
+            }
+        ]
+    }
+]

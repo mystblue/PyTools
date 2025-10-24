@@ -1,0 +1,851 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "defaultFlag",
+                "title": "オプションサービス区分",
+                "choice": [
+                    {
+                        "title": "通常受注",
+                        "value": "0"
+                    },
+                    {
+                        "title": "オプションサービス受注",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1| )$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "0",
+                "mapping": "101-defaultFlag"
+            },
+            {
+                "key": "orderId",
+                "title": "受付番号",
+                "placeholder": "半角英数字23桁以内(英字は大文字のみ)",
+                "isRequired": true,
+                "validRule": "^[A-Z0-9#\\-\\*\\/<>:@]{1,23}$",
+                "validRuleMessage": "半角英数字23桁以内(英字は大文字のみ)",
+                "validErrorMessage": "受付番号は半角英数字23桁以内(英字は大文字のみ)の入力としてください",
+                "defaultValue": "",
+                "mapping": "101-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9][0-9]{0,2}(,[0-9]{3})$|^[1-9][0-9]{0,5}$",
+                "validRuleMessage": "1 以上 999,999 以下",
+                "validErrorMessage": "金額は1 以上 999,999 以下としてください",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～99回以内入力",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字2～99回以内入力",
+                "validErrorMessage": "支払回数は半角数字2～99回以内の入力としてください",
+                "mapping": "101-count"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "購入者名（漢字）",
+                "placeholder": "全角半角60バイト以内",
+                "isRequired": true,
+                "validRule": ".{0,30}$",
+                "validRuleMessage": "全角半角60バイト以内",
+                "validErrorMessage": "顧客名は全角半角60バイト以内入力としてください",
+                "bytelen": 60,
+                "mapping": "101-customerNameKanji"
+            },
+            {
+                "key": "phoneNumber",
+                "title": "購入者TEL",
+                "placeholder": "半角数字8～13桁ハイフンあり",
+                "isRequired": true,
+                "validRule": "^[0-9\\-]{8,13}$",
+                "validRuleMessage": "半角数字8～13桁ハイフンあり",
+                "validErrorMessage": "購入者TELは半角数字8～13桁ハイフンあり入力としてください",
+                "mapping": "101-phoneNumber"
+            },
+            {
+                "key": "email",
+                "title": "購入者E-Mail",
+                "placeholder": "半角英数字記号64桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_.=\\(\\)\\/:;?!\\*'@\\$\\+%]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁以内入力",
+                "validErrorMessage": "購入者E-Mailは半角英数字記号64桁以内入力としてください",
+                "mapping": "101-email"
+            },
+            {
+                "key": "customerName",
+                "title": "カード名義人",
+                "placeholder": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z \\-,.]{1,30}$",
+                "validRuleMessage": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "validErrorMessage": "カード名義人は半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力としてください",
+                "mapping": "101-customerName"
+            },
+            {
+                "key": "customerId",
+                "availableRules": [
+                    {
+                        "keyTarget": "defaultFlag",
+                        "validRule": "^1$"
+                    }
+                ],
+                "title": "カード保有者を特定するＩＤ",
+                "placeholder": "半角英数字記号64桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁",
+                "validErrorMessage": "カード保有者を特定するＩＤは半角英数字記号64桁以内入力としてください",
+                "mapping": "101-customerId"
+            },
+            {
+                "key": "customerPass",
+                "availableRules": [
+                    {
+                        "keyTarget": "defaultFlag",
+                        "validRule": "^1$"
+                    }
+                ],
+                "title": "認証キー",
+                "placeholder": "半角英数字記号8桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字記号8桁",
+                "validErrorMessage": "認証キーは半角英数字記号8桁以内入力としてください",
+                "mapping": "101-customerPass"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "加盟店コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,9}$",
+                "validRuleMessage": "半角英数字9桁以内",
+                "validErrorMessage": "加盟店コードは半角英数字9桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "与信承認番号"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "与信結果エラーコード"
+            },
+            {
+                "key": "numOfCards",
+                "title": "保管件数"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード識別キー"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号(マスク)"
+            },
+            {
+                "key": "tranDate",
+                "title": "最終利用日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "オーソリ売上",
+        "check": false,
+        "dealtype": "102",
+        "request":
+        [
+            {
+                "key": "defaultFlag",
+                "title": "オプションサービス区分",
+                "choice": [
+                    {
+                        "title": "通常受注",
+                        "value": "0"
+                    },
+                    {
+                        "title": "オプションサービス受注",
+                        "value": "1"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1| )$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "0",
+                "mapping": "102-defaultFlag"
+            },
+            {
+                "key": "orderId",
+                "title": "受付番号",
+                "placeholder": "半角英数字23桁以内(英字は大文字のみ)",
+                "isRequired": true,
+                "validRule": "^[A-Z0-9#\\-\\*\\/<>:@]{1,23}$",
+                "validRuleMessage": "半角英数字23桁以内(英字は大文字のみ)",
+                "validErrorMessage": "受付番号は半角英数字23桁以内(英字は大文字のみ)の入力としてください",
+                "defaultValue": "",
+                "mapping": "102-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9][0-9]{0,2}(,[0-9]{3})$|^[1-9][0-9]{0,5}$",
+                "validRuleMessage": "1 以上 999,999 以下",
+                "validErrorMessage": "金額は1 以上 999,999 以下としてください",
+                "mapping": "102-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "102-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～99回以内入力",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字2～99回以内入力",
+                "validErrorMessage": "支払回数は半角数字2～99回以内の入力としてください",
+                "mapping": "102-count"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "購入者名（漢字）",
+                "placeholder": "全角半角60バイト以内",
+                "isRequired": true,
+                "validRule": ".{0,60}$",
+                "validRuleMessage": "全角半角60バイト以内",
+                "validErrorMessage": "顧客名は全角半角60バイト以内入力としてください",
+                "bytelen": 60,
+                "mapping": "102-customerNameKanji"
+            },
+            {
+                "key": "phoneNumber",
+                "title": "購入者TEL",
+                "placeholder": "半角数字8～13桁ハイフンあり",
+                "isRequired": true,
+                "validRule": "^[0-9\\-]{8,13}$",
+                "validRuleMessage": "半角数字8～13桁ハイフンあり",
+                "validErrorMessage": "購入者TELは半角数字8～13桁ハイフンあり入力としてください",
+                "mapping": "102-phoneNumber"
+            },
+            {
+                "key": "email",
+                "title": "購入者E-Mail",
+                "placeholder": "半角英数字記号64桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_.=\\(\\)\\/:;?!\\*'@\\$\\+%]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁以内入力",
+                "validErrorMessage": "購入者E-Mailは半角英数字記号64桁以内入力としてください",
+                "mapping": "102-email"
+            },
+            {
+                "key": "customerName",
+                "title": "カード名義人",
+                "placeholder": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z \\-,.]{1,30}$",
+                "validRuleMessage": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "validErrorMessage": "カード名義人は半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力としてください",
+                "mapping": "102-customerName"
+            },
+            {
+                "key": "customerId",
+                "availableRules": [
+                    {
+                        "keyTarget": "defaultFlag",
+                        "validRule": "^1$"
+                    }
+                ],
+                "title": "カード保有者を特定するＩＤ",
+                "placeholder": "半角英数字記号64桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁",
+                "validErrorMessage": "カード保有者を特定するＩＤは半角英数字記号64桁以内入力としてください",
+                "mapping": "102-customerId"
+            },
+            {
+                "key": "customerPass",
+                "availableRules": [
+                    {
+                        "keyTarget": "defaultFlag",
+                        "validRule": "^1$"
+                    }
+                ],
+                "title": "認証キー",
+                "placeholder": "半角英数字記号8桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字記号8桁",
+                "validErrorMessage": "認証キーは半角英数字記号8桁以内入力としてください",
+                "mapping": "102-customerPass"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "加盟店コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,9}$",
+                "validRuleMessage": "半角英数字9桁以内",
+                "validErrorMessage": "加盟店コードは半角英数字9桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "与信承認番号"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "与信結果エラーコード"
+            },
+            {
+                "key": "numOfCards",
+                "title": "保管件数"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード識別キー"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号(マスク)"
+            },
+            {
+                "key": "tranDate",
+                "title": "最終利用日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カードチェック",
+        "check": false,
+        "dealtype": "103",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "受付番号",
+                "placeholder": "半角英数字23桁以内(英字は大文字のみ)",
+                "isRequired": true,
+                "validRule": "^[A-Z0-9#\\-\\*\\/<>:@]{1,23}$",
+                "validRuleMessage": "半角英数字23桁以内(英字は大文字のみ)",
+                "validErrorMessage": "受付番号は半角英数字23桁以内(英字は大文字のみ)の入力としてください",
+                "defaultValue": "",
+                "mapping": "103-orderId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "購入者名（漢字）",
+                "placeholder": "全角半角60バイト以内",
+                "isRequired": true,
+                "validRule": ".{0,60}$",
+                "validRuleMessage": "全角半角60バイト以内",
+                "validErrorMessage": "顧客名は全角半角60バイト以内入力としてください",
+                "bytelen": 60,
+                "mapping": "103-customerNameKanji"
+            },
+            {
+                "key": "phoneNumber",
+                "title": "購入者TEL",
+                "placeholder": "半角数字8～13桁ハイフンあり",
+                "isRequired": true,
+                "validRule": "^[0-9\\-]{8,13}$",
+                "validRuleMessage": "半角数字8～13桁ハイフンあり",
+                "validErrorMessage": "購入者TELは半角数字8～13桁ハイフンあり入力としてください",
+                "mapping": "103-phoneNumber"
+            },
+            {
+                "key": "email",
+                "title": "購入者E-Mail",
+                "placeholder": "半角英数字記号64桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_.=\\(\\)\\/:;?!\\*'@\\$\\+%]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁以内入力",
+                "validErrorMessage": "購入者E-Mailは半角英数字記号64桁以内入力としてください",
+                "mapping": "103-email"
+            },
+            {
+                "key": "customerName",
+                "title": "カード名義人",
+                "placeholder": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z \\-,.]{1,30}$",
+                "validRuleMessage": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "validErrorMessage": "カード名義人は半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力としてください",
+                "mapping": "103-customerName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "加盟店コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,9}$",
+                "validRuleMessage": "半角英数字9桁以内",
+                "validErrorMessage": "加盟店コードは半角英数字9桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "与信承認番号"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "与信結果エラーコード"
+            },
+            {
+                "key": "numOfCards",
+                "title": "保管件数"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード識別キー"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号(マスク)"
+            },
+            {
+                "key": "tranDate",
+                "title": "最終利用日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "カード保有者を特定するＩＤ",
+                "placeholder": "半角英数字記号64桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁",
+                "validErrorMessage": "カード保有者を特定するＩＤは半角英数字記号64桁以内入力としてください",
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "customerPass",
+                "title": "認証キー",
+                "placeholder": "半角英数字記号8桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字記号8桁",
+                "validErrorMessage": "認証キーは半角英数字記号8桁以内入力としてください",
+                "mapping": "104-customerPass"
+            },
+            {
+                "key": "orderId",
+                "title": "受付番号",
+                "placeholder": "半角英数字23桁以内(英字は大文字のみ)",
+                "isRequired": true,
+                "validRule": "^[A-Z0-9#\\-\\*\\/<>:@]{1,23}$",
+                "validRuleMessage": "半角英数字23桁以内(英字は大文字のみ)",
+                "validErrorMessage": "受付番号は半角英数字23桁以内(英字は大文字のみ)の入力としてください",
+                "defaultValue": "",
+                "mapping": "104-orderId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "購入者名（漢字）",
+                "placeholder": "全角半角60バイト以内",
+                "isRequired": true,
+                "validRule": ".{0,60}$",
+                "validRuleMessage": "全角半角60バイト以内",
+                "validErrorMessage": "顧客名は全角半角60バイト以内入力としてください",
+                "bytelen": 60,
+                "mapping": "104-customerNameKanji"
+            },
+            {
+                "key": "phoneNumber",
+                "title": "購入者TEL",
+                "placeholder": "半角数字8～13桁ハイフンあり",
+                "isRequired": true,
+                "validRule": "^[0-9\\-]{8,13}$",
+                "validRuleMessage": "半角数字8～13桁ハイフンあり",
+                "validErrorMessage": "購入者TELは半角数字8～13桁ハイフンあり入力としてください",
+                "mapping": "104-phoneNumber"
+            },
+            {
+                "key": "email",
+                "title": "購入者E-Mail",
+                "placeholder": "半角英数字記号64桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_.=\\(\\)\\/:;?!\\*'@\\$\\+%]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁以内入力",
+                "validErrorMessage": "購入者E-Mailは半角英数字記号64桁以内入力としてください",
+                "mapping": "104-email"
+            },
+            {
+                "key": "customerName",
+                "title": "カード名義人",
+                "placeholder": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z \\-,.]{1,30}$",
+                "validRuleMessage": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "validErrorMessage": "カード名義人は半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力としてください",
+                "mapping": "104-customerName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "加盟店コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,9}$",
+                "validRuleMessage": "半角英数字9桁以内",
+                "validErrorMessage": "加盟店コードは半角英数字9桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "与信承認番号"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "与信結果エラーコード"
+            },
+            {
+                "key": "numOfCards",
+                "title": "保管件数"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード識別キー"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号(マスク)"
+            },
+            {
+                "key": "tranDate",
+                "title": "最終利用日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり更新",
+        "check": false,
+        "dealtype": "105",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "カード保有者を特定するＩＤ",
+                "placeholder": "半角英数字記号64桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 \\-~]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁",
+                "validErrorMessage": "カード保有者を特定するＩＤは半角英数字記号64桁以内入力としてください",
+                "mapping": "105-customerId"
+            },
+            {
+                "key": "customerPass",
+                "title": "認証キー",
+                "placeholder": "半角英数字記号8桁",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9 -~]{1,8}$",
+                "validRuleMessage": "半角英数字記号8桁",
+                "validErrorMessage": "認証キーは半角英数字記号8桁以内入力としてください",
+                "mapping": "105-customerPass"
+            },
+            {
+                "key": "orderId",
+                "title": "受付番号",
+                "placeholder": "半角英数字23桁以内(英字は大文字のみ)",
+                "isRequired": true,
+                "validRule": "^[A-Z0-9#\\-\\*\\/<>:@]{1,23}$",
+                "validRuleMessage": "半角英数字23桁以内(英字は大文字のみ)",
+                "validErrorMessage": "受付番号は半角英数字23桁以内(英字は大文字のみ)の入力としてください",
+                "defaultValue": "",
+                "mapping": "105-orderId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "購入者名（漢字）",
+                "placeholder": "全角半角60バイト以内",
+                "isRequired": true,
+                "validRule": ".{0,60}$",
+                "validRuleMessage": "全角半角60バイト以内",
+                "validErrorMessage": "顧客名は全角半角60バイト以内入力としてください",
+                "bytelen": 60,
+                "mapping": "105-customerNameKanji"
+            },
+            {
+                "key": "phoneNumber",
+                "title": "購入者TEL",
+                "placeholder": "半角数字8～13桁ハイフンあり",
+                "isRequired": true,
+                "validRule": "^[0-9\\-]{8,13}$",
+                "validRuleMessage": "半角数字8～13桁ハイフンあり",
+                "validErrorMessage": "購入者TELは半角数字8～13桁ハイフンあり入力としてください",
+                "mapping": "105-phoneNumber"
+            },
+            {
+                "key": "email",
+                "title": "購入者E-Mail",
+                "placeholder": "半角英数字記号64桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_.=\\(\\)\\/:;?!\\*'@\\$\\+%]{1,64}$",
+                "validRuleMessage": "半角英数字記号64桁以内入力",
+                "validErrorMessage": "購入者E-Mailは半角英数字記号64桁以内入力としてください",
+                "mapping": "105-email"
+            },
+            {
+                "key": "customerName",
+                "title": "カード名義人",
+                "placeholder": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "isRequired": true,
+                "validRule": "^[A-Za-z \\-,.]{1,30}$",
+                "validRuleMessage": "半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力",
+                "validErrorMessage": "カード名義人は半角英字スペース,ハイフン,カンマ,ドットの30桁以内入力としてください",
+                "mapping": "105-customerName"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "加盟店コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,9}$",
+                "validRuleMessage": "半角英数字9桁以内",
+                "validErrorMessage": "加盟店コードは半角英数字9桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "105-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "エラーコード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "与信承認番号"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "与信結果エラーコード"
+            },
+            {
+                "key": "numOfCards",
+                "title": "保管件数"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カード識別キー"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号(マスク)"
+            },
+            {
+                "key": "tranDate",
+                "title": "最終利用日時"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    }
+]

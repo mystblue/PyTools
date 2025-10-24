@@ -1,0 +1,837 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "取引ID",
+                "placeholder": "半角英数字(ハイフン、アンダースコア含む)100桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9\\-_]{1,100}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア含む)100桁以内",
+                "validErrorMessage": "取引IDは半角英数字(ハイフン、アンダースコア含む)100桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "101-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 99,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9][0-9]{0,1}(,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,7}",
+                "validRuleMessage": "上限99,999,999",
+                "validErrorMessage": "金額は 1 以上 99,999,999 以下の入力としてください",
+                "defaultValue": "",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "ボーナス月指定",
+                        "value": "23"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|23|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "支払区分は10/21/23/61/80のいずれかを指定してください",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～99回以内",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字2～99回以内",
+                "validErrorMessage": "支払回数は半角数字2～99回以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "101-bunkatsu"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^23$"
+                    }
+                ],
+                "title": "ボーナス月指定",
+                "choice": [
+                    {
+                        "title": "1月",
+                        "value": "1"
+                    },
+                    {
+                        "title": "2月",
+                        "value": "2"
+                    },
+                    {
+                        "title": "3月",
+                        "value": "3"
+                    },
+                    {
+                        "title": "4月",
+                        "value": "4"
+                    },
+                    {
+                        "title": "5月",
+                        "value": "5"
+                    },
+                    {
+                        "title": "6月",
+                        "value": "6"
+                    },
+                    {
+                        "title": "7月",
+                        "value": "7"
+                    },
+                    {
+                        "title": "8月",
+                        "value": "8"
+                    },
+                    {
+                        "title": "9月",
+                        "value": "9"
+                    },
+                    {
+                        "title": "10月",
+                        "value": "10"
+                    },
+                    {
+                        "title": "11月",
+                        "value": "11"
+                    },
+                    {
+                        "title": "12月",
+                        "value": "12"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^([1-9]|1[0-2])$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "ボーナス月指定は1～12の間で指定してください",
+                "mapping": "101-bonus"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントCCID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,30}$",
+                "validRuleMessage": "半角英数字30桁以内",
+                "validErrorMessage": "マーチャントCCIDは半角英数字30桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "応答承認番号"
+            },
+            {
+                "key": "orderId",
+                "title": "取引ID"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "要求カード番号"
+            },
+            {
+                "key": "acqId",
+                "title": "仕向け先コード"
+            }
+        ]
+    },
+    {
+        "key": "オーソリ売上",
+        "check": false,
+        "dealtype": "102",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "取引ID",
+                "placeholder": "半角英数字(ハイフン、アンダースコア含む)100桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9\\-_]{1,100}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア含む)100桁以内",
+                "validErrorMessage": "取引IDは半角英数字(ハイフン、アンダースコア含む)100桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "102-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 99,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9][0-9]{0,1}(,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,7}",
+                "validRuleMessage": "上限99,999,999",
+                "validErrorMessage": "金額は 1 以上 99,999,999 以下の入力としてください",
+                "defaultValue": "",
+                "mapping": "102-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払い区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "ボーナス月指定",
+                        "value": "23"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|23|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "支払区分は10/21/23/61/80のいずれかを指定してください",
+                "defaultValue": "10",
+                "mapping": "102-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "placeholder": "半角数字2～99回以内",
+                "isRequired": true,
+                "validRule": "^([2-9]|[1-9][0-9])$",
+                "validRuleMessage": "半角数字2～99回以内",
+                "validErrorMessage": "支払回数は半角数字2～99回以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "102-bunkatsu"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^23$"
+                    }
+                ],
+                "title": "ボーナス月指定",
+                "choice": [
+                    {
+                        "title": "1月",
+                        "value": "1"
+                    },
+                    {
+                        "title": "2月",
+                        "value": "2"
+                    },
+                    {
+                        "title": "3月",
+                        "value": "3"
+                    },
+                    {
+                        "title": "4月",
+                        "value": "4"
+                    },
+                    {
+                        "title": "5月",
+                        "value": "5"
+                    },
+                    {
+                        "title": "6月",
+                        "value": "6"
+                    },
+                    {
+                        "title": "7月",
+                        "value": "7"
+                    },
+                    {
+                        "title": "8月",
+                        "value": "8"
+                    },
+                    {
+                        "title": "9月",
+                        "value": "9"
+                    },
+                    {
+                        "title": "10月",
+                        "value": "10"
+                    },
+                    {
+                        "title": "11月",
+                        "value": "11"
+                    },
+                    {
+                        "title": "12月",
+                        "value": "12"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^([1-9]|1[0-2])$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "ボーナス月指定は1～12の間で指定してください",
+                "mapping": "102-bonus"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントCCID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,30}$",
+                "validRuleMessage": "半角英数字30桁以内",
+                "validErrorMessage": "マーチャントCCIDは半角英数字30桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "応答承認番号"
+            },
+            {
+                "key": "orderId",
+                "title": "取引ID"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "要求カード番号"
+            },
+            {
+                "key": "acqId",
+                "title": "仕向け先コード"
+            }
+        ]
+    },
+    {
+        "key": "カードチェック",
+        "check": false,
+        "dealtype": "103",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "取引ID",
+                "placeholder": "半角英数字(ハイフン、アンダースコア含む)100桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9\\-_]{1,100}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア含む)100桁以内",
+                "validErrorMessage": "取引IDは半角英数字(ハイフン、アンダースコア含む)100桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "103-orderId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントCCID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,30}$",
+                "validRuleMessage": "半角英数字30桁以内",
+                "validErrorMessage": "マーチャントCCIDは半角英数字30桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "応答承認番号"
+            },
+            {
+                "key": "orderId",
+                "title": "取引ID"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "要求カード番号"
+            },
+            {
+                "key": "acqId",
+                "title": "仕向け先コード"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9\\-._@]{1,100}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内",
+                "validErrorMessage": "会員IDは半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "標準カードフラグ",
+                "choice": [
+                    {
+                        "title": "標準カードにする",
+                        "value": "1"
+                    },
+                    {
+                        "title": "標準カードの設定を変更しない",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な標準カードフラグ以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "1",
+                "mapping": "104-defaultFlag"
+            },
+            {
+                "key": "orderId",
+                "title": "課金グループID",
+                "placeholder": "半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内",
+                "isRequired": false,
+                "validRule": "^[a-zA-Z0-9\\-._@]{1,100}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内",
+                "validErrorMessage": "課金グループIDは半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-orderId"
+            },
+            {
+                "key": "seikyuuKaishiYm",
+                "title": "課金開始日",
+                "placeholder": "半角数字8桁(YYYYMMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{8}$",
+                "validRuleMessage": "半角数字8桁(YYYYMMDD)",
+                "validErrorMessage": "課金開始日は半角数字8桁の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-seikyuuKaishiYm"
+            },
+            {
+                "key": "seikyuuShuryoYm",
+                "title": "課金終了日",
+                "placeholder": "半角数字8桁(YYYYMMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{8}$",
+                "validRuleMessage": "半角数字8桁(YYYYMMDD)",
+                "validErrorMessage": "課金終了日は半角数字8桁の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-seikyuuShuryoYm"
+            },
+            {
+                "key": "acntNo1",
+                "title": "都度／初回課金金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 99,999,999 以下",
+                "isRequired": false,
+                "validRule": "^[1-9][0-9]{0,1}(,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,7}",
+                "validRuleMessage": "上限99,999,999",
+                "validErrorMessage": "都度／初回課金金額は 1 以上 99,999,999 以下の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-acntNo1"
+            },
+            {
+                "key": "amount",
+                "title": "継続課金金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 99,999,999 以下",
+                "isRequired": false,
+                "validRule": "^[1-9][0-9]{0,1}(,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,7}",
+                "validRuleMessage": "上限99,999,999",
+                "validErrorMessage": "継続課金金額は 1 以上 99,999,999 以下の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-amount"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "継続課金用メモ１",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "継続課金用メモ１は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "104-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "継続課金用メモ２",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "継続課金用メモ２は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "104-merchantFree2"
+            },
+            {
+                "key": "merchantFree3",
+                "title": "継続課金用メモ３",
+                "placeholder": "全角半角100バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "全角半角100バイト以内",
+                "validErrorMessage": "継続課金用メモ３は全角半角100バイト以内入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "mapping": "104-merchantFree3"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントCCID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,30}$",
+                "validRuleMessage": "半角英数字30桁以内",
+                "validErrorMessage": "マーチャントCCIDは半角英数字30桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "応答承認番号"
+            },
+            {
+                "key": "orderId",
+                "title": "取引ID"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "要求カード番号"
+            },
+            {
+                "key": "acqId",
+                "title": "仕向け先コード"
+            },
+            {
+                "key": "processId",
+                "title": "会員管理処理番号"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "会員管理ステータス"
+            },
+            {
+                "key": "checkString",
+                "title": "会員管理メッセージ"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カードID"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限"
+            },
+            {
+                "key": "resultCd",
+                "title": "標準カードフラグ"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり更新",
+        "check": false,
+        "dealtype": "105",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "会員ID",
+                "placeholder": "半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9\\-._@]{1,100}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内",
+                "validErrorMessage": "会員IDは半角英数字(ハイフン、アンダースコア、ドット、アットマーク含む)100桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "105-customerId"
+            },
+            {
+                "key": "cardId",
+                "title": "カードID",
+                "placeholder": "半角英数字100桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,100}$",
+                "validRuleMessage": "半角英数字100桁以内",
+                "validErrorMessage": "カードIDは半角英数字100桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "105-cardId"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "標準カードフラグ",
+                "choice": [
+                    {
+                        "title": "標準カードにする",
+                        "value": "1"
+                    },
+                    {
+                        "title": "標準カードの設定を変更しない",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": false,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な標準カードフラグ以外が指定されています",
+                "isHidden": true,
+                "defaultValue": "1",
+                "mapping": "105-defaultFlag"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "マーチャントCCID",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{1,30}$",
+                "validRuleMessage": "半角英数字30桁以内",
+                "validErrorMessage": "マーチャントCCIDは半角英数字30桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "105-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "結果コード"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果内容"
+            },
+            {
+                "key": "merrMsg",
+                "title": "エラーメッセージ"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "応答承認番号"
+            },
+            {
+                "key": "orderId",
+                "title": "取引ID"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "要求カード番号"
+            },
+            {
+                "key": "acqId",
+                "title": "仕向け先コード"
+            },
+            {
+                "key": "processId",
+                "title": "会員管理処理番号"
+            },
+            {
+                "key": "creditErrorCode",
+                "title": "会員管理ステータス"
+            },
+            {
+                "key": "checkString",
+                "title": "会員管理メッセージ"
+            },
+            {
+                "key": "customerId",
+                "title": "会員ID"
+            },
+            {
+                "key": "customerCardId",
+                "title": "カードID"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限"
+            },
+            {
+                "key": "resultCd",
+                "title": "標準カードフラグ"
+            }
+        ]
+    }
+]

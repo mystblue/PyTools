@@ -1,0 +1,1427 @@
+[
+    {
+        "key": "オーソリ",
+        "check": false,
+        "dealtype": "101",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "請求番号",
+                "placeholder": "半角数字17桁固定",
+                "isRequired": true,
+                "validRule": "^[0-9]{17}$",
+                "validRuleMessage": "半角数字17桁固定入力",
+                "validErrorMessage": "請求番号は半角数字17桁固定の入力としてください",
+                "defaultValue": "",
+                "mapping": "101-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "請求金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "上限9,999,999",
+                "validErrorMessage": "請求金額は 1 以上 9,999,999 以下の入力としてください",
+                "mapping": "101-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "101-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "choice": [
+                    {
+                        "title": "2回払い",
+                        "value": "2"
+                    },
+                    {
+                        "title": "分割払い(3回)",
+                        "value": "3"
+                    },
+                    {
+                        "title": "分割払い(5回)",
+                        "value": "5"
+                    },
+                    {
+                        "title": "分割払い(6回)",
+                        "value": "6"
+                    },
+                    {
+                        "title": "分割払い(10回)",
+                        "value": "10"
+                    },
+                    {
+                        "title": "分割払い(12回)",
+                        "value": "12"
+                    },
+                    {
+                        "title": "分割払い(15回)",
+                        "value": "15"
+                    },
+                    {
+                        "title": "分割払い(18回)",
+                        "value": "18"
+                    },
+                    {
+                        "title": "分割払い(20回)",
+                        "value": "20"
+                    },
+                    {
+                        "title": "分割払い(24回)",
+                        "value": "24"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(2|3|5|6|10|12|15|18|20|24)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "2",
+                "mapping": "101-count"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "顧客名",
+                "placeholder": "全角30文字",
+                "isRequired": true,
+                "validRule": "^[^ -~｡-ﾟ]{1,30}$",
+                "validRuleMessage": "顧客名は全角30文字以内入力としてください",
+                "validErrorMessage": "顧客名は全角30文字以内入力としてください",
+                "mapping": "101-customerNameKanji"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客番号",
+                "placeholder": "半角数字12～14桁以内",
+                "isRequired": false,
+                "validRule": "^[0-9]{12,14}$",
+                "validRuleMessage": "半角数字12～14桁入力",
+                "validErrorMessage": "顧客番号は半角数字12桁または14桁入力としてください",
+                "isHidden": true,
+                "mapping": "101-customerId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "契約コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,7}$",
+                "validRuleMessage": "半角英数字7桁以内",
+                "validErrorMessage": "契約コードは半角英数字7桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "101-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "収納企業コード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,8}$",
+                "validRuleMessage": "半角英数字8桁以内入力",
+                "validErrorMessage": "半角英数字8桁以内としてください",
+                "defaultValue": "",
+                "mapping": "101-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数字20桁以内入力",
+                "validErrorMessage": "半角英数字20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "101-tmpPassword1"
+            },
+            {
+                "key": "tmpCode2",
+                "title": "拠点コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,5}$",
+                "validRuleMessage": "半角英数字5桁以内入力",
+                "validErrorMessage": "半角英数字5桁以内としてください",
+                "defaultValue": "",
+                "mapping": "101-tmpCode2"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果コード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "結果内容"
+            },
+            {
+                "key": "orderId",
+                "title": "請求番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済受付日"
+            },
+            {
+                "key": "processId",
+                "title": "決済受付番号"
+            },
+            {
+                "key": "acqId",
+                "title": "被仕向会社コード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "billNumber",
+                "title": "顧客番号"
+            },
+            {
+                "key": "customerId",
+                "title": "加盟店顧客ＩＤ"
+            },
+            {
+                "key": "numOfCards",
+                "title": "登録件数"
+            },
+            {
+                "key": "reqId",
+                "title": "識別番号_01"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号_01"
+            },
+            {
+                "key": "reqBrand",
+                "title": "カードブランド_01"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "カード有効期限切れフラグ_01"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "オーソリ売上",
+        "check": false,
+        "dealtype": "102",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "請求番号",
+                "placeholder": "半角数字17桁固定",
+                "isRequired": true,
+                "validRule": "^[0-9]{17}$",
+                "validRuleMessage": "半角数字17桁固定入力",
+                "validErrorMessage": "請求番号は半角数字17桁固定の入力としてください",
+                "defaultValue": "",
+                "mapping": "102-orderId"
+            },
+            {
+                "key": "amount",
+                "title": "請求金額(カンマありなし両方可。カンマは3桁ごと入力)",
+                "placeholder": "1 以上 9,999,999 以下",
+                "isRequired": true,
+                "validRule": "^[1-9](,[0-9]{3}){2}$|^[1-9][0-9]{0,2}(,[0-9]{3}){1}$|^[1-9][0-9]{0,6}$",
+                "validRuleMessage": "上限9,999,999",
+                "validErrorMessage": "請求金額は 1 以上 9,999,999 以下の入力としてください",
+                "mapping": "102-amount"
+            },
+            {
+                "key": "jpo",
+                "title": "支払区分",
+                "choice": [
+                    {
+                        "title": "一括払い",
+                        "value": "10"
+                    },
+                    {
+                        "title": "ボーナス一括払い",
+                        "value": "21"
+                    },
+                    {
+                        "title": "分割払い",
+                        "value": "61"
+                    },
+                    {
+                        "title": "リボルビング払い",
+                        "value": "80"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(10|21|61|80)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "10",
+                "mapping": "102-jpo"
+            },
+            {
+                "key": "count",
+                "availableRules": [
+                    {
+                        "keyTarget": "jpo",
+                        "validRule": "^61$"
+                    }
+                ],
+                "title": "支払回数",
+                "choice": [
+                    {
+                        "title": "2回払い",
+                        "value": "2"
+                    },
+                    {
+                        "title": "分割払い(3回)",
+                        "value": "3"
+                    },
+                    {
+                        "title": "分割払い(5回)",
+                        "value": "5"
+                    },
+                    {
+                        "title": "分割払い(6回)",
+                        "value": "6"
+                    },
+                    {
+                        "title": "分割払い(10回)",
+                        "value": "10"
+                    },
+                    {
+                        "title": "分割払い(12回)",
+                        "value": "12"
+                    },
+                    {
+                        "title": "分割払い(15回)",
+                        "value": "15"
+                    },
+                    {
+                        "title": "分割払い(18回)",
+                        "value": "18"
+                    },
+                    {
+                        "title": "分割払い(20回)",
+                        "value": "20"
+                    },
+                    {
+                        "title": "分割払い(24回)",
+                        "value": "24"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(2|3|5|6|10|12|15|18|20|24)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な支払区分以外が指定されています",
+                "defaultValue": "2",
+                "mapping": "102-count"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "顧客名",
+                "placeholder": "全角30文字",
+                "isRequired": true,
+                "validRule": "^[^ -~｡-ﾟ]{1,30}$",
+                "validRuleMessage": "顧客名は全角30文字以内入力としてください",
+                "validErrorMessage": "顧客名は全角30文字以内入力としてください",
+                "mapping": "102-customerNameKanji"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客番号",
+                "placeholder": "半角数字12～14桁以内",
+                "isRequired": false,
+                "validRule": "^[0-9]{12,14}$",
+                "validRuleMessage": "半角数字12～14桁以内入力",
+                "validErrorMessage": "顧客番号は半角数字12桁または14桁入力としてください",
+                "isHidden": true,
+                "mapping": "102-customerId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "契約コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,7}$",
+                "validRuleMessage": "半角英数字7桁以内",
+                "validErrorMessage": "契約コードは半角英数字7桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "102-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "収納企業コード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,8}$",
+                "validRuleMessage": "半角英数字8桁以内入力",
+                "validErrorMessage": "半角英数字8桁以内としてください",
+                "defaultValue": "",
+                "mapping": "102-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数字20桁以内入力",
+                "validErrorMessage": "半角英数字20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "102-tmpPassword1"
+            },
+            {
+                "key": "tmpCode2",
+                "title": "拠点コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,5}$",
+                "validRuleMessage": "半角英数字5桁以内入力",
+                "validErrorMessage": "半角英数字5桁以内としてください",
+                "defaultValue": "",
+                "mapping": "102-tmpCode2"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果コード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "結果内容"
+            },
+            {
+                "key": "orderId",
+                "title": "請求番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済受付日"
+            },
+            {
+                "key": "processId",
+                "title": "決済受付番号"
+            },
+            {
+                "key": "acqId",
+                "title": "被仕向会社コード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "billNumber",
+                "title": "顧客番号"
+            },
+            {
+                "key": "customerId",
+                "title": "加盟店顧客ＩＤ"
+            },
+            {
+                "key": "numOfCards",
+                "title": "登録件数"
+            },
+            {
+                "key": "reqId",
+                "title": "識別番号_01"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号_01"
+            },
+            {
+                "key": "reqBrand",
+                "title": "カードブランド_01"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "カード有効期限切れフラグ_01"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カードチェック",
+        "check": false,
+        "dealtype": "103",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "請求番号",
+                "placeholder": "半角数字17桁固定",
+                "isRequired": true,
+                "validRule": "^[0-9]{17}$",
+                "validRuleMessage": "半角数字17桁固定入力",
+                "validErrorMessage": "請求番号は半角数字17桁固定の入力としてください",
+                "defaultValue": "",
+                "mapping": "103-orderId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "顧客名",
+                "placeholder": "全角30文字",
+                "isRequired": true,
+                "validRule": "^[^ -~｡-ﾟ]{1,30}$",
+                "validRuleMessage": "顧客名は全角30文字以内入力としてください",
+                "validErrorMessage": "顧客名は全角30文字以内入力としてください",
+                "mapping": "103-customerNameKanji"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客番号",
+                "placeholder": "半角数字12～14桁以内",
+                "isRequired": false,
+                "validRule": "^[0-9]{12,14}$",
+                "validRuleMessage": "半角数字12～14桁以内入力",
+                "validErrorMessage": "顧客番号は半角数字12桁または14桁入力としてください",
+                "isHidden": true,
+                "mapping": "103-customerId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "契約コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,7}$",
+                "validRuleMessage": "半角英数字7桁以内",
+                "validErrorMessage": "契約コードは半角英数字7桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "103-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "収納企業コード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,8}$",
+                "validRuleMessage": "半角英数字8桁以内入力",
+                "validErrorMessage": "半角英数字8桁以内としてください",
+                "defaultValue": "",
+                "mapping": "103-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数字20桁以内入力",
+                "validErrorMessage": "半角英数字20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "103-tmpPassword1"
+            },
+            {
+                "key": "tmpCode2",
+                "title": "拠点コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,5}$",
+                "validRuleMessage": "半角英数字5桁以内入力",
+                "validErrorMessage": "半角英数字5桁以内としてください",
+                "defaultValue": "",
+                "mapping": "103-tmpCode2"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果コード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "結果内容"
+            },
+            {
+                "key": "orderId",
+                "title": "請求番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済受付日"
+            },
+            {
+                "key": "processId",
+                "title": "決済受付番号"
+            },
+            {
+                "key": "acqId",
+                "title": "被仕向会社コード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "billNumber",
+                "title": "顧客番号"
+            },
+            {
+                "key": "customerId",
+                "title": "加盟店顧客ＩＤ"
+            },
+            {
+                "key": "numOfCards",
+                "title": "登録件数"
+            },
+            {
+                "key": "reqId",
+                "title": "識別番号_01"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号_01"
+            },
+            {
+                "key": "reqBrand",
+                "title": "カードブランド_01"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "カード有効期限切れフラグ_01"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり(都度課金)登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "請求番号",
+                "placeholder": "半角数字17桁固定",
+                "isRequired": true,
+                "validRule": "^[0-9]{17}$",
+                "validRuleMessage": "半角数字17桁固定入力",
+                "validErrorMessage": "請求番号は半角数字17桁固定の入力としてください",
+                "defaultValue": "",
+                "mapping": "104tudo-orderId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "顧客名",
+                "placeholder": "全角30文字",
+                "isRequired": true,
+                "validRule": "^[^ -~｡-ﾟ]{1,30}$",
+                "validRuleMessage": "顧客名は全角30文字以内入力としてください",
+                "validErrorMessage": "顧客名は全角30文字以内入力としてください",
+                "mapping": "104tudo-customerNameKanji"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客番号",
+                "placeholder": "半角数字12～14桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9]{12,14}$",
+                "validRuleMessage": "半角数字12～14桁以内入力",
+                "validErrorMessage": "顧客番号は半角数字12桁または14桁入力としてください",
+                "mapping": "104tudo-customerId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "契約コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,7}$",
+                "validRuleMessage": "半角英数字7桁以内",
+                "validErrorMessage": "契約コードは半角英数字7桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104tudo-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "収納企業コード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,8}$",
+                "validRuleMessage": "半角英数8桁以内入力",
+                "validErrorMessage": "半角英数8桁以内としてください",
+                "defaultValue": "",
+                "mapping": "104tudo-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数20桁以内入力",
+                "validErrorMessage": "半角英数20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "104tudo-tmpPassword1"
+            },
+            {
+                "key": "tmpCode2",
+                "title": "拠点コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,5}$",
+                "validRuleMessage": "半角英数5桁以内入力",
+                "validErrorMessage": "半角英数字5桁以内としてください",
+                "defaultValue": "",
+                "mapping": "104tudo-tmpCode2"
+            },
+            {
+                "key": "tmpPassword2",
+                "title": "お預かり認証パスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数字20桁以内入力",
+                "validErrorMessage": "半角英数字20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "104tudo-tmpPassword2"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果コード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "結果内容"
+            },
+            {
+                "key": "orderId",
+                "title": "請求番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済受付日"
+            },
+            {
+                "key": "processId",
+                "title": "決済受付番号"
+            },
+            {
+                "key": "acqId",
+                "title": "被仕向会社コード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "billNumber",
+                "title": "顧客番号"
+            },
+            {
+                "key": "customerId",
+                "title": "加盟店顧客ＩＤ"
+            },
+            {
+                "key": "numOfCards",
+                "title": "登録件数"
+            },
+            {
+                "key": "reqId",
+                "title": "識別番号_01"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号_01"
+            },
+            {
+                "key": "reqBrand",
+                "title": "カードブランド_01"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "カード有効期限切れフラグ_01"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり(都度課金)更新",
+        "check": false,
+        "dealtype": "105",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "請求番号",
+                "placeholder": "半角数字17桁固定",
+                "isRequired": true,
+                "validRule": "^[0-9]{17}$",
+                "validRuleMessage": "半角数字17桁固定入力",
+                "validErrorMessage": "請求番号は半角数字17桁固定の入力としてください",
+                "defaultValue": "",
+                "mapping": "105tudo-orderId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "顧客名",
+                "placeholder": "全角30文字",
+                "isRequired": true,
+                "validRule": "^[^ -~｡-ﾟ]{1,30}$",
+                "validRuleMessage": "顧客名は全角30文字以内入力としてください",
+                "validErrorMessage": "顧客名は全角30文字以内入力としてください",
+                "mapping": "105tudo-customerNameKanji"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客番号",
+                "placeholder": "半角数字12～14桁以内",
+                "isRequired": true,
+                "validRule": "^[0-9]{12,14}$",
+                "validRuleMessage": "半角数字12～14桁以内入力",
+                "validErrorMessage": "顧客番号は半角数字12桁または14桁入力としてください",
+                "mapping": "105tudo-customerId"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "契約コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,7}$",
+                "validRuleMessage": "半角英数字7桁以内",
+                "validErrorMessage": "契約コードは半角英数字7桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "105tudo-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "収納企業コード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,8}$",
+                "validRuleMessage": "半角英数8桁以内入力",
+                "validErrorMessage": "半角英数8桁以内としてください",
+                "defaultValue": "",
+                "mapping": "105tudo-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数20桁以内入力",
+                "validErrorMessage": "半角英数20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "105tudo-tmpPassword1"
+            },
+            {
+                "key": "tmpCode2",
+                "title": "拠点コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,5}$",
+                "validRuleMessage": "半角英数5桁以内入力",
+                "validErrorMessage": "半角英数字5桁以内としてください",
+                "defaultValue": "",
+                "mapping": "105tudo-tmpCode2"
+            },
+            {
+                "key": "tmpPassword2",
+                "title": "お預かり認証パスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数字20桁以内入力",
+                "validErrorMessage": "半角英数字20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "105tudo-tmpPassword2"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果コード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "結果内容"
+            },
+            {
+                "key": "orderId",
+                "title": "請求番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済受付日"
+            },
+            {
+                "key": "processId",
+                "title": "決済受付番号"
+            },
+            {
+                "key": "acqId",
+                "title": "被仕向会社コード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "billNumber",
+                "title": "顧客番号"
+            },
+            {
+                "key": "customerId",
+                "title": "加盟店顧客ＩＤ"
+            },
+            {
+                "key": "numOfCards",
+                "title": "登録件数"
+            },
+            {
+                "key": "reqId",
+                "title": "識別番号_01"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号_01"
+            },
+            {
+                "key": "reqBrand",
+                "title": "カードブランド_01"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "カード有効期限切れフラグ_01"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり(継続課金)登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "契約補助番号",
+                "placeholder": "半角英数25桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,25}$",
+                "validRuleMessage": "半角英数25桁以内",
+                "validErrorMessage": "契約補助番号は半角英数25桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "104keizoku-orderId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "顧客名",
+                "placeholder": "全角30文字",
+                "isRequired": true,
+                "validRule": "^[^ -~｡-ﾟ]{1,30}$",
+                "validRuleMessage": "顧客名は全角30文字以内入力としてください",
+                "validErrorMessage": "顧客名は全角30文字以内入力としてください",
+                "mapping": "104keizoku-customerNameKanji"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客番号",
+                "placeholder": "半角数字12～14桁以内入力",
+                "isRequired": true,
+                "validRule": "^[0-9]{12,14}$",
+                "validRuleMessage": "半角数字12～14桁以内入力",
+                "validErrorMessage": "顧客番号は半角数字12桁または14桁入力としてください",
+                "mapping": "104keizoku-customerId"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "洗替・継続課金フラグ",
+                "choice": [
+                    {
+                        "title": "対象とする",
+                        "value": "1"
+                    },
+                    {
+                        "title": "対象としない",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な洗替・継続課金フラグ以外が指定されています",
+                "defaultValue": "1",
+                "mapping": "104keizoku-defaultFlag"
+            },
+            {
+                "key": "seikyuuKaishiYm",
+                "title": "請求開始年月",
+                "placeholder": "半角数字6桁(YYYYMM)以内入力",
+                "isRequired": true,
+                "validRule": "^[0-9]{4}(01|02|03|04|05|06|07|08|09|10|11|12)$",
+                "validRuleMessage": "半角数字6桁(YYYYMM)以内入力",
+                "validErrorMessage": "請求開始年月は半角数字6桁(YYYYMM)以内入力としてください",
+                "mapping": "104keizoku-seikyuuKaishiYm"
+            },
+            {
+                "key": "seikyuuShuryoYm",
+                "title": "請求終了年月",
+                "placeholder": "半角数字6桁(YYYYMM)以内入力",
+                "isRequired": true,
+                "validRule": "^[0-9]{4}(01|02|03|04|05|06|07|08|09|10|11|12)$",
+                "validRuleMessage": "半角数字6桁(YYYYMM)以内入力",
+                "validErrorMessage": "請求終了年月は半角数字6桁(YYYYMM)以内入力としてください",
+                "defaultValue": "209912",
+                "mapping": "104keizoku-seikyuuShuryoYm"
+            },
+            {
+                "key": "seikyuuHoho",
+                "title": "請求方法",
+                "choice": [
+                    {
+                        "title": "月払",
+                        "value": "1"
+                    },
+                    {
+                        "title": "年払",
+                        "value": "2"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(1|2)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な請求方法以外が指定されています",
+                "defaultValue": "1",
+                "mapping": "104keizoku-seikyuuHoho"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "顧客自由使用欄１",
+                "placeholder": "全角半角30byte以内入力",
+                "isRequired": false,
+                "validRule": ".{0,30}$",
+                "validRuleMessage": "全角半角30byte以内入力",
+                "validErrorMessage": "顧客自由使用欄１は全角半角30byte以内入力としてください",
+                "isHidden": true,
+                "bytelen": 30,
+                "mapping": "104keizoku-merchantFree1"
+            },
+            {
+                "key": "merchantFree2",
+                "title": "顧客自由使用欄２",
+                "placeholder": "全角半角30byte以内入力",
+                "isRequired": false,
+                "validRule": ".{0,30}$",
+                "validRuleMessage": "全角半角30byte以内入力",
+                "validErrorMessage": "顧客自由使用欄２は全角半角30byte以内入力としてください",
+                "isHidden": true,
+                "bytelen": 30,
+                "mapping": "104keizoku-merchantFree2"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "契約コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,7}$",
+                "validRuleMessage": "半角英数字7桁以内",
+                "validErrorMessage": "契約コードは半角英数字7桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104keizoku-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "収納企業コード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,8}$",
+                "validRuleMessage": "半角英数8桁以内入力",
+                "validErrorMessage": "半角英数8桁以内としてください",
+                "defaultValue": "",
+                "mapping": "104keizoku-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数20桁以内入力",
+                "validErrorMessage": "半角英数20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "104keizoku-tmpPassword1"
+            },
+            {
+                "key": "tmpCode2",
+                "title": "拠点コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,5}$",
+                "validRuleMessage": "半角英数5桁以内入力",
+                "validErrorMessage": "半角英数字5桁以内としてください",
+                "defaultValue": "",
+                "mapping": "104keizoku-tmpCode2"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果コード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "結果内容"
+            },
+            {
+                "key": "orderId",
+                "title": "請求番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済受付日"
+            },
+            {
+                "key": "processId",
+                "title": "決済受付番号"
+            },
+            {
+                "key": "acqId",
+                "title": "被仕向会社コード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "billNumber",
+                "title": "顧客番号"
+            },
+            {
+                "key": "customerId",
+                "title": "加盟店顧客ＩＤ"
+            },
+            {
+                "key": "numOfCards",
+                "title": "登録件数"
+            },
+            {
+                "key": "reqId",
+                "title": "識別番号_01"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号_01"
+            },
+            {
+                "key": "reqBrand",
+                "title": "カードブランド_01"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "カード有効期限切れフラグ_01"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    },
+    {
+        "key": "カード預かり(継続課金)更新",
+        "check": false,
+        "dealtype": "105",
+        "request":
+        [
+            {
+                "key": "orderId",
+                "title": "契約補助番号",
+                "placeholder": "半角英数25桁以内",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,25}$",
+                "validRuleMessage": "半角英数25桁以内",
+                "validErrorMessage": "契約補助番号は半角英数25桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "105keizoku-orderId"
+            },
+            {
+                "key": "customerId",
+                "title": "顧客番号",
+                "placeholder": "半角数字12～14桁以内入力",
+                "isRequired": true,
+                "validRule": "^[0-9]{12,14}$",
+                "validRuleMessage": "半角数字12～14桁以内入力",
+                "validErrorMessage": "顧客番号は半角数字12桁または14桁入力としてください",
+                "mapping": "105keizoku-customerId"
+            },
+            {
+                "key": "defaultFlag",
+                "title": "洗替・継続課金フラグ",
+                "choice": [
+                    {
+                        "title": "対象とする",
+                        "value": "1"
+                    },
+                    {
+                        "title": "対象としない",
+                        "value": "0"
+                    }
+                ],
+                "isRequired": true,
+                "validRule": "^(0|1)$",
+                "validRuleMessage": "選択肢から選択",
+                "validErrorMessage": "選択可能な洗替・継続課金フラグ以外が指定されています",
+                "defaultValue": "1",
+                "mapping": "105keizoku-defaultFlag"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "契約コード",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9]{0,7}$",
+                "validRuleMessage": "半角英数字7桁以内",
+                "validErrorMessage": "契約コードは半角英数字7桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "105keizoku-pspMerchantId"
+            },
+            {
+                "key": "tmpCode1",
+                "title": "収納企業コード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,8}$",
+                "validRuleMessage": "半角英数8桁以内入力",
+                "validErrorMessage": "半角英数8桁以内としてください",
+                "defaultValue": "",
+                "mapping": "105keizoku-tmpCode1"
+            },
+            {
+                "key": "tmpPassword1",
+                "title": "ショップパスワード",
+                "isRequired": true,
+                "validRule": "^[a-zA-Z0-9]{1,20}$",
+                "validRuleMessage": "半角英数20桁以内入力",
+                "validErrorMessage": "半角英数20桁以内としてください",
+                "type": "password",
+                "defaultValue": "",
+                "mapping": "105keizoku-tmpPassword1"
+            },
+            {
+                "key": "tmpCode2",
+                "title": "拠点コード",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,5}$",
+                "validRuleMessage": "半角英数5桁以内入力",
+                "validErrorMessage": "半角英数字5桁以内としてください",
+                "defaultValue": "",
+                "mapping": "105keizoku-tmpCode2"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "結果コード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "結果内容"
+            },
+            {
+                "key": "orderId",
+                "title": "請求番号"
+            },
+            {
+                "key": "tranDate",
+                "title": "決済受付日"
+            },
+            {
+                "key": "processId",
+                "title": "決済受付番号"
+            },
+            {
+                "key": "acqId",
+                "title": "被仕向会社コード"
+            },
+            {
+                "key": "resAuthCode",
+                "title": "承認番号"
+            },
+            {
+                "key": "billNumber",
+                "title": "顧客番号"
+            },
+            {
+                "key": "customerId",
+                "title": "加盟店顧客ＩＤ"
+            },
+            {
+                "key": "numOfCards",
+                "title": "登録件数"
+            },
+            {
+                "key": "reqId",
+                "title": "識別番号_01"
+            },
+            {
+                "key": "reqCardNumber",
+                "title": "カード番号_01"
+            },
+            {
+                "key": "reqBrand",
+                "title": "カードブランド_01"
+            },
+            {
+                "key": "reqExpireStatus",
+                "title": "カード有効期限切れフラグ_01"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            }
+        ]
+    }
+]

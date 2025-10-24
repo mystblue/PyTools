@@ -1,0 +1,236 @@
+[
+    {
+        "key": "カード預かり登録",
+        "check": false,
+        "dealtype": "104",
+        "request":
+        [
+            {
+                "key": "customerId",
+                "title": "お客様番号",
+                "placeholder": "半角英数字(ハイフン、アンダースコア含む)32桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9\\-_]{1,32}$",
+                "validRuleMessage": "半角英数字(ハイフン、アンダースコア含む)32桁以内",
+                "validErrorMessage": "お客様番号は半角英数字記号32桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "104-customerId"
+            },
+            {
+                "key": "customerNameKanji",
+                "title": "お客様漢字名",
+                "placeholder": "半角英数字全角50桁以内",
+                "isRequired": true,
+                "validRule": ".{1,50}$",
+                "validRuleMessage": "半角英数字全角50桁以内",
+                "validErrorMessage": "お客様漢字名は半角英数字全角50桁以内の入力としてください",
+                "bytelen": 50,
+                "defaultValue": "",
+                "mapping": "104-customerNameKanji"
+            },
+            {
+                "key": "customerName",
+                "title": "お客様カナ名",
+                "placeholder": "半角英数、半角カナ50桁以内",
+                "isRequired": true,
+                "validRule": "^[A-Za-z0-9ｦ-ﾟ]{1,50}$",
+                "validRuleMessage": "半角英数、半角カナ50桁以内",
+                "validErrorMessage": "お客様カナ名は半角英数、半角カナ50桁以内の入力としてください",
+                "defaultValue": "",
+                "mapping": "104-customerName"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "任意項目",
+                "placeholder": "半角英数字全角100桁以内",
+                "isRequired": false,
+                "validRule": ".{0,100}$",
+                "validRuleMessage": "半角英数字全角100桁以内",
+                "validErrorMessage": "任意項目は半角英数字全角100桁以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 100,
+                "defaultValue": "",
+                "mapping": "104-merchantFree1"
+            },
+            {
+                "key": "email",
+                "title": "eメール",
+                "placeholder": "半角英数字記号50桁以内",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9\\-_.=\\(\\)\\/:;?!\\*'@\\$\\+%]{0,50}$",
+                "validRuleMessage": "半角英数字記号50桁以内",
+                "validErrorMessage": "eメールは半角英数字記号50桁以内の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-email"
+            },
+            {
+                "key": "phoneNumber",
+                "title": "電話番号",
+                "placeholder": "半角数字11桁(ハイフンなし)以内",
+                "isRequired": false,
+                "validRule": "^[0-9]{0,11}$",
+                "validRuleMessage": "半角数字11桁(ハイフンなし)以内",
+                "validErrorMessage": "電話番号は半角数記号11桁以内の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-phoneNumber"
+            },
+            {
+                "key": "dateBirth",
+                "title": "誕生日",
+                "placeholder": "半角数字8桁(YYYYMMDD)",
+                "isRequired": false,
+                "validRule": "^[0-9]{8}$",
+                "validRuleMessage": "半角数字8桁(YYYYMMDD)",
+                "validErrorMessage": "誕生日は半角数字8桁の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-dateBirth"
+            },
+            {
+                "key": "postal",
+                "title": "郵便番号",
+                "placeholder": "半角数字7桁(ハイフンなし)",
+                "isRequired": false,
+                "validRule": "^[0-9]{7}$",
+                "validRuleMessage": "半角数字7桁(ハイフンなし)",
+                "validErrorMessage": "郵便番号は半角数字7桁(ハイフンなし)の入力としてください",
+                "isHidden": true,
+                "defaultValue": "",
+                "mapping": "104-postal"
+            },
+            {
+                "key": "address1",
+                "title": "住所1",
+                "placeholder": "半角英数字全角256バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,256}$",
+                "validRuleMessage": "半角英数字全角256バイト以内",
+                "validErrorMessage": "住所1は半角英数字全角256バイト以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 256,
+                "defaultValue": "",
+                "mapping": "104-address1"
+            },
+            {
+                "key": "address2",
+                "title": "住所2",
+                "placeholder": "半角英数字全角256バイト以内",
+                "isRequired": false,
+                "validRule": ".{0,256}$",
+                "validRuleMessage": "半角英数字全角256バイト以内",
+                "validErrorMessage": "住所2は半角英数字全角256バイト以内の入力としてください",
+                "isHidden": true,
+                "bytelen": 256,
+                "defaultValue": "",
+                "mapping": "104-address2"
+            },
+            {
+                "key": "pspMerchantId",
+                "title": "公開APIキー",
+                "isRequired": false,
+                "validRule": "^[A-Za-z0-9 -~]{0,43}$",
+                "validRuleMessage": "半角英数字43桁以内",
+                "validErrorMessage": "公開APIキーは半角英数字43桁以内入力としてください",
+                "defaultValue": "",
+                "mapping": "104-pspMerchantId"
+            }
+        ],
+        "response":
+        [
+            {
+                "key": "mstatus",
+                "title": "処理結果"
+            },
+            {
+                "key": "vResultCode",
+                "title": "レスポンスコード"
+            },
+            {
+                "key": "merrMsg",
+                "title": "レスポンス詳細"
+            },
+            {
+                "key": "gwErrCd",
+                "title": "決済GW エラーコード"
+            },
+            {
+                "key": "gwErrMsg",
+                "title": "決済GW エラーメッセージ"
+            },
+            {
+                "key": "requestDate",
+                "title": "端末から電文を受信した時刻"
+            },
+            {
+                "key": "responseDate",
+                "title": "端末へ電文を送信した時刻"
+            },
+            {
+                "key": "token",
+                "title": "トークンID"
+            },
+            {
+                "key": "tranDate",
+                "title": "登録時のUNIXタイムスタンプ"
+            },
+            {
+                "key": "nameKanji",
+                "title": "漢字お客様名"
+            },
+            {
+                "key": "nameKana",
+                "title": "半角カナお客様名"
+            },
+            {
+                "key": "merchantFree1",
+                "title": "任意項目"
+            },
+            {
+                "key": "email",
+                "title": "eメール"
+            },
+            {
+                "key": "tel",
+                "title": "電話番号(数値のみ）"
+            },
+            {
+                "key": "dateOfBirth",
+                "title": "誕生日(YYYYMMDD)"
+            },
+            {
+                "key": "zip",
+                "title": "郵便番号(数値のみ)"
+            },
+            {
+                "key": "line1",
+                "title": "住所1"
+            },
+            {
+                "key": "line2",
+                "title": "住所2"
+            },
+            {
+                "key": "brand",
+                "title": "ブランド"
+            },
+            {
+                "key": "last4",
+                "title": "カード番号下4桁"
+            },
+            {
+                "key": "expire",
+                "title": "有効期限"
+            },
+            {
+                "key": "top6",
+                "title": "カード番号上6桁"
+            },
+            {
+                "key": "cardTypeMsg",
+                "title": "カード種別メッセージ"
+            }
+        ]
+    }
+]
