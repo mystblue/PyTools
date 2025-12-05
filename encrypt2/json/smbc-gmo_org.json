@@ -1,0 +1,22 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "8888aaaaa${date}",
+        "tmpCode1": "tshop00000836",
+        "tmpPassword1": "7bp1vabv",
+        "category": "1"
+    },
+    {
+        "cardNumber": "5111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "customerId": "SMBCGMOPGtest20240611v2",
+        "cardId": "0",
+        "category": "4",
+        "orderId": "8888aaaaa${date}",
+        "tmpCode1": "tshop00000836",
+        "tmpPassword1": "7bp1vabv"
+    }
+]

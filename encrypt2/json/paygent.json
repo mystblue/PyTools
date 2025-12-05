@@ -1,0 +1,16 @@
+[
+    {
+        "//"          : "IC オーソリ売上正常系",
+        "cardNumber"  : "3580000000001111",
+        "cardExpire"  : "0528",
+        "securityCode": "8888",
+        "amount"      : "1000",
+        "jpo"         : "10",
+        "orderId"     : "paygent20250530v1",
+        "customerId"  : "paygent${date}",
+        "readMethod"  : "IC",
+        "pspShortName":"paygent",
+        "pspMerchantId":"",
+        "category"    : "3"
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "dgftlk${date}1",
+        "jpo": "10",
+        "amount": "1000",
+        "customerId"  : "dgft${date}",
+        "readMethod"  : "IC",
+        "category": "2"
+    }
+]

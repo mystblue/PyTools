@@ -17,7 +17,7 @@ cert = './cert/D19CF1C348EAB5AA.pem'
 #cert = './cert/D9DAA9555C27F998.pem' # ステージング環境
 #cert = './cert/D9DAA9555C27F936.pem'
 
-psp_list = ['paygent']
+psp_list = ['dgft']
 """
 psp_list = [
     'dgft',

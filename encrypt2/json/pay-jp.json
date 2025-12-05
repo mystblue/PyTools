@@ -1,0 +1,11 @@
+[
+    {
+        "cardNumber": "4242424242424242",
+        "cardExpire": "1235",
+        "securityCode": "8888",
+        "email": "test@test.com",
+        "customerId": "testpayjp5",
+        "productName": "テスト商品",
+        "category": "4"
+    }
+]

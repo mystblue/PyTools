@@ -1,0 +1,13 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "customerId": "8888aaa${date}",
+        "customerNameKanji": "テスト太郎",
+        "customerName": "test taro",
+        "pspShortName": "gmo-mb",
+        "pspMerchantId": "mjPGBgnYKzk185fjVIxOCaGGvLquj3gsJJWpeNnuOYI",
+        "category": "4"
+    }
+]

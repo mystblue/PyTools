@@ -1,0 +1,40 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "category": "1"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "category": "2",
+        "jpo": "10",
+        "amount": "1000"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "category": "3",
+        "jpo": "10",
+        "amount": "1000"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "category": "4",
+        "customerId": "sony20240826v2",
+        "customerPass": "sony26v1"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "category": "5",
+        "customerId": "sony20240826v2",
+        "customerPass": "sony26v1"
+    }
+]

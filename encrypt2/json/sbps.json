@@ -1,0 +1,14 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "customerId": "7859${date}",
+        "merchantFree4": "testproduct",
+        "orderId": "888${date}",
+        "amount": "1000",
+        "jpo": "10",
+        "defaultFlag": "0",
+        "category": "1"
+    }
+]

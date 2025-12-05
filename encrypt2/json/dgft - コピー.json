@@ -1,0 +1,42 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "8888aaaaa${date}",
+        "category": "1"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "dgftlk${date}1",
+        "jpo": "10",
+        "amount": "1000",
+        "category": "2"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "dgftlk${date}2",
+        "jpo": "10",
+        "amount": "1000",
+        "category": "3"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "customerId": "dgftlk${date}",
+        "category": "4"
+    },
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "customerId": "dgftlk20240711164426",
+        "cardId": "69KA76VEYTYZ4CSUH5OHAS41P",
+        "category": "5"
+    }
+]

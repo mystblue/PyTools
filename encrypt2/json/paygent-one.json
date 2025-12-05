@@ -1,0 +1,42 @@
+[
+    {
+        "//"          : "IC オーソリ正常系",
+        "cardNumber"  : "4001420000000000",
+        "cardExpire"  : "1225",
+        "securityCode": "8888",
+        "amount"      : "1000",
+        "jpo"         : "10",
+        "orderId"     : "paygent20240412v2",
+        "customerId"  : "paygent${date}",
+        "readMethod"  : "IC",
+        "category"    : "2"
+    },
+    {
+        "//"          : "IC オーソリ売上正常系",
+        "cardNumber"  : "4001420000000000",
+        "cardExpire"  : "1225",
+        "securityCode": "8888",
+        "amount"      : "1000",
+        "jpo"         : "10",
+        "orderId"     : "paygent20240412v2",
+        "customerId"  : "paygent${date}",
+        "readMethod"  : "IC",
+        "category"    : "3"
+    },
+    {
+        "//"          : "カード預かり登録正常系",
+        "cardNumber"  : "3580000000001111",
+        "cardExpire"  : "1225",
+        "securityCode": "8888",
+        "customerId"  : "paygent${date}",
+        "category"    : "4"
+    },
+    {
+        "//"          : "カード預かり更新正常系",
+        "cardNumber"  : "3580000000001111",
+        "cardExpire"  : "1225",
+        "securityCode": "8888",
+        "customerId"  : "paygent${date}",
+        "category"    : "5"
+    }
+]

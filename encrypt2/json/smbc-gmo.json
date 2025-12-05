@@ -1,0 +1,15 @@
+[
+    {
+        "cardNumber": "4111111111111111",
+        "cardExpire": "1225",
+        "securityCode": "8888",
+        "orderId": "8888aaaaa${date}",
+        "tmpCode1": "tshop00000836",
+        "tmpPassword1": "7bp1vabv",
+        "amount": "1000",
+        "jpo": "10",
+        "readMethod": "IC",
+        "customerId": "testxxx26a36326a8taa1ab",
+        "category": "3"
+    }
+]
