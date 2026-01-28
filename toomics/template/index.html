@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2">
+<meta charset="utf-8">
+<title>{0}</title>
+<style type="text/css">
+html, body {{
+  margin: 0px;
+  padding: 0px;
+}}
+.flexbox{{
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+}}
+img {{
+  display: block;
+  width: 100%;
+}}
+
+input#list {{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 5px 50px;
+}}
+
+input#next {{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 5px 50px;
+}}
+
+table {{
+    border-collapse: collapse; border: 1px solid silver;
+    margin: 2%;
+}}
+th {{
+    background-color: mintcream;
+    border: 1px solid silver;
+    padding : 2px 5px;
+    text-align : left;
+}}
+td {{
+    border: 1px solid silver;
+    padding : 2px 10px;
+}}
+table td:nth-child(2) {{
+    text-align: center;
+}}
+
+</style>
+
+<script type="text/javascript">
+const key = "{1}";
+window.addEventListener('load', addContents);
+
+/** コンテンツを追加 */
+function addContents() {{
+    let savedEpisode = null;
+    let savedVal = localStorage.getItem(key);
+    var savedData = null;
+    if (savedVal) {{
+        savedData = JSON.parse(savedVal);
+    }}
+    if (savedData) {{
+        const table = document.querySelector("table");
+        for (const row of table.rows) {{          // <tr>
+            //alert(row.cells[1].textContent);
+            savedEpisode = getEpisodeFromSavedData(row.cells[1].textContent, savedData);
+            if (savedEpisode) {{
+                date = savedEpisode["date"];
+                memo = savedEpisode["memo"];
+                row.cells[2].textContent = date;
+                row.cells[3].textContent = memo;
+            }}
+        }}
+    }}
+
+    const trs = document.querySelectorAll("tr");
+    
+    trs.forEach(tr => {{
+      tr.addEventListener("click", function(event) {{
+          const row = event.currentTarget;     // クリックされた tr
+          const index = row.rowIndex;      // table 全体での行番号（0-based）
+          const s = String(index - 1).padStart(3, "0");
+	      location.href = s + ".html";
+      }});
+    }});
+}}
+
+function getEpisodeFromSavedData(episodeNum, savedData) {{
+    for (episodeOne of savedData) {{
+        if (episodeNum == episodeOne["episode"]) {{
+            return episodeOne;
+        }}
+    }}
+    return null;
+}}
+</script>
+</head>
+<body>
+
+
+<table>
+<tr><th>タイトル</th><th>話数</th><th>既読</th><th>メモ</th></tr>
+{2}
+</table>
+
+</body>
+</html>

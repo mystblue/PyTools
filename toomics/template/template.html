@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=2">
+<meta charset="utf-8">
+<title>{0}</title>
+<style type="text/css">
+html, body {{
+  margin: 0px;
+  padding: 0px;
+}}
+.flexbox{{
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+}}
+img {{
+  display: block;
+  width: 100%;
+}}
+
+input#list {{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 5px 50px;
+}}
+
+input#next {{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 5px 50px;
+}}
+
+table {{
+    border-collapse: collapse; border: 1px solid silver;
+    margin: 2%;
+}}
+th {{
+    background-color: mintcream;
+    border: 1px solid silver;
+    padding : 2px 5px;
+    text-align : left;
+}}
+td {{
+    border: 1px solid silver;
+    padding : 2px 10px;
+}}
+table td:nth-child(2) {{
+    text-align: center;
+}}
+
+</style>
+<script type="text/javascript">
+const key = "{1}";
+const episode = "{2}";
+  document.addEventListener('DOMContentLoaded', eventHandler);
+
+  /* ページ読み込み時のイベントハンドラ */
+  function eventHandler() {{
+    const images = document.querySelectorAll("img");
+    
+    images.forEach(img => {{
+      img.addEventListener("click", function(event) {{
+        // ウインドウ内での座標を取得
+        const x = event.clientX;
+        const y = event.clientY;
+        
+        let scrollHeight = 0;
+        if (y < window.innerHeight / 3) {{
+            scrollHeight = window.innerHeight * 1.5;
+        }} else if (y < window.innerHeight * 2 / 3) {{
+            scrollHeight = window.innerHeight - 50;
+        }} else {{
+            scrollHeight = window.innerHeight / 2.5;
+        }}
+        //alert(scrollHeight);
+        window.scrollBy({{
+          top: scrollHeight,
+          behavior: "instant"  // smooth:スムーズスクロール
+        }});
+      }});
+    }});
+    setMemo();
+  }}
+
+function setMemo() {{
+    let savedEpisode = null;
+    let savedVal = localStorage.getItem(key);
+    var savedData = null;
+    if (savedVal) {{
+        savedData = JSON.parse(savedVal);
+        savedEpisode = getEpisodeFromSavedData(episode, savedData);
+        if (savedEpisode) {{
+            document.getElementById("memo").setAttribute("value", savedEpisode["memo"]);
+        }}
+    }}
+}}
+function getEpisodeFromSavedData(episodeNum, savedData) {{
+    for (episodeOne of savedData) {{
+        if (episodeNum == episodeOne["episode"]) {{
+            return episodeOne;
+        }}
+    }}
+    return null;
+}}
+function nextClicked() {{
+    let textInput = document.getElementById("memo");
+    
+    let savedVal = localStorage.getItem(key);
+    var savedData = null;
+    if (savedVal) {{
+        savedData = JSON.parse(savedVal);
+    }} else {{
+        savedData = new Array();
+    }}
+    
+    var episodeData = getEpisodeFromSavedData(episode, savedData);
+    if (!episodeData) {{
+        var episodeData = new Object();
+        episodeData["episode"] = episode;
+        savedData.push(episodeData);
+    }}
+    episodeData["memo"] = textInput.value;
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = (date.getMonth() + 1);
+    var day = date.getDate();
+    episodeData["date"] = year + "/" + month + "/" + day;
+    
+    let val = JSON.stringify(savedData);
+    localStorage.setItem(key, val);
+
+    location.href = "{3}.html";
+}}
+
+function listClicked() {{
+    location.href = "index.html";
+}}
+
+</script>
+
+</head>
+<body>
+{4}
+<input id="memo" type="text" value="">
+<input id="next" type="button" value="次へ" onclick="nextClicked()">
+<input id="list" type="button" value="一覧へ" onclick="listClicked()">
+</body>
+</html>
