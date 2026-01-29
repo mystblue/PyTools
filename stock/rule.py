@@ -32,21 +32,23 @@ def add_indicators(df):
 def is_buy_signal(df):
     latest = df.iloc[-1]
     prev = df.iloc[-2]
-
+    
     # ゴールデンクロス（MA5がMA20を上抜け）
     gc = (prev["MA5"] <= prev["MA20"]) and (latest["MA5"] > latest["MA20"])
-
+    
     # 出来高が平均以上
     vol_ok = latest["Volume"] > latest["VOLUME_MA20"]
-
+    
     # RSIが50以上（弱すぎない）
     #rsi_ok = latest["RSI14"] >= 50
     rsi_ok = latest["RSI14"] >= 45
-
+    
+    # 25 日線が上向き
     cond6 = latest["MA25_SLOPE"] > 0
-
+    
+    # 75 日線が上向き
     cond75 = latest["MA75_SLOPE"] > 0
-
+    
     return gc and vol_ok and rsi_ok and cond6 and cond75
 
 def main():
