@@ -1,3 +1,4 @@
+import datetime
 import yfinance as yf
 import pandas as pd
 import ta  # pip install ta
@@ -79,7 +80,10 @@ def main():
         df_res = pd.DataFrame(results)
         print("今日の買い候補：")
         print(df_res)
-        df_res.to_csv("screening_results.csv", index=False)
+        
+        now = datetime.datetime.now()
+        date_str = now.strftime('%Y%m%d')
+        df_res.to_csv("screening_results_" + date_str + ".csv", index=False)
     else:
         print("今日の条件合致銘柄はなし")
 
