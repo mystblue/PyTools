@@ -4,7 +4,7 @@ import yfinance as yf
 
 def fetch_data(code, name):
     ticker = yf.Ticker(code + ".T")
-    data = ticker.history(period="10y")
+    data = ticker.history(period="2d")
     data.to_csv("today\\" + name + "_1d.csv")
 
 def fetch_data_local(filepath):
