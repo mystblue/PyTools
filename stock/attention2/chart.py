@@ -3,7 +3,7 @@ import mplfinance as mpf
 
 def create_chart(df):
     df["MA5"] = df["Close"].rolling(5).mean()
-    df["MA25"] = df["Close"].rolling(25).mean()
+    df["MA25"] = df["Close"].rolling(20).mean()
     df["MA75"] = df["Close"].rolling(75).mean()
     
     # --- RSI 計算（14日） ---

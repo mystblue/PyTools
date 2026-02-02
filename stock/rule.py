@@ -67,10 +67,14 @@ def main():
                 latest = df.iloc[-1]
                 results.append({
                     "ticker": ticker,
+                    "date": latest["Date"],
                     "close": latest["Close"],
                     "rsi": latest["RSI14"],
                     "ma5": latest["MA5"],
                     "ma20": latest["MA20"],
+                    "pref_date": df.iloc[-2]["Date"],
+                    "PREV_ma5": df.iloc[-2]["MA5"],
+                    "PREV_ma20": df.iloc[-2]["MA20"],
                     "volume": latest["Volume"],
                 })
         except Exception as e:
