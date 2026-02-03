@@ -4,15 +4,15 @@ import yfinance as yf
 
 def fetch_data(code, name):
     ticker = yf.Ticker(code + ".T")
-    data = ticker.history(period="2d")
-    data.to_csv("..\\today\\" + name + "_2d.csv")
+    data = ticker.history(period="1d")
+    data.to_csv("..\\today\\" + name + "_1d.csv")
 
 def fetch_data_local(filepath):
     data = pd.read_csv(filepath, index_col=0)
     return data
 
 def merge(name):
-    src1 = "..\\master_10y_20260129\\" + name + "_10y.csv"
+    src1 = "..\\master\\" + name + "_10y.csv"
     src2 = "..\\today\\" + name + "_1d.csv"
     df = fetch_data_local(src1)
     df2 = fetch_data_local(src2)
