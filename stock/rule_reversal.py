@@ -34,6 +34,7 @@ def add_indicators(df, bb_window=20, bb_sigma=2, rsi_period=14):
     df["BB_UPPER"] = ma + bb_sigma * std
     df["BB_LOWER"] = ma - bb_sigma * std
 
+    df["MA5"] = df["Close"].rolling(window=5).mean()
     df["MA20"] = df["Close"].rolling(window=20).mean()
     df["MA75"] = df["Close"].rolling(75).mean()
     df["MA75_SLOPE"] = df["MA75"].diff()
@@ -85,6 +86,10 @@ def is_buy_signal(latest, prev):
     """
 
     # いずれかの逆張り条件を満たせば買いシグナル
+    if rsi_cond:
+        print("RSI 反転")
+    if bb_cond:
+        print("BB")
     return rsi_cond or bb_cond
 
 def main():
@@ -101,6 +106,7 @@ def main():
             today = df.iloc[-1]
             yesterday = df.iloc[-2]
             if is_buy_signal(today, yesterday):
+                print(ticker)
                 latest = df.iloc[-1]
                 results.append({
                     "ticker": ticker,
