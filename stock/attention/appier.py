@@ -4,7 +4,7 @@ import yfinance as yf
 
 def fetch_data(code, name):
     ticker = yf.Ticker(code + ".T")
-    data = ticker.history(period="2d")
+    data = ticker.history(period="1d")
     data.to_csv("..\\today\\" + name + "_1d.csv")
 
 def fetch_data_local(filepath):
@@ -28,7 +28,7 @@ def merge(name):
 
 def update_data(code, name):
     fetch_data(code, name)
-    merge(name)
+    #merge(name)
 
 if __name__ == '__main__':
     update_data("4180", "appier")
