@@ -4,7 +4,7 @@ import pandas as pd
 import ta  # pip install ta
 
 # 1. 監視銘柄リスト
-TICKERS = ["fujikura"]
+TICKERS = ["fujikura", "advantest", "ibiden", "lasertec", "sumco", "screen", "hoya", "rohm", "shinetsu", "tel", "furukawa", "denso", "shionogi", "chugai", "astellas", "nintendo", "capcom", "bandai", "kepco", "tepco", "enos", "mhi", "ihi", "khi", "itochu", "mitsubishi", "mitsui", "olc", "toyota", "nipponsteel", "jfeh", "nyk", "mol", "kilne", "kikkoman", "nipponham", "konami", "squareenix", "suzuki", "subaru", "disco", "renesas", "softbankg", "ntt", "kddi", "softbank", "cyberagent", "rakuten", "zh", "fujitsu", "nec", "omron"]
 
 def fetch_data(ticker):
     df = pd.read_csv("master\\" + ticker + ".csv")
