@@ -63,6 +63,9 @@ def create_chart_bb(df):
 	
 	df["Upper"] = df["MA20"] + (df["STD20"] * 2)
 	df["Lower"] = df["MA20"] - (df["STD20"] * 2)
+
+	df["Upper1"] = df["MA20"] + (df["STD20"])
+	df["Lower1"] = df["MA20"] - (df["STD20"])
     
 	df["MA160"] = df["Close"].rolling(160).mean()
 	
@@ -73,7 +76,9 @@ def create_chart_bb(df):
 	apds = [
 	    mpf.make_addplot(df["MA20"], panel=0, width=1, color="blue", label="middle"),
 	    mpf.make_addplot(df["Upper"], panel=0, width=1, color="green", label="2σ"),
+	    mpf.make_addplot(df["Upper1"], panel=0, width=1, color="lightgreen", label="σ"),
 	    mpf.make_addplot(df["Lower"], panel=0, width=1, color="red", label="-2σ"),
+	    mpf.make_addplot(df["Lower1"], panel=0, width=1, color="pink", label="-1σ"),
 	    mpf.make_addplot(df["MA160"], panel=0, width=1, color="brown", label="160"),
 	]
 
@@ -105,6 +110,6 @@ def create_chart_bb(df):
 
 if __name__ == '__main__':
     # CSV 読み込み
-    df = pd.read_csv("..\\master\\simizu.csv", parse_dates=["Date"], index_col="Date")
+    df = pd.read_csv("..\\master\\zh.csv", parse_dates=["Date"], index_col="Date")
     create_chart(df)
     create_chart_bb(df)
