@@ -1,8 +1,8 @@
 import yfinance as yf
 
-fujikura = yf.Ticker("5803.T")
+fujikura = yf.Ticker("1803.T")
 data = fujikura.history(period="10y")
-data.to_csv("fujikura_10y.csv")
+data.to_csv("simizu_10y.csv")
 
 #print(data)
 #print(type(data))

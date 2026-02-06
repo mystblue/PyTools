@@ -88,3 +88,4 @@ if __name__ == '__main__':
     update_data("6702", "fujitsu")
     update_data("6701", "nec")
     update_data("6645", "omron")
+    update_data("1803", "simizu")
