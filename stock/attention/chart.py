@@ -110,6 +110,6 @@ def create_chart_bb(df):
 
 if __name__ == '__main__':
     # CSV 読み込み
-    df = pd.read_csv("..\\master\\zh.csv", parse_dates=["Date"], index_col="Date")
+    df = pd.read_csv("..\\master\\hoya.csv", parse_dates=["Date"], index_col="Date")
     create_chart(df)
     create_chart_bb(df)
